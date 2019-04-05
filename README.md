@@ -11,7 +11,7 @@
 > 선물하기
 
 # 팀원 소개
-!(./.Image/Hobbangman.jpg)
+![alter character](./.Image/Hobbangman.jpg)
 **정성운**:
 > 한양대학교 3학년 학생입니다.
 > email : odysseyj@naver.com
