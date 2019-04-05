@@ -17,8 +17,10 @@
 > email : odysseyj@naver.com
 
 <img width = "100px" height = "100px"> ![alter character](./.Image/CJH_image.jpeg)</img>
+
 **최준호**:
 > 한양대학교 3학년 학생입니다.
+
 > email : jeff112630@gmail.com
 
 **전하영**:
