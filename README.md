@@ -27,6 +27,7 @@
 -->
 
 |  | 이름 | 소속 | email |
+| ---------- | :--------- | :----------: | ----------: |
 | <img src = "./.Image/Hobbangman.jpg" height="100px" width = "100px" alt = "alt character"></img> | 정성운 | 한양대학교 3학년 | odysseyj@naver.com |
 | <img src = "./.Image/CJH_image.jpeg" height="100px" width = "100px" alt = "alt character"></img> | 최준호 | 한양대학교 3학년 | jeff112630@gmail.com |
 | <img src = "./.Image/017.png" alt="alt character"></img> | 전하영 | 한양대학교 4학년 | superha0@naver.com |
