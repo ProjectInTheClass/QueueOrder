@@ -15,6 +15,19 @@ struct Menu {
     var price:Int //음료가격
 }
 
+// 주문정보 받는 구조체.
+struct OrderInfo {
+    var menu : [Menu]
+    var priceSum : Int
+    var date : String
+}
+
+// 로그인된 유저 정보를 들고있는 프로퍼티
+var loginUserInfo : KOUserMe?
+
+// 유저가 주문했던 정보를 들고있는 프로퍼티
+var userOrdered : [OrderInfo]?
+
 var moca = Menu(coffee:"카페모카", image:nil, price:3500)
 var latte = Menu(coffee:"카페라떼", image:nil, price:2500)
 var iceLatte = Menu(coffee:"아이스카페라떼", image:nil, price:2500)
