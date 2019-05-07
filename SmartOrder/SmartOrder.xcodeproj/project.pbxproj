@@ -25,6 +25,9 @@
 		D6E96A09227C4819009A3E04 /* MyPageStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6E96A08227C4819009A3E04 /* MyPageStoryboard.storyboard */; };
 		D6E96A0B227C4891009A3E04 /* MyMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6E96A0A227C4891009A3E04 /* MyMenu.storyboard */; };
 		D6E96A0D227C4906009A3E04 /* PayStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6E96A0C227C4906009A3E04 /* PayStoryboard.storyboard */; };
+		D6E96A0F2281E571009A3E04 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E96A0E2281E571009A3E04 /* CartViewController.swift */; };
+		D6E96A112281F76A009A3E04 /* CartDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E96A102281F76A009A3E04 /* CartDetailViewController.swift */; };
+		D6E96A152281FFA3009A3E04 /* Cart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6E96A142281FFA3009A3E04 /* Cart.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +52,9 @@
 		D6E96A08227C4819009A3E04 /* MyPageStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPageStoryboard.storyboard; sourceTree = "<group>"; };
 		D6E96A0A227C4891009A3E04 /* MyMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyMenu.storyboard; sourceTree = "<group>"; };
 		D6E96A0C227C4906009A3E04 /* PayStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PayStoryboard.storyboard; sourceTree = "<group>"; };
+		D6E96A0E2281E571009A3E04 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		D6E96A102281F76A009A3E04 /* CartDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartDetailViewController.swift; sourceTree = "<group>"; };
+		D6E96A142281FFA3009A3E04 /* Cart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cart.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,12 +119,15 @@
 				57D92523227ED0E20044E96B /* Mypage */,
 				57D92519227DAF080044E96B /* Kakao */,
 				D67B8F8922685F3D009FEBD5 /* AppDelegate.swift */,
+				D6E96A0E2281E571009A3E04 /* CartViewController.swift */,
+				D6E96A102281F76A009A3E04 /* CartDetailViewController.swift */,
 				D67B8F9B22685F8F009FEBD5 /* DataCenter.swift */,
 				D6E96A06227C2246009A3E04 /* CouponViewController.swift */,
 				D67B8F8B22685F3D009FEBD5 /* ViewController.swift */,
 				D67B8F8D22685F3D009FEBD5 /* Main.storyboard */,
 				D6E96A0C227C4906009A3E04 /* PayStoryboard.storyboard */,
 				D6E96A0A227C4891009A3E04 /* MyMenu.storyboard */,
+				D6E96A142281FFA3009A3E04 /* Cart.storyboard */,
 				D6E96A04227C133A009A3E04 /* StampViewController.swift */,
 				D6E96A02227C100C009A3E04 /* HomeViewController.swift */,
 				D67B8F9F22687A43009FEBD5 /* DetailViewController.swift */,
@@ -194,6 +203,7 @@
 				D6E96A09227C4819009A3E04 /* MyPageStoryboard.storyboard in Resources */,
 				D6E96A0B227C4891009A3E04 /* MyMenu.storyboard in Resources */,
 				D67B8F8F22685F3D009FEBD5 /* Main.storyboard in Resources */,
+				D6E96A152281FFA3009A3E04 /* Cart.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,8 +216,10 @@
 			files = (
 				57D9251B227DAF190044E96B /* LoginViewController.swift in Sources */,
 				D6E96A07227C2246009A3E04 /* CouponViewController.swift in Sources */,
+				D6E96A112281F76A009A3E04 /* CartDetailViewController.swift in Sources */,
 				D67B8F9C22685F8F009FEBD5 /* DataCenter.swift in Sources */,
 				57D9251D227DAF6B0044E96B /* KakaoLoginButton.swift in Sources */,
+				D6E96A0F2281E571009A3E04 /* CartViewController.swift in Sources */,
 				D6E96A05227C133A009A3E04 /* StampViewController.swift in Sources */,
 				D67B8F8C22685F3D009FEBD5 /* ViewController.swift in Sources */,
 				D67B8FA022687A43009FEBD5 /* DetailViewController.swift in Sources */,

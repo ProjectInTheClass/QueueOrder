@@ -79,6 +79,8 @@ struct cart {
 }
 
 var selected1 = order1
+var myCart = cart(selectedMenu: [selected1])
+
 
 //주문내역
 struct OrderList {
@@ -173,7 +175,8 @@ struct CouponList {
     }
 }
 
-var couponList1 = CouponList(coupons:[])
-//couponList1.addCoupon(coupon1)
-//couponList1.addCoupon(coupon2)
+var couponList = CouponList(coupons:[coupon1,coupon2])
+
+//couponList.addCoupon(coupon1)
+//couponList.addCoupon(coupon2)
 

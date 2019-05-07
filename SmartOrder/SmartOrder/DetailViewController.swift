@@ -11,7 +11,14 @@ import UIKit
 class DetailViewController: UITableViewController {
 
     var coffeeForView:Menu?
+    var caffeInfo = 0 //카페 고유 번호 받아와야함 -> 추후 수정.
     
+    let alertController = UIAlertController(title: "장바구니로 이동하시겠습니까?", message:
+        "음료가 등록되었습니다.", preferredStyle: .alert)
+    
+  
+    @IBOutlet weak var ice: UISegmentedControl!
+    @IBOutlet weak var coffeeSize: UISegmentedControl!
     @IBOutlet weak var coffee: UIImageView!
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var coffeeName: UILabel!
@@ -27,10 +34,73 @@ class DetailViewController: UITableViewController {
         coffeeName.text = coffeeForView?.coffee
         price.text = "\(str!) 원"
         resultPrice.text = "\(str!)"
+        
+        alertController.addAction(UIAlertAction(title: "취소", style: .cancel))
+       // alertController.addAction(UIAlertAction(title: "확인", style: .default))
+        alertController.addAction(UIAlertAction(title: "확인", style: .default)
+        {
+            UIAlertAction in
+            /*
+             let storyBoard = self.storyboard!
+             let cartView = storyBoard.instantiateViewController(withIdentifier: "cartView") as! CartViewController
+             cartView.delegate = self
+             
+             self.present(cartView, animated: true, completion: nil)
+             */
+            
+            /*
+            let storyboard: UIStoryboard = UIStoryboard(name: "Cart", bundle: nil)
+            let nextView = storyboard.instantiateViewController(withIdentifier: "MyCart") as! CartViewController
+            self.present(nextView, animated: true, completion: nil)
+ */
+            var coffeeName = ""
+            if let coffee = self.coffeeForView?.coffee {
+                coffeeName = coffee
+            }
+            
+            var cost:Int? = 0
+            if let res = self.resultPrice?.text {
+                cost = Int(res)
+            }
+            
+            var coffeePrice:Int = 0
+            if let cp = self.coffeeForView?.price {
+                coffeePrice = cp
+            }
+            
+            var amount:Int? = 0
+            if let am = self.amount?.text {
+                amount = Int(am)
+            }
+            
+            var cofeeSize = "Small"
+            if let sz = self.coffeeSize.titleForSegment(at: self.coffeeSize.selectedSegmentIndex) {
+                cofeeSize = sz
+            }
+            var iceSize = "보통"
+            if let ice = self.ice.titleForSegment(at: self.ice.selectedSegmentIndex) {
+                iceSize = ice
+            }
+            
+            var shotInt:Int? = 0
+            if let sht = self.shot?.text {
+                shotInt = Int(sht)
+            }
+            
+            var addCart = Order(caffeInfo: self.caffeInfo, coffee: coffeeName, price: cost!,
+                                count: amount!, size: cofeeSize, ice: iceSize, shot: shotInt!, orderDate: "")
+            myCart.selectedMenu.append(addCart)
+        })
+        
+        
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(dismissFunc), name: Notification.Name.NSExtensionHostWillResignActive, object: nil)
+  
     }
     
     override func viewWillAppear(_ animated: Bool) {
         print(coffeeForView?.coffee)
+        
     }
     @IBAction func amountMinus(_ sender: Any) {
         
@@ -106,5 +176,14 @@ class DetailViewController: UITableViewController {
         shot.text = "\(num!+1)"
         resultPrice.text = "\(rp!+500*(Int(amt!)!))"
         
+    }
+    @IBAction func showAlert(_ sender: Any) {
+        self.present(alertController, animated: true, completion: {
+             print("장바구니에 있는 item 갯수는... \(myCart.selectedMenu.count)")
+        })
+    }
+    
+    @objc func dismissFunc(){
+        self.alertController.dismiss(animated: true, completion: nil)
     }
 }
