@@ -32,7 +32,7 @@ class CaffePreViewController: UIViewController {
             storePhoto.image = UIImage(named: "dummy")
         }
         
-        storeLocation.text = caffeForView?.location
+        storeLocation.text = caffeForView?.name
     }
     
 

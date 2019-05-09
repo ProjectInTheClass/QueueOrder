@@ -247,6 +247,9 @@
                         <outlet property="price" destination="S0y-sI-Frk" id="MSK-ut-FyB"/>
                         <outlet property="resultPrice" destination="KFD-cx-wUC" id="gi8-hE-cRm"/>
                         <outlet property="shot" destination="df7-eI-S6e" id="zec-Pz-eBm"/>
+                        <outlet property="shotDecrease" destination="8NX-d6-DHA" id="T0D-Ki-8Vk"/>
+                        <outlet property="shotIncrease" destination="bKd-EC-Gwo" id="CtE-12-2Wn"/>
+                        <outlet property="shotTit" destination="0HP-sX-ha6" id="CMH-R9-KsN"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xl6-13-52b" userLabel="First Responder" sceneMemberID="firstResponder"/>

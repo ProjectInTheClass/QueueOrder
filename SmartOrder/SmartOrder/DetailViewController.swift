@@ -25,9 +25,20 @@ class DetailViewController: UITableViewController {
     @IBOutlet weak var amount: UILabel!
     @IBOutlet weak var shot: UILabel!
     @IBOutlet weak var resultPrice: UILabel!
-    
+    @IBOutlet weak var shotTit: UILabel!
+    @IBOutlet weak var shotIncrease: UIButton!
+    @IBOutlet weak var shotDecrease: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //샷 추가 가능하지 않으면 보이지 않게
+        if coffeeForView?.shot == false {
+            shot.isHidden = true
+            shotDecrease.isHidden = true
+            shotTit.isHidden = true
+            shotIncrease.isHidden = true
+        }
+        
         let str:Int! = coffeeForView?.price
         
         coffee?.image = UIImage(named: "coffee_picture_blue")

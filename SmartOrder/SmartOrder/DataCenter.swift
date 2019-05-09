@@ -13,6 +13,7 @@ struct Menu {
     var coffee:String //음료이름
     var image:String? //음료사진
     var price:Int //음료가격
+    var shot : Bool
 }
 
 // 주문정보 받는 구조체.
@@ -28,16 +29,16 @@ var loginUserInfo : KOUserMe?
 // 유저가 주문했던 정보를 들고있는 프로퍼티
 var userOrdered : [OrderInfo]?
 
-var moca = Menu(coffee:"카페모카", image:nil, price:3500)
-var latte = Menu(coffee:"카페라떼", image:nil, price:2500)
-var iceLatte = Menu(coffee:"아이스카페라떼", image:nil, price:2500)
-var macchiatos = Menu(coffee:"카라멜마끼야또", image:nil, price:3500)
-var iceAmericano = Menu(coffee:"아메리카노", image:nil, price:1800)
-var Americano = Menu(coffee:"아이스아메리카노", image:nil, price:1500)
-var chocolate = Menu(coffee:"핫초코", image:nil, price:3000)
-var iceChocolate = Menu(coffee:"아이스초코", image:nil, price:3500)
-var iceteaL = Menu(coffee:"아이스티레몬", image:nil, price:3000)
-var iceteaP = Menu(coffee:"아이스티복숭아", image:nil, price:3000)
+var moca = Menu(coffee:"카페모카", image:nil, price:3500, shot:true)
+var latte = Menu(coffee:"카페라떼", image:nil, price:2500, shot:true)
+var iceLatte = Menu(coffee:"아이스카페라떼", image:nil, price:2500, shot:true)
+var macchiatos = Menu(coffee:"카라멜마끼야또", image:nil, price:3500, shot:true)
+var iceAmericano = Menu(coffee:"아메리카노", image:nil, price:1800, shot:true)
+var Americano = Menu(coffee:"아이스아메리카노", image:nil, price:1500, shot:true)
+var chocolate = Menu(coffee:"핫초코", image:nil, price:3000, shot:false)
+var iceChocolate = Menu(coffee:"아이스초코", image:nil, price:3500, shot:false)
+var iceteaL = Menu(coffee:"아이스티레몬", image:nil, price:3000, shot:false)
+var iceteaP = Menu(coffee:"아이스티복숭아", image:nil, price:3000, shot:false)
 
 let MenuSubscript:[Menu] = [moca,latte,iceLatte,macchiatos,iceAmericano,Americano,chocolate,iceChocolate,iceteaL,iceteaP]
 
@@ -53,9 +54,10 @@ struct Caffe {
 }
 
 var caffe1 = Caffe(caffeInfo:0, logo:"queue", photo:"queueIn", name:"카페큐", location:"한양대학교 산학기술관(IT/BT관) 3층 로비", menu:MenuSubscript, stampToCoupon:10)
-var caffe2 = Caffe(caffeInfo:1, logo:nil, photo:nil, name:"TIAMO", location:"한양대학교 노천", menu:MenuSubscript, stampToCoupon:10)
+var caffe2 = Caffe(caffeInfo:1, logo: "tiamo", photo:nil, name:"TIAMO MK점", location:"한양대학교 노천", menu:MenuSubscript, stampToCoupon:10)
+var caffe3 = Caffe(caffeInfo:2, logo: nil, photo:nil, name:"TIAMO 학술정보관점", location:"제2공학관", menu:MenuSubscript, stampToCoupon:10)
 
-var caffeList:[Int:Caffe] = [caffe1.caffeInfo:caffe1, caffe2.caffeInfo:caffe2]
+var caffeList:[Int:Caffe] = [caffe1.caffeInfo:caffe1, caffe2.caffeInfo:caffe2, caffe3.caffeInfo:caffe3]
 
 //주문
 struct Order {
