@@ -1,0 +1,6 @@
+framework module Pods_SmartOrder {
+  umbrella header "Pods-SmartOrder-umbrella.h"
+
+  export *
+  module * { export * }
+}
