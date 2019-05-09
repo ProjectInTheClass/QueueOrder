@@ -74,6 +74,10 @@
                                                         <action selector="amountPlus:" destination="vqN-Zj-Q7r" eventType="touchUpInside" id="I5G-34-LDw"/>
                                                     </connections>
                                                 </button>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="like" translatesAutoresizingMaskIntoConstraints="NO" id="DV8-Ev-qbK">
+                                                    <rect key="frame" x="364" y="11" width="39" height="38"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -111,7 +115,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="66.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="QoJ-XS-AtM">
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="QoJ-XS-AtM">
                                                     <rect key="frame" x="134" y="19" width="248" height="29"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <segments>
@@ -247,7 +251,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xl6-13-52b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4771" y="23"/>
+            <point key="canvasLocation" x="4769.5652173913049" y="22.767857142857142"/>
         </scene>
         <!--Payment-->
         <scene sceneID="LMK-ji-2In">
@@ -258,4 +262,7 @@
             <point key="canvasLocation" x="5424" y="23"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="like" width="150" height="134"/>
+    </resources>
 </document>

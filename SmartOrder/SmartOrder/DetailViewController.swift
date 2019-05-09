@@ -102,11 +102,15 @@ class DetailViewController: UITableViewController {
         print(coffeeForView?.coffee)
         
     }
+    func calculation (count:Int, price:Int, shotCnt:Int) {
+        var total = count * (price + (shotCnt * 500))
+        resultPrice.text = "\(total)"
+    }
+    
     @IBAction func amountMinus(_ sender: Any) {
         
         var num:Int? = nil
-        let rp = Int(resultPrice.text!)
-        //let cp = Int(coffeeForView!.price)
+        
         var cp:Int? = nil
         
         if let str = amount.text {
@@ -121,19 +125,21 @@ class DetailViewController: UITableViewController {
             if let amountNum = num {
                 amount.text = "\(amountNum-1)"
             }
-            if let sumPrice:Int = rp, let price:Int = cp{
-                let res = sumPrice-price
-                resultPrice.text = "\(res)"
+            //총액 계산
+            
+            var sc:Int? = nil
+            if let tmp = shot.text {
+                sc = Int(tmp)
             }
+            
+            calculation(count:num!-1, price:cp!, shotCnt:sc!)
         }
     }
     
     @IBAction func amountPlus(_ sender: Any) {
-        //let str = amount.text
-        //let num = Int(str!)
+        
         var num:Int? = nil
-        let rp = Int(resultPrice.text!)
-        //let cp = Int(coffeeForView!.price)
+        
         var cp:Int? = nil
         if let str = amount.text {
             num = Int(str)
@@ -147,39 +153,57 @@ class DetailViewController: UITableViewController {
             amount.text = "\(amountNum+1)"
         }
         
-        //resultPrice.text = "\(rp! + cp)"
-        if let sumPrice:Int = rp, let price:Int = cp{
-            let res = sumPrice+price
-            resultPrice.text = "\(res)"
+        //총액 계산
+        
+        var sc:Int? = nil
+        if let tmp = shot.text {
+            sc = Int(tmp)
         }
+        calculation(count:num!+1, price:cp!, shotCnt:sc!)
         
     }
     @IBAction func shotMinus(_ sender: Any) {
         let str = shot.text
-        let num = Int(str!)
-        let rp = Int(resultPrice.text!)
-        
-        let amt = amount.text
+        let sc = Int(str!)
         
         if shot.text != "0" {
-            shot.text = "\(num!-1)"
-            resultPrice.text = "\(rp!-500*(Int(amt!)!))"
+            shot.text = "\(sc!-1)"
+            
+            //총액 계산
+            var cp:Int? = nil
+            var num:Int? = nil
+            if let str = amount.text {
+                num = Int(str)
+            }
+            
+            if let coffeePrice = coffeeForView?.price {
+                cp = Int(coffeePrice)
+            }
+            calculation(count:num!, price:cp!, shotCnt:sc!-1)
         }
     }
     @IBAction func shotPlus(_ sender: Any) {
         let str = shot.text
-        let num = Int(str!)
-        let rp = Int(resultPrice.text!)
+        let sc = Int(str!)
         
-        let amt = amount.text
+        shot.text = "\(sc!+1)"
+        //총액 계산
         
-        shot.text = "\(num!+1)"
-        resultPrice.text = "\(rp!+500*(Int(amt!)!))"
+        var cp:Int? = nil
+        var num:Int? = nil
+        if let str = amount.text {
+            num = Int(str)
+        }
+        
+        if let coffeePrice = coffeeForView?.price {
+            cp = Int(coffeePrice)
+        }
+        calculation(count:num!, price:cp!, shotCnt:sc!+1)
         
     }
     @IBAction func showAlert(_ sender: Any) {
         self.present(alertController, animated: true, completion: {
-             print("장바구니에 있는 item 갯수는... \(myCart.selectedMenu.count)")
+            print("장바구니에 있는 item 갯수는... \(myCart.selectedMenu.count)")
         })
     }
     
