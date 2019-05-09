@@ -50,9 +50,9 @@ class MenuTableViewController: UITableViewController {
         cell.detailTextLabel?.text = String(MenuForTheRow.price)+"원"
         
         if (indexPath.row % 2) == 0 {
-        cell.imageView?.image = UIImage(named: "그린커피_배경")
+        cell.imageView?.image = UIImage(named: "coffee_picture_blue")
         } else{
-            cell.imageView?.image = UIImage(named: "그린커피_배경_회색")
+            cell.imageView?.image = UIImage(named: "coffee_picture_white")
         }
         /*
         if indexPath.row > 4 {

@@ -59,7 +59,7 @@ class StampViewController: UIViewController, UITableViewDataSource, UITableViewD
             
             cell.textLabel?.text = "\(name!) \(stampList[indexPath.row].info)"
             cell.detailTextLabel?.text = stampList[indexPath.row].issueDate
-            cell.imageView?.image = UIImage(named: "원두")
+            cell.imageView?.image = UIImage(named: "bean")
      
             resCell = cell
         }
@@ -78,9 +78,9 @@ class StampViewController: UIViewController, UITableViewDataSource, UITableViewD
             
             
             if coupon.hasPrefix("2000"){
-                cell.imageView?.image = UIImage(named: "2000원 할인쿠폰")
+                cell.imageView?.image = UIImage(named: "2000coupon")
             } else {
-                cell.imageView?.image = UIImage(named: "음료쿠폰")
+                cell.imageView?.image = UIImage(named: "freeCoupon")
             }
             resCell = cell
         }

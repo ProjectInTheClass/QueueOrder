@@ -30,7 +30,7 @@ class DetailViewController: UITableViewController {
         super.viewDidLoad()
         let str:Int! = coffeeForView?.price
         
-        coffee.image = UIImage(named: "그린커피_배경")
+        coffee?.image = UIImage(named: "coffee_picture_blue")
         coffeeName.text = coffeeForView?.coffee
         price.text = "\(str!) 원"
         resultPrice.text = "\(str!)"

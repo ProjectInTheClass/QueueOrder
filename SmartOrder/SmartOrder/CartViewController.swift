@@ -47,7 +47,7 @@ class CartViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MyCart", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MyCart", for: indexPath) as! CartTableViewCell
         
         // Configure the cell...
         /*
@@ -56,6 +56,7 @@ class CartViewController: UITableViewController {
          cell.detailTextLabel?.text = coffeeForTheRow.origin
          */
         
+        /* 기존 detail cell 사용하였을 때
         let CartForTheRow:Order = myCart.selectedMenu[indexPath.row]
         cell.textLabel?.text = CartForTheRow.coffee
         cell.detailTextLabel?.text = String(CartForTheRow.price)+"원"
@@ -64,7 +65,8 @@ class CartViewController: UITableViewController {
             cell.imageView?.image = UIImage(named: "그린커피_배경")
         } else{
             cell.imageView?.image = UIImage(named: "그린커피_배경_회색")
-        }
+        }*/
+        
         /*
          if indexPath.row > 4 {
          cell.textLabel?.text = "d"
@@ -75,6 +77,18 @@ class CartViewController: UITableViewController {
          cell.detailTextLabel?.text = "vietnam"
          }
          */
+        let CartForTheRow:Order = myCart.selectedMenu[indexPath.row]
+        cell.price.text = "\(CartForTheRow.price)"
+        cell.name.text = CartForTheRow.coffee
+        
+        if (indexPath.row % 2) == 0 {
+            cell.img?.image = UIImage(named: "coffee_picture_blue")
+        } else{
+            cell.img?.image = UIImage(named: "coffee_picture_white")
+        }
+        cell.cnt.text = "\(CartForTheRow.count)"
+        
+       // cell.selectBtn?.image = UIImage(named: "select")
         return cell
     }
     

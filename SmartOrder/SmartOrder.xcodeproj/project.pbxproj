@@ -14,11 +14,12 @@
 		D67B8F8A22685F3D009FEBD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67B8F8922685F3D009FEBD5 /* AppDelegate.swift */; };
 		D67B8F8C22685F3D009FEBD5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67B8F8B22685F3D009FEBD5 /* ViewController.swift */; };
 		D67B8F8F22685F3D009FEBD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D67B8F8D22685F3D009FEBD5 /* Main.storyboard */; };
-		D67B8F9122685F3E009FEBD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D67B8F9022685F3E009FEBD5 /* Assets.xcassets */; };
 		D67B8F9422685F3E009FEBD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D67B8F9222685F3E009FEBD5 /* LaunchScreen.storyboard */; };
 		D67B8F9C22685F8F009FEBD5 /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67B8F9B22685F8F009FEBD5 /* DataCenter.swift */; };
 		D67B8F9E226869D4009FEBD5 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67B8F9D226869D4009FEBD5 /* MenuTableViewController.swift */; };
 		D67B8FA022687A43009FEBD5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67B8F9F22687A43009FEBD5 /* DetailViewController.swift */; };
+		D68E3EB722840D9F004EE3EC /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68E3EB622840D9F004EE3EC /* CartTableViewCell.swift */; };
+		D68E3EB922843B5F004EE3EC /* Order.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D68E3EB822843B5F004EE3EC /* Order.storyboard */; };
 		D6E96A03227C100C009A3E04 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E96A02227C100C009A3E04 /* HomeViewController.swift */; };
 		D6E96A05227C133A009A3E04 /* StampViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E96A04227C133A009A3E04 /* StampViewController.swift */; };
 		D6E96A07227C2246009A3E04 /* CouponViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E96A06227C2246009A3E04 /* CouponViewController.swift */; };
@@ -28,6 +29,7 @@
 		D6E96A0F2281E571009A3E04 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E96A0E2281E571009A3E04 /* CartViewController.swift */; };
 		D6E96A112281F76A009A3E04 /* CartDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E96A102281F76A009A3E04 /* CartDetailViewController.swift */; };
 		D6E96A152281FFA3009A3E04 /* Cart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6E96A142281FFA3009A3E04 /* Cart.storyboard */; };
+		D6E96A3522833E2E009A3E04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6E96A3422833E2D009A3E04 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,12 +42,13 @@
 		D67B8F8922685F3D009FEBD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D67B8F8B22685F3D009FEBD5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D67B8F8E22685F3D009FEBD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D67B8F9022685F3E009FEBD5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D67B8F9322685F3E009FEBD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D67B8F9522685F3E009FEBD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D67B8F9B22685F8F009FEBD5 /* DataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
 		D67B8F9D226869D4009FEBD5 /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		D67B8F9F22687A43009FEBD5 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		D68E3EB622840D9F004EE3EC /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
+		D68E3EB822843B5F004EE3EC /* Order.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Order.storyboard; sourceTree = "<group>"; };
 		D6E96A02227C100C009A3E04 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D6E96A04227C133A009A3E04 /* StampViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampViewController.swift; sourceTree = "<group>"; };
 		D6E96A06227C2246009A3E04 /* CouponViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +58,7 @@
 		D6E96A0E2281E571009A3E04 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		D6E96A102281F76A009A3E04 /* CartDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartDetailViewController.swift; sourceTree = "<group>"; };
 		D6E96A142281FFA3009A3E04 /* Cart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cart.storyboard; sourceTree = "<group>"; };
+		D6E96A3422833E2D009A3E04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,14 +129,16 @@
 				D6E96A06227C2246009A3E04 /* CouponViewController.swift */,
 				D67B8F8B22685F3D009FEBD5 /* ViewController.swift */,
 				D67B8F8D22685F3D009FEBD5 /* Main.storyboard */,
+				D68E3EB822843B5F004EE3EC /* Order.storyboard */,
 				D6E96A0C227C4906009A3E04 /* PayStoryboard.storyboard */,
 				D6E96A0A227C4891009A3E04 /* MyMenu.storyboard */,
 				D6E96A142281FFA3009A3E04 /* Cart.storyboard */,
+				D68E3EB622840D9F004EE3EC /* CartTableViewCell.swift */,
 				D6E96A04227C133A009A3E04 /* StampViewController.swift */,
 				D6E96A02227C100C009A3E04 /* HomeViewController.swift */,
 				D67B8F9F22687A43009FEBD5 /* DetailViewController.swift */,
 				D67B8F9D226869D4009FEBD5 /* MenuTableViewController.swift */,
-				D67B8F9022685F3E009FEBD5 /* Assets.xcassets */,
+				D6E96A3422833E2D009A3E04 /* Assets.xcassets */,
 				D67B8F9222685F3E009FEBD5 /* LaunchScreen.storyboard */,
 				D67B8F9522685F3E009FEBD5 /* Info.plist */,
 			);
@@ -199,9 +205,10 @@
 			files = (
 				D6E96A0D227C4906009A3E04 /* PayStoryboard.storyboard in Resources */,
 				D67B8F9422685F3E009FEBD5 /* LaunchScreen.storyboard in Resources */,
-				D67B8F9122685F3E009FEBD5 /* Assets.xcassets in Resources */,
 				D6E96A09227C4819009A3E04 /* MyPageStoryboard.storyboard in Resources */,
+				D68E3EB922843B5F004EE3EC /* Order.storyboard in Resources */,
 				D6E96A0B227C4891009A3E04 /* MyMenu.storyboard in Resources */,
+				D6E96A3522833E2E009A3E04 /* Assets.xcassets in Resources */,
 				D67B8F8F22685F3D009FEBD5 /* Main.storyboard in Resources */,
 				D6E96A152281FFA3009A3E04 /* Cart.storyboard in Resources */,
 			);
@@ -221,6 +228,7 @@
 				57D9251D227DAF6B0044E96B /* KakaoLoginButton.swift in Sources */,
 				D6E96A0F2281E571009A3E04 /* CartViewController.swift in Sources */,
 				D6E96A05227C133A009A3E04 /* StampViewController.swift in Sources */,
+				D68E3EB722840D9F004EE3EC /* CartTableViewCell.swift in Sources */,
 				D67B8F8C22685F3D009FEBD5 /* ViewController.swift in Sources */,
 				D67B8FA022687A43009FEBD5 /* DetailViewController.swift in Sources */,
 				D67B8F8A22685F3D009FEBD5 /* AppDelegate.swift in Sources */,
