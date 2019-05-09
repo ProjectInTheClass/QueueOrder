@@ -99,6 +99,9 @@ class LoginViewController: UIViewController {
     }*/
 
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool{
+        if "Home" == identifier {
+            
+        }
         if let loginUserInfo = loginUserInfo as? KOUserMe {
             self.performSegue(withIdentifier: "HomeSegue", sender: nil)
             print("TRUE")

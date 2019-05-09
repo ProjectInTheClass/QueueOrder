@@ -11,6 +11,8 @@
 		57D9251D227DAF6B0044E96B /* KakaoLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D9251C227DAF6B0044E96B /* KakaoLoginButton.swift */; };
 		57D92521227DAFAE0044E96B /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D92520227DAFAE0044E96B /* KakaoOpenSDK.framework */; };
 		57D92525227ED12E0044E96B /* MypageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D92524227ED12E0044E96B /* MypageViewController.swift */; };
+		57D925272283A9090044E96B /* MyPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D925262283A9090044E96B /* MyPageTableViewController.swift */; };
+		57D9254722840D9E0044E96B /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D9254622840D9E0044E96B /* MyTableViewCell.swift */; };
 		D67B8F8A22685F3D009FEBD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67B8F8922685F3D009FEBD5 /* AppDelegate.swift */; };
 		D67B8F8C22685F3D009FEBD5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67B8F8B22685F3D009FEBD5 /* ViewController.swift */; };
 		D67B8F8F22685F3D009FEBD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D67B8F8D22685F3D009FEBD5 /* Main.storyboard */; };
@@ -33,6 +35,8 @@
 		57D92520227DAFAE0044E96B /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
 		57D92522227DB0270044E96B /* Briging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Briging-Header.h"; sourceTree = "<group>"; };
 		57D92524227ED12E0044E96B /* MypageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageViewController.swift; sourceTree = "<group>"; };
+		57D925262283A9090044E96B /* MyPageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTableViewController.swift; sourceTree = "<group>"; };
+		57D9254622840D9E0044E96B /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 		D67B8F8622685F3D009FEBD5 /* SmartOrder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartOrder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D67B8F8922685F3D009FEBD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D67B8F8B22685F3D009FEBD5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +90,8 @@
 			children = (
 				D6E96A08227C4819009A3E04 /* MyPageStoryboard.storyboard */,
 				57D92524227ED12E0044E96B /* MypageViewController.swift */,
+				57D925262283A9090044E96B /* MyPageTableViewController.swift */,
+				57D9254622840D9E0044E96B /* MyTableViewCell.swift */,
 			);
 			path = Mypage;
 			sourceTree = "<group>";
@@ -210,8 +216,10 @@
 				57D9251D227DAF6B0044E96B /* KakaoLoginButton.swift in Sources */,
 				D6E96A05227C133A009A3E04 /* StampViewController.swift in Sources */,
 				D67B8F8C22685F3D009FEBD5 /* ViewController.swift in Sources */,
+				57D9254722840D9E0044E96B /* MyTableViewCell.swift in Sources */,
 				D67B8FA022687A43009FEBD5 /* DetailViewController.swift in Sources */,
 				D67B8F8A22685F3D009FEBD5 /* AppDelegate.swift in Sources */,
+				57D925272283A9090044E96B /* MyPageTableViewController.swift in Sources */,
 				D67B8F9E226869D4009FEBD5 /* MenuTableViewController.swift in Sources */,
 				D6E96A03227C100C009A3E04 /* HomeViewController.swift in Sources */,
 				57D92525227ED12E0044E96B /* MypageViewController.swift in Sources */,

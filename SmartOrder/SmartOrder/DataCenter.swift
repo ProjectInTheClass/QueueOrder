@@ -17,11 +17,16 @@ struct Menu {
 
 // 주문정보 받는 구조체.
 struct OrderInfo {
+    var cafe : String
     var menu : [Menu]
     var priceSum : Int
     var date : String
 }
 
+struct UserInfo{
+    var loginUserInfo : KOUserMe?
+    var stamp : [Int:Stamp]
+}
 // 로그인된 유저 정보를 들고있는 프로퍼티
 var loginUserInfo : KOUserMe?
 
