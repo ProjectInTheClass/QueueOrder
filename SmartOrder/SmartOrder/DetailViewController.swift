@@ -13,8 +13,8 @@ class DetailViewController: UITableViewController {
     var coffeeForView:Menu?
     var caffeInfo = 0 //카페 고유 번호 받아와야함 -> 추후 수정.
     
-    let alertController = UIAlertController(title: "장바구니로 이동하시겠습니까?", message:
-        "음료가 등록되었습니다.", preferredStyle: .alert)
+    let alertController = UIAlertController(title: "음료를 담으시겠습니까?", message:
+        "", preferredStyle: .alert)
     
   
     @IBOutlet weak var ice: UISegmentedControl!

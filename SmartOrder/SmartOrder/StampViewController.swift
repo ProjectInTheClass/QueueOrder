@@ -53,7 +53,7 @@ class StampViewController: UIViewController, UITableViewDataSource, UITableViewD
              let cell = tableView.dequeueReusableCell(withIdentifier: "MyStamp", for: indexPath)
             
             var name:String! = "없음"
-            if let caffe:String = caffeList[stampList[indexPath.row].caffeInfo] {
+            if let caffe:String = caffeList[stampList[indexPath.row].caffeInfo]?.name {
                 name = caffe
             }
             

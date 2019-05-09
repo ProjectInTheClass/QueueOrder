@@ -52,10 +52,10 @@ struct Caffe {
     var stampToCoupon:Int
 }
 
-var caffe1 = Caffe(caffeInfo:0, logo:nil, photo:nil, name:"카페큐", location:"ITBI관 3층", menu:MenuSubscript, stampToCoupon:10)
-var caffe2 = Caffe(caffeInfo:1, logo:nil, photo:nil, name:"띠아모", location:"ITBI관 3층", menu:MenuSubscript, stampToCoupon:10)
+var caffe1 = Caffe(caffeInfo:0, logo:"queue", photo:"queueIn", name:"카페큐", location:"한양대학교 산학기술관(IT/BT관) 3층 로비", menu:MenuSubscript, stampToCoupon:10)
+var caffe2 = Caffe(caffeInfo:1, logo:nil, photo:nil, name:"TIAMO", location:"한양대학교 노천", menu:MenuSubscript, stampToCoupon:10)
 
-var caffeList:[Int:String] = [caffe1.caffeInfo:caffe1.name, caffe2.caffeInfo:caffe2.name]
+var caffeList:[Int:Caffe] = [caffe1.caffeInfo:caffe1, caffe2.caffeInfo:caffe2]
 
 //주문
 struct Order {
