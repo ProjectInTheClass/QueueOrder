@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/jeonhayeong/Desktop/2019-1/QueueOrder/QueueOrder/SmartOrder/SmartOrder/Kakao/Assets.xcassets">
+   </FileRef>
+   <FileRef
       location = "group:SmartOrder.xcodeproj">
    </FileRef>
    <FileRef
