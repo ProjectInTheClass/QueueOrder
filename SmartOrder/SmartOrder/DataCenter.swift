@@ -185,3 +185,5 @@ var couponList = CouponList(coupons:[coupon1,coupon2])
 //couponList.addCoupon(coupon1)
 //couponList.addCoupon(coupon2)
 
+//선호 메뉴
+var MyMenu : [Order] = [];
