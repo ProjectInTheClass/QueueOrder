@@ -9,14 +9,10 @@
 import UIKit
 
 class DetailViewController: UITableViewController {
-
-    var coffeeForView:Menu?
-    var caffeInfo = 0 //카페 고유 번호 받아와야함 -> 추후 수정.
-    
-    let alertController = UIAlertController(title: "음료를 담으시겠습니까?", message:
-        "", preferredStyle: .alert)
-    
   
+    @IBOutlet weak var like: UIImageView!
+    @IBOutlet weak var ifLarge: UILabel!
+    @IBOutlet weak var sizeOption: UISegmentedControl!
     @IBOutlet weak var ice: UISegmentedControl!
     @IBOutlet weak var coffeeSize: UISegmentedControl!
     @IBOutlet weak var coffee: UIImageView!
@@ -28,8 +24,18 @@ class DetailViewController: UITableViewController {
     @IBOutlet weak var shotTit: UILabel!
     @IBOutlet weak var shotIncrease: UIButton!
     @IBOutlet weak var shotDecrease: UIButton!
+    
+    var coffeeForView:Menu?
+    var caffeInfo = 0 //카페 고유 번호 받아와야함 -> 추후 수정.
+    
+    let alertController = UIAlertController(title: "음료를 담으시겠습니까?", message:
+        "", preferredStyle: .alert)
+    
+    var isLiked = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        ifLarge.isHidden = true
         
         //샷 추가 가능하지 않으면 보이지 않게
         if coffeeForView?.shot == false {
@@ -112,84 +118,88 @@ class DetailViewController: UITableViewController {
         print(coffeeForView?.coffee)
         
     }
-    func calculation (count:Int, price:Int, shotCnt:Int) {
-        let total = count * (price + (shotCnt * 500))
+    
+    // 총 결제 금액 계산하는 함수
+    func calculation () {
+        var num:Int? = nil
+        
+        var cp:Int? = nil
+        
+        if let str = amount.text {
+            num = Int(str)
+        }
+        
+        if let coffeePrice = coffeeForView?.price {
+            cp = Int(coffeePrice)
+        }
+
+        var sc:Int? = nil
+        if let tmp = shot.text {
+            sc = Int(tmp)
+        }
+        
+        var add:Int = 0
+        
+        if sizeOption.selectedSegmentIndex == 1 {
+            price.isHidden = true
+            ifLarge.isHidden = false
+            
+            if caffeList[caffeInfo] != nil {
+                add = caffeList[caffeInfo]!.sizeUp
+            } else {
+                add = 600
+            }
+            
+            ifLarge.text = "\(cp! + add) 원"
+        }
+        else {
+            ifLarge.isHidden = true
+            price.isHidden = false
+        }
+        let count = num!
+        let price = cp!
+        let shotCnt = sc!
+        
+        let total = count * ((price + add) + (shotCnt * 500))
         resultPrice.text = "\(total)"
     }
     
     @IBAction func amountMinus(_ sender: Any) {
-        
-        var num:Int? = nil
-        
-        var cp:Int? = nil
-        
-        if let str = amount.text {
-            num = Int(str)
-        }
-        
-        if let coffeePrice = coffeeForView?.price {
-            cp = Int(coffeePrice)
-        }
-        
         if amount.text != "1" {
+            var num:Int? = nil
+          
+            if let str = amount.text {
+                num = Int(str)
+            }
+            
             if let amountNum = num {
                 amount.text = "\(amountNum-1)"
             }
-            //총액 계산
-            
-            var sc:Int? = nil
-            if let tmp = shot.text {
-                sc = Int(tmp)
-            }
-            
-            calculation(count:num!-1, price:cp!, shotCnt:sc!)
+            calculation()
         }
     }
     
     @IBAction func amountPlus(_ sender: Any) {
-        
         var num:Int? = nil
         
-        var cp:Int? = nil
         if let str = amount.text {
             num = Int(str)
-        }
-        
-        if let coffeePrice = coffeeForView?.price {
-            cp = Int(coffeePrice)
         }
         
         if let amountNum = num {
             amount.text = "\(amountNum+1)"
         }
         
-        //총액 계산
-        
-        var sc:Int? = nil
-        if let tmp = shot.text {
-            sc = Int(tmp)
-        }
-        calculation(count:num!+1, price:cp!, shotCnt:sc!)
-        
+        calculation()
     }
+    
     @IBAction func shotMinus(_ sender: Any) {
         let str = shot.text
         let sc = Int(str!)
         
         if shot.text != "0" {
             shot.text = "\(sc!-1)"
-            
-            //총액 계산
-            var cp:Int? = nil
-            var num:Int? = nil
-            if let str = amount.text {
-                num = Int(str)
-            }
-            
-            if let coffeePrice = coffeeForView?.price {
-                cp = Int(coffeePrice)
-            }
-            calculation(count:num!, price:cp!, shotCnt:sc!-1)
+            calculation()
         }
     }
     @IBAction func shotPlus(_ sender: Any) {
@@ -197,18 +207,7 @@ class DetailViewController: UITableViewController {
         let sc = Int(str!)
         
         shot.text = "\(sc!+1)"
-        //총액 계산
-        
-        var cp:Int? = nil
-        var num:Int? = nil
-        if let str = amount.text {
-            num = Int(str)
-        }
-        
-        if let coffeePrice = coffeeForView?.price {
-            cp = Int(coffeePrice)
-        }
-        calculation(count:num!, price:cp!, shotCnt:sc!+1)
+        calculation()
         
     }
     @IBAction func showAlert(_ sender: Any) {
@@ -219,5 +218,19 @@ class DetailViewController: UITableViewController {
     
     @objc func dismissFunc(){
         self.alertController.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func selectedSize(_ sender: Any) {
+        calculation()
+    }
+    @IBAction func onClikLikeBtn(_ sender: Any) {
+        
+        if(isLiked) {
+            like.image = UIImage(named: "Unlike")
+        } else {
+            like.image = UIImage(named: "like")
+        }
+        
+        isLiked = !isLiked
     }
 }

@@ -36,9 +36,9 @@ class CartTableViewCell: UITableViewCell {
     @IBAction func onClick(_ sender: Any) {
         
         if(isSelect) {
-            select.image = UIImage(named: "Unchecked30")
-        } else {
             select.image = UIImage(named: "checked30")
+        } else {
+            select.image = UIImage(named: "Unchecked30")
         }
         
         isSelect = !isSelect
