@@ -22,6 +22,7 @@ class CaffePreViewController: UIViewController {
         print(caffeForView?.logo)
         print(caffeForView?.photo)
         // Do any additional setup after loading the view.
+
         
         let name = caffeForView?.name
         detailed.text = "\(name!)를 선택하시겠어요?"

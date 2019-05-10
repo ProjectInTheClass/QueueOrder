@@ -15,6 +15,7 @@ class CartTableViewCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var select: UIImageView!
+    @IBOutlet weak var option: UILabel!
     
     var isSelect = false
     
@@ -35,9 +36,9 @@ class CartTableViewCell: UITableViewCell {
     @IBAction func onClick(_ sender: Any) {
         
         if(isSelect) {
-            select.image = UIImage(named: "selected")
+            select.image = UIImage(named: "Unchecked30")
         } else {
-            select.image = UIImage(named: "notSelected")
+            select.image = UIImage(named: "checked30")
         }
         
         isSelect = !isSelect

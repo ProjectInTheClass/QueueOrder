@@ -47,7 +47,6 @@ class DetailViewController: UITableViewController {
         resultPrice.text = "\(str!)"
         
         alertController.addAction(UIAlertAction(title: "취소", style: .cancel))
-       // alertController.addAction(UIAlertAction(title: "확인", style: .default))
         alertController.addAction(UIAlertAction(title: "확인", style: .default)
         {
             UIAlertAction in
@@ -63,7 +62,7 @@ class DetailViewController: UITableViewController {
             let storyboard: UIStoryboard = UIStoryboard(name: "Cart", bundle: nil)
             let nextView = storyboard.instantiateViewController(withIdentifier: "MyCart") as! CartViewController
             self.present(nextView, animated: true, completion: nil)
- */
+            */
             var coffeeName = ""
             if let coffee = self.coffeeForView?.coffee {
                 coffeeName = coffee
@@ -98,7 +97,7 @@ class DetailViewController: UITableViewController {
                 shotInt = Int(sht)
             }
             
-            var addCart = Order(caffeInfo: self.caffeInfo, coffee: coffeeName, price: cost!,
+            let addCart = Order(caffeInfo: self.caffeInfo, coffee: coffeeName, price: cost!,
                                 count: amount!, size: cofeeSize, ice: iceSize, shot: shotInt!, orderDate: "")
             myCart.selectedMenu.append(addCart)
         })
@@ -114,7 +113,7 @@ class DetailViewController: UITableViewController {
         
     }
     func calculation (count:Int, price:Int, shotCnt:Int) {
-        var total = count * (price + (shotCnt * 500))
+        let total = count * (price + (shotCnt * 500))
         resultPrice.text = "\(total)"
     }
     
@@ -214,7 +213,7 @@ class DetailViewController: UITableViewController {
     }
     @IBAction func showAlert(_ sender: Any) {
         self.present(alertController, animated: true, completion: {
-            print("장바구니에 있는 item 갯수는... \(myCart.selectedMenu.count)")
+            print("장바구니에 추가한 item 갯수는... \(myCart.selectedMenu.count)")
         })
     }
     

@@ -78,7 +78,7 @@ class CartViewController: UITableViewController {
          }
          */
         let CartForTheRow:Order = myCart.selectedMenu[indexPath.row]
-        cell.price.text = "\(CartForTheRow.price)"
+        cell.price.text = "금액 \(CartForTheRow.price)원"
         cell.name.text = CartForTheRow.coffee
         
         if (indexPath.row % 2) == 0 {
@@ -86,7 +86,10 @@ class CartViewController: UITableViewController {
         } else{
             cell.img?.image = UIImage(named: "coffee_picture_white")
         }
-        cell.cnt.text = "\(CartForTheRow.count)"
+        
+        cell.option.text = "사이즈\(CartForTheRow.size) / 얼음\(CartForTheRow.ice) / 샷추가\(CartForTheRow.shot)"
+        
+        cell.cnt.text = "수량 \(CartForTheRow.count)개"
         
        // cell.selectBtn?.image = UIImage(named: "select")
         return cell

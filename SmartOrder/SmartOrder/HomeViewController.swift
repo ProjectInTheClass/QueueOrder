@@ -22,7 +22,10 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+       
+       //navigation bar back 글씨 지우기
+        self.navigationController?.navigationBar.topItem?.title = ""
+        
         // Do any additional setup after loading the view.
     }
     

@@ -731,5 +731,5 @@
         <image name="유저소" width="30" height="34"/>
         <image name="핸드폰50" width="144" height="144"/>
     </resources>
-    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+    <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
 </document>

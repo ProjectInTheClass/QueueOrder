@@ -13,6 +13,9 @@ class MenuTableViewController: UITableViewController {
         
         super.viewDidLoad()
 
+        //navigation bar back 글씨 지우기
+        self.navigationController?.navigationBar.topItem?.title = ""
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

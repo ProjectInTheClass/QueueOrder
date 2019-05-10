@@ -59,7 +59,7 @@ class StampViewController: UIViewController, UITableViewDataSource, UITableViewD
             
             cell.textLabel?.text = "\(name!) \(stampList[indexPath.row].info)"
             cell.detailTextLabel?.text = stampList[indexPath.row].issueDate
-            cell.imageView?.image = UIImage(named: "bean")
+            cell.imageView?.image = UIImage(named: "bean_mini")
      
             resCell = cell
         }
