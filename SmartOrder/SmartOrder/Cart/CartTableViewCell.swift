@@ -10,11 +10,11 @@ import UIKit
 
 class CartTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var selectBox: UIButton!
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var cnt: UILabel!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var img: UIImageView!
-    @IBOutlet weak var select: UIImageView!
     @IBOutlet weak var option: UILabel!
     
     var isSelect = false
@@ -36,9 +36,9 @@ class CartTableViewCell: UITableViewCell {
     @IBAction func onClick(_ sender: Any) {
         
         if(isSelect) {
-            select.image = UIImage(named: "checked30")
+            selectBox.setImage(UIImage(named: "checked30"), for: UIControl.State.normal)
         } else {
-            select.image = UIImage(named: "Unchecked30")
+            selectBox.setImage(UIImage(named: "Unchecked30"), for: UIControl.State.normal)
         }
         
         isSelect = !isSelect

@@ -74,10 +74,6 @@
                                                         <action selector="amountPlus:" destination="vqN-Zj-Q7r" eventType="touchUpInside" id="I5G-34-LDw"/>
                                                     </connections>
                                                 </button>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Unlike" translatesAutoresizingMaskIntoConstraints="NO" id="DV8-Ev-qbK">
-                                                    <rect key="frame" x="364" y="11" width="39" height="38"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlW-PH-ElO">
                                                     <rect key="frame" x="173" y="49" width="120" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -85,9 +81,10 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ex1-fJ-nK3">
-                                                    <rect key="frame" x="360" y="8" width="46" height="41"/>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ex1-fJ-nK3">
+                                                    <rect key="frame" x="358" y="22" width="36" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" image="Unlike"/>
                                                     <connections>
                                                         <action selector="onClikLikeBtn:" destination="vqN-Zj-Q7r" eventType="touchUpInside" id="Rsj-lp-grV"/>
                                                     </connections>
@@ -262,7 +259,7 @@
                         <outlet property="coffeeSize" destination="lS5-2x-VaY" id="f2b-GH-px3"/>
                         <outlet property="ice" destination="QoJ-XS-AtM" id="2T3-5z-lTY"/>
                         <outlet property="ifLarge" destination="hlW-PH-ElO" id="MTJ-fJ-ZjX"/>
-                        <outlet property="like" destination="DV8-Ev-qbK" id="JxV-ue-R7W"/>
+                        <outlet property="likeBtn" destination="Ex1-fJ-nK3" id="Z1Y-Io-Bui"/>
                         <outlet property="price" destination="S0y-sI-Frk" id="MSK-ut-FyB"/>
                         <outlet property="resultPrice" destination="KFD-cx-wUC" id="gi8-hE-cRm"/>
                         <outlet property="shot" destination="df7-eI-S6e" id="zec-Pz-eBm"/>

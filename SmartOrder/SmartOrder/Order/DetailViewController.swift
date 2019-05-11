@@ -10,7 +10,7 @@ import UIKit
 
 class DetailViewController: UITableViewController {
   
-    @IBOutlet weak var like: UIImageView!
+    @IBOutlet weak var likeBtn: UIButton!
     @IBOutlet weak var ifLarge: UILabel!
     @IBOutlet weak var sizeOption: UISegmentedControl!
     @IBOutlet weak var ice: UISegmentedControl!
@@ -226,9 +226,9 @@ class DetailViewController: UITableViewController {
     @IBAction func onClikLikeBtn(_ sender: Any) {
         
         if(isLiked) {
-            like.image = UIImage(named: "Unlike")
+            likeBtn.setImage(UIImage(named: "Unlike"), for: UIControl.State.normal)
         } else {
-            like.image = UIImage(named: "like")
+            likeBtn.setImage(UIImage(named: "like"), for: UIControl.State.normal)
         }
         
         isLiked = !isLiked
