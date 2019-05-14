@@ -3,56 +3,80 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57091A8D228B089000C82641 /* MypageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57091A8C228B089000C82641 /* MypageDetailViewController.swift */; };
 		57D9251B227DAF190044E96B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D9251A227DAF190044E96B /* LoginViewController.swift */; };
 		57D9251D227DAF6B0044E96B /* KakaoLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D9251C227DAF6B0044E96B /* KakaoLoginButton.swift */; };
 		57D92521227DAFAE0044E96B /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D92520227DAFAE0044E96B /* KakaoOpenSDK.framework */; };
 		57D92525227ED12E0044E96B /* MypageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D92524227ED12E0044E96B /* MypageViewController.swift */; };
-		57D925272283A9090044E96B /* MyPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D925262283A9090044E96B /* MyPageTableViewController.swift */; };
-		57D9254722840D9E0044E96B /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D9254622840D9E0044E96B /* MyTableViewCell.swift */; };
+		57D92549228566F60044E96B /* MypageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D92548228566F60044E96B /* MypageTableViewController.swift */; };
+		57D9254B228567140044E96B /* MypageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D9254A228567140044E96B /* MypageTableViewCell.swift */; };
+		B1CA3EB62283E3B6004A49A9 /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CA3EB52283E3B6004A49A9 /* PayViewController.swift */; };
 		D67B8F8A22685F3D009FEBD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67B8F8922685F3D009FEBD5 /* AppDelegate.swift */; };
 		D67B8F8C22685F3D009FEBD5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67B8F8B22685F3D009FEBD5 /* ViewController.swift */; };
 		D67B8F8F22685F3D009FEBD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D67B8F8D22685F3D009FEBD5 /* Main.storyboard */; };
-		D67B8F9122685F3E009FEBD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D67B8F9022685F3E009FEBD5 /* Assets.xcassets */; };
 		D67B8F9422685F3E009FEBD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D67B8F9222685F3E009FEBD5 /* LaunchScreen.storyboard */; };
 		D67B8F9C22685F8F009FEBD5 /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67B8F9B22685F8F009FEBD5 /* DataCenter.swift */; };
 		D67B8F9E226869D4009FEBD5 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67B8F9D226869D4009FEBD5 /* MenuTableViewController.swift */; };
 		D67B8FA022687A43009FEBD5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67B8F9F22687A43009FEBD5 /* DetailViewController.swift */; };
+		D68E3EB722840D9F004EE3EC /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68E3EB622840D9F004EE3EC /* CartTableViewCell.swift */; };
+		D68E3EB922843B5F004EE3EC /* Order.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D68E3EB822843B5F004EE3EC /* Order.storyboard */; };
+		D6BC363022848BF600ADF9EA /* CaffeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BC362F22848BF600ADF9EA /* CaffeCollectionViewCell.swift */; };
+		D6BC363422848DB700ADF9EA /* CaffeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BC363322848DB700ADF9EA /* CaffeCollectionViewController.swift */; };
+		D6BC36382284B0A900ADF9EA /* CaffePreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BC36372284B0A900ADF9EA /* CaffePreViewController.swift */; };
+		D6BC363D22855FE900ADF9EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6BC363C22855FE900ADF9EA /* Assets.xcassets */; };
 		D6E96A03227C100C009A3E04 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E96A02227C100C009A3E04 /* HomeViewController.swift */; };
 		D6E96A05227C133A009A3E04 /* StampViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E96A04227C133A009A3E04 /* StampViewController.swift */; };
 		D6E96A07227C2246009A3E04 /* CouponViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E96A06227C2246009A3E04 /* CouponViewController.swift */; };
 		D6E96A09227C4819009A3E04 /* MyPageStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6E96A08227C4819009A3E04 /* MyPageStoryboard.storyboard */; };
 		D6E96A0B227C4891009A3E04 /* MyMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6E96A0A227C4891009A3E04 /* MyMenu.storyboard */; };
 		D6E96A0D227C4906009A3E04 /* PayStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6E96A0C227C4906009A3E04 /* PayStoryboard.storyboard */; };
+		D6E96A0F2281E571009A3E04 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E96A0E2281E571009A3E04 /* CartViewController.swift */; };
+		D6E96A112281F76A009A3E04 /* CartDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E96A102281F76A009A3E04 /* CartDetailViewController.swift */; };
+		D6E96A152281FFA3009A3E04 /* Cart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6E96A142281FFA3009A3E04 /* Cart.storyboard */; };
+		DF83A1099C40A70A0DD41217 /* Pods_SmartOrder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0CFF9ED595C02FCDA07475B /* Pods_SmartOrder.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4FF2CD8C9BFE9FF5014DFBDE /* Pods-SmartOrder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartOrder.release.xcconfig"; path = "Target Support Files/Pods-SmartOrder/Pods-SmartOrder.release.xcconfig"; sourceTree = "<group>"; };
+		57091A8C228B089000C82641 /* MypageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageDetailViewController.swift; sourceTree = "<group>"; };
 		57D9251A227DAF190044E96B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		57D9251C227DAF6B0044E96B /* KakaoLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginButton.swift; sourceTree = "<group>"; };
 		57D92520227DAFAE0044E96B /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
 		57D92522227DB0270044E96B /* Briging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Briging-Header.h"; sourceTree = "<group>"; };
 		57D92524227ED12E0044E96B /* MypageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageViewController.swift; sourceTree = "<group>"; };
-		57D925262283A9090044E96B /* MyPageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTableViewController.swift; sourceTree = "<group>"; };
-		57D9254622840D9E0044E96B /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
+		57D92548228566F60044E96B /* MypageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageTableViewController.swift; sourceTree = "<group>"; };
+		57D9254A228567140044E96B /* MypageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageTableViewCell.swift; sourceTree = "<group>"; };
+		A0CFF9ED595C02FCDA07475B /* Pods_SmartOrder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartOrder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1CA3EB52283E3B6004A49A9 /* PayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
+		BE24E8A5F404F852E5CDA5F2 /* Pods-SmartOrder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartOrder.debug.xcconfig"; path = "Target Support Files/Pods-SmartOrder/Pods-SmartOrder.debug.xcconfig"; sourceTree = "<group>"; };
 		D67B8F8622685F3D009FEBD5 /* SmartOrder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartOrder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D67B8F8922685F3D009FEBD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D67B8F8B22685F3D009FEBD5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D67B8F8E22685F3D009FEBD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D67B8F9022685F3E009FEBD5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D67B8F9322685F3E009FEBD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D67B8F9522685F3E009FEBD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D67B8F9B22685F8F009FEBD5 /* DataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
 		D67B8F9D226869D4009FEBD5 /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		D67B8F9F22687A43009FEBD5 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		D68E3EB622840D9F004EE3EC /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
+		D68E3EB822843B5F004EE3EC /* Order.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Order.storyboard; sourceTree = "<group>"; };
+		D6BC362F22848BF600ADF9EA /* CaffeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaffeCollectionViewCell.swift; sourceTree = "<group>"; };
+		D6BC363322848DB700ADF9EA /* CaffeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaffeCollectionViewController.swift; sourceTree = "<group>"; };
+		D6BC36372284B0A900ADF9EA /* CaffePreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaffePreViewController.swift; sourceTree = "<group>"; };
+		D6BC363C22855FE900ADF9EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D6E96A02227C100C009A3E04 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D6E96A04227C133A009A3E04 /* StampViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampViewController.swift; sourceTree = "<group>"; };
 		D6E96A06227C2246009A3E04 /* CouponViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponViewController.swift; sourceTree = "<group>"; };
 		D6E96A08227C4819009A3E04 /* MyPageStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPageStoryboard.storyboard; sourceTree = "<group>"; };
 		D6E96A0A227C4891009A3E04 /* MyMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyMenu.storyboard; sourceTree = "<group>"; };
 		D6E96A0C227C4906009A3E04 /* PayStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PayStoryboard.storyboard; sourceTree = "<group>"; };
+		D6E96A0E2281E571009A3E04 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		D6E96A102281F76A009A3E04 /* CartDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartDetailViewController.swift; sourceTree = "<group>"; };
+		D6E96A142281FFA3009A3E04 /* Cart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cart.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,12 +85,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				57D92521227DAFAE0044E96B /* KakaoOpenSDK.framework in Frameworks */,
+				DF83A1099C40A70A0DD41217 /* Pods_SmartOrder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3BCC0A1581273BE5939D615A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BE24E8A5F404F852E5CDA5F2 /* Pods-SmartOrder.debug.xcconfig */,
+				4FF2CD8C9BFE9FF5014DFBDE /* Pods-SmartOrder.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		57D92519227DAF080044E96B /* Kakao */ = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				57D92520227DAFAE0044E96B /* KakaoOpenSDK.framework */,
+				A0CFF9ED595C02FCDA07475B /* Pods_SmartOrder.framework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -89,11 +124,20 @@
 			isa = PBXGroup;
 			children = (
 				D6E96A08227C4819009A3E04 /* MyPageStoryboard.storyboard */,
+				57091A8C228B089000C82641 /* MypageDetailViewController.swift */,
 				57D92524227ED12E0044E96B /* MypageViewController.swift */,
-				57D925262283A9090044E96B /* MyPageTableViewController.swift */,
-				57D9254622840D9E0044E96B /* MyTableViewCell.swift */,
+				57D92548228566F60044E96B /* MypageTableViewController.swift */,
+				57D9254A228567140044E96B /* MypageTableViewCell.swift */,
 			);
 			path = Mypage;
+			sourceTree = "<group>";
+		};
+		B1CA3EB72283E3E6004A49A9 /* Pay */ = {
+			isa = PBXGroup;
+			children = (
+				B1CA3EB52283E3B6004A49A9 /* PayViewController.swift */,
+			);
+			path = Pay;
 			sourceTree = "<group>";
 		};
 		D67B8F7D22685F3D009FEBD5 = {
@@ -102,6 +146,7 @@
 				57D9251F227DAF9B0044E96B /* Frameworks */,
 				D67B8F8822685F3D009FEBD5 /* SmartOrder */,
 				D67B8F8722685F3D009FEBD5 /* Products */,
+				3BCC0A1581273BE5939D615A /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,19 +162,28 @@
 			isa = PBXGroup;
 			children = (
 				57D92523227ED0E20044E96B /* Mypage */,
+				B1CA3EB72283E3E6004A49A9 /* Pay */,
 				57D92519227DAF080044E96B /* Kakao */,
 				D67B8F8922685F3D009FEBD5 /* AppDelegate.swift */,
-				D67B8F9B22685F8F009FEBD5 /* DataCenter.swift */,
+				D6BC363C22855FE900ADF9EA /* Assets.xcassets */,
+				D6E96A0E2281E571009A3E04 /* CartViewController.swift */,
+				D6E96A102281F76A009A3E04 /* CartDetailViewController.swift */,
 				D6E96A06227C2246009A3E04 /* CouponViewController.swift */,
+				D6BC363322848DB700ADF9EA /* CaffeCollectionViewController.swift */,
+				D6BC362F22848BF600ADF9EA /* CaffeCollectionViewCell.swift */,
+				D67B8F9B22685F8F009FEBD5 /* DataCenter.swift */,
+				D6BC36372284B0A900ADF9EA /* CaffePreViewController.swift */,
 				D67B8F8B22685F3D009FEBD5 /* ViewController.swift */,
 				D67B8F8D22685F3D009FEBD5 /* Main.storyboard */,
+				D68E3EB822843B5F004EE3EC /* Order.storyboard */,
 				D6E96A0C227C4906009A3E04 /* PayStoryboard.storyboard */,
 				D6E96A0A227C4891009A3E04 /* MyMenu.storyboard */,
+				D6E96A142281FFA3009A3E04 /* Cart.storyboard */,
+				D68E3EB622840D9F004EE3EC /* CartTableViewCell.swift */,
 				D6E96A04227C133A009A3E04 /* StampViewController.swift */,
 				D6E96A02227C100C009A3E04 /* HomeViewController.swift */,
 				D67B8F9F22687A43009FEBD5 /* DetailViewController.swift */,
 				D67B8F9D226869D4009FEBD5 /* MenuTableViewController.swift */,
-				D67B8F9022685F3E009FEBD5 /* Assets.xcassets */,
 				D67B8F9222685F3E009FEBD5 /* LaunchScreen.storyboard */,
 				D67B8F9522685F3E009FEBD5 /* Info.plist */,
 			);
@@ -143,9 +197,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D67B8F9822685F3E009FEBD5 /* Build configuration list for PBXNativeTarget "SmartOrder" */;
 			buildPhases = (
+				802B669CBB8DD6BB6413194C /* [CP] Check Pods Manifest.lock */,
 				D67B8F8222685F3D009FEBD5 /* Sources */,
 				D67B8F8322685F3D009FEBD5 /* Frameworks */,
 				D67B8F8422685F3D009FEBD5 /* Resources */,
+				EE2E2CD3021BAC286C0411E6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -196,14 +252,58 @@
 			files = (
 				D6E96A0D227C4906009A3E04 /* PayStoryboard.storyboard in Resources */,
 				D67B8F9422685F3E009FEBD5 /* LaunchScreen.storyboard in Resources */,
-				D67B8F9122685F3E009FEBD5 /* Assets.xcassets in Resources */,
 				D6E96A09227C4819009A3E04 /* MyPageStoryboard.storyboard in Resources */,
+				D68E3EB922843B5F004EE3EC /* Order.storyboard in Resources */,
 				D6E96A0B227C4891009A3E04 /* MyMenu.storyboard in Resources */,
 				D67B8F8F22685F3D009FEBD5 /* Main.storyboard in Resources */,
+				D6BC363D22855FE900ADF9EA /* Assets.xcassets in Resources */,
+				D6E96A152281FFA3009A3E04 /* Cart.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		802B669CBB8DD6BB6413194C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SmartOrder-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE2E2CD3021BAC286C0411E6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SmartOrder/Pods-SmartOrder-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SmartOrder/Pods-SmartOrder-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SmartOrder/Pods-SmartOrder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D67B8F8222685F3D009FEBD5 /* Sources */ = {
@@ -211,16 +311,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				57D9251B227DAF190044E96B /* LoginViewController.swift in Sources */,
+				B1CA3EB62283E3B6004A49A9 /* PayViewController.swift in Sources */,
 				D6E96A07227C2246009A3E04 /* CouponViewController.swift in Sources */,
+				D6E96A112281F76A009A3E04 /* CartDetailViewController.swift in Sources */,
+				D6BC363422848DB700ADF9EA /* CaffeCollectionViewController.swift in Sources */,
+				D6BC363022848BF600ADF9EA /* CaffeCollectionViewCell.swift in Sources */,
 				D67B8F9C22685F8F009FEBD5 /* DataCenter.swift in Sources */,
+				57091A8D228B089000C82641 /* MypageDetailViewController.swift in Sources */,
 				57D9251D227DAF6B0044E96B /* KakaoLoginButton.swift in Sources */,
+				D6BC36382284B0A900ADF9EA /* CaffePreViewController.swift in Sources */,
+				D6E96A0F2281E571009A3E04 /* CartViewController.swift in Sources */,
 				D6E96A05227C133A009A3E04 /* StampViewController.swift in Sources */,
+				D68E3EB722840D9F004EE3EC /* CartTableViewCell.swift in Sources */,
 				D67B8F8C22685F3D009FEBD5 /* ViewController.swift in Sources */,
-				57D9254722840D9E0044E96B /* MyTableViewCell.swift in Sources */,
 				D67B8FA022687A43009FEBD5 /* DetailViewController.swift in Sources */,
+				57D9254B228567140044E96B /* MypageTableViewCell.swift in Sources */,
 				D67B8F8A22685F3D009FEBD5 /* AppDelegate.swift in Sources */,
-				57D925272283A9090044E96B /* MyPageTableViewController.swift in Sources */,
 				D67B8F9E226869D4009FEBD5 /* MenuTableViewController.swift in Sources */,
+				57D92549228566F60044E96B /* MypageTableViewController.swift in Sources */,
 				D6E96A03227C100C009A3E04 /* HomeViewController.swift in Sources */,
 				57D92525227ED12E0044E96B /* MypageViewController.swift in Sources */,
 			);
@@ -366,6 +474,7 @@
 		};
 		D67B8F9922685F3E009FEBD5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE24E8A5F404F852E5CDA5F2 /* Pods-SmartOrder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -378,7 +487,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_LDFLAGS = "-all_load";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"$(inherited)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ha0.SmartOrder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "./SmartOrder/Kakao/Briging-Header.h";
@@ -389,6 +501,7 @@
 		};
 		D67B8F9A22685F3E009FEBD5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4FF2CD8C9BFE9FF5014DFBDE /* Pods-SmartOrder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -401,7 +514,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_LDFLAGS = "-all_load";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"$(inherited)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ha0.SmartOrder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "./SmartOrder/Kakao/Briging-Header.h";
