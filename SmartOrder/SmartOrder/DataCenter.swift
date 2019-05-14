@@ -83,8 +83,10 @@ struct cart {
     var selectedMenu:[Order]
 }
 
+var cartSelectedArray:[Int] = [1,1,1]
+
 var selected1 = order1
-var myCart = cart(selectedMenu: [selected1])
+var myCart = cart(selectedMenu: [selected1,selected1,selected1])
 
 
 //주문내역

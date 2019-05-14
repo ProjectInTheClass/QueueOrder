@@ -122,12 +122,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="under2" translatesAutoresizingMaskIntoConstraints="NO" id="U16-ZX-hNg">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="under2" translatesAutoresizingMaskIntoConstraints="NO" id="wl5-jk-Tyo">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Bb-Zp-TLs">
-                                <rect key="frame" x="20" y="122" width="374" height="26"/>
+                                <rect key="frame" x="0.0" y="122" width="414" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -146,16 +146,18 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJz-YQ-kTZ">
-                                <rect key="frame" x="98" y="479" width="100" height="30"/>
+                                <rect key="frame" x="87" y="473" width="100" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="아니오"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2wv-xd-zPj">
-                                <rect key="frame" x="239" y="479" width="100" height="30"/>
+                                <rect key="frame" x="228" y="473" width="100" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.7348154187" green="0.79887300729999999" blue="0.89022094009999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="예"/>
+                                <state key="normal" title="예">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <segue destination="hB6-W9-Fqo" kind="show" id="D4Z-43-0Fy"/>
                                 </connections>
@@ -166,8 +168,10 @@
                     </view>
                     <connections>
                         <outlet property="detailed" destination="3Bb-Zp-TLs" id="kfR-tb-wSu"/>
+                        <outlet property="noBtn" destination="aJz-YQ-kTZ" id="baH-z0-3ip"/>
                         <outlet property="storeLocation" destination="Kl7-Yg-9fx" id="hwb-Y6-sDM"/>
                         <outlet property="storePhoto" destination="vs3-tu-l8c" id="1sc-PE-wyL"/>
+                        <outlet property="yesBtn" destination="2wv-xd-zPj" id="cvw-cK-zVU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eiw-o9-hF6" userLabel="First Responder" sceneMemberID="firstResponder"/>

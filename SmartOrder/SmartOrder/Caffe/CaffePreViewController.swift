@@ -15,6 +15,8 @@ class CaffePreViewController: UIViewController {
     @IBOutlet weak var storePhoto: UIImageView!
     @IBOutlet weak var storeLocation: UILabel!
     @IBOutlet weak var detailed: UILabel!
+    @IBOutlet weak var noBtn: UIButton!
+    @IBOutlet weak var yesBtn: UIButton!
     
     override func viewDidLoad() {
         
@@ -35,6 +37,22 @@ class CaffePreViewController: UIViewController {
         
         storeLocation.text = caffeForView?.location
 
+        //noBtn.backgroundColor = .clear
+        noBtn.backgroundColor = UIColor.white
+        noBtn.layer.cornerRadius = 5
+        noBtn.layer.borderWidth = 1
+        noBtn.layer.borderColor = UIColor.white.cgColor
+        //noBtn.layer.borderColor = UIColor(red: 98/255, green: 92/255, blue: 89/255, alpha: 1.0).cgColor
+        
+        //yesBtn.backgroundColor = .clear
+        //yesBtn.backgroundColor = UIColor.white
+        yesBtn.backgroundColor = UIColor(red: 98/255, green: 92/255, blue: 89/255, alpha: 1.0)
+        yesBtn.layer.cornerRadius = 5
+        yesBtn.layer.borderWidth = 1
+        yesBtn.layer.borderColor = UIColor(red: 98/255, green: 92/255, blue: 89/255, alpha: 1.0).cgColor
+        //yesBtn.layer.borderColor = UIColor(red: 48/255, green: 123/255, blue: 246/255, alpha: 1.0).cgColor
+        
+        
     }
     
 

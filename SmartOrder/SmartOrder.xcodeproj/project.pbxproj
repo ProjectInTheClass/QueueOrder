@@ -12,6 +12,9 @@
 		57D92521227DAFAE0044E96B /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D92520227DAFAE0044E96B /* KakaoOpenSDK.framework */; };
 		57D92525227ED12E0044E96B /* MypageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D92524227ED12E0044E96B /* MypageViewController.swift */; };
 		B1CA3EB62283E3B6004A49A9 /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CA3EB52283E3B6004A49A9 /* PayViewController.swift */; };
+		D670AEAB228AC7D70034D94D /* CartOrderInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D670AEAA228AC7D70034D94D /* CartOrderInfoCell.swift */; };
+		D670AEAD228B3B5A0034D94D /* CartOrderInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D670AEAC228B3B5A0034D94D /* CartOrderInfoViewController.swift */; };
+		D670AEAF228B3DB40034D94D /* CartOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D670AEAE228B3DB40034D94D /* CartOrderCell.swift */; };
 		D67B8F8A22685F3D009FEBD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67B8F8922685F3D009FEBD5 /* AppDelegate.swift */; };
 		D67B8F8C22685F3D009FEBD5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67B8F8B22685F3D009FEBD5 /* ViewController.swift */; };
 		D67B8F8F22685F3D009FEBD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D67B8F8D22685F3D009FEBD5 /* Main.storyboard */; };
@@ -47,6 +50,9 @@
 		A0CFF9ED595C02FCDA07475B /* Pods_SmartOrder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartOrder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1CA3EB52283E3B6004A49A9 /* PayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
 		BE24E8A5F404F852E5CDA5F2 /* Pods-SmartOrder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartOrder.debug.xcconfig"; path = "Target Support Files/Pods-SmartOrder/Pods-SmartOrder.debug.xcconfig"; sourceTree = "<group>"; };
+		D670AEAA228AC7D70034D94D /* CartOrderInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartOrderInfoCell.swift; sourceTree = "<group>"; };
+		D670AEAC228B3B5A0034D94D /* CartOrderInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartOrderInfoViewController.swift; sourceTree = "<group>"; };
+		D670AEAE228B3DB40034D94D /* CartOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartOrderCell.swift; sourceTree = "<group>"; };
 		D67B8F8622685F3D009FEBD5 /* SmartOrder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartOrder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D67B8F8922685F3D009FEBD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D67B8F8B22685F3D009FEBD5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +144,9 @@
 				D68E3EB622840D9F004EE3EC /* CartTableViewCell.swift */,
 				D6E96A0E2281E571009A3E04 /* CartViewController.swift */,
 				D6E96A142281FFA3009A3E04 /* Cart.storyboard */,
+				D670AEAE228B3DB40034D94D /* CartOrderCell.swift */,
+				D670AEAC228B3B5A0034D94D /* CartOrderInfoViewController.swift */,
+				D670AEAA228AC7D70034D94D /* CartOrderInfoCell.swift */,
 				D6E96A102281F76A009A3E04 /* CartDetailViewController.swift */,
 			);
 			path = Cart;
@@ -348,6 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D670AEAB228AC7D70034D94D /* CartOrderInfoCell.swift in Sources */,
 				57D9251B227DAF190044E96B /* LoginViewController.swift in Sources */,
 				B1CA3EB62283E3B6004A49A9 /* PayViewController.swift in Sources */,
 				D6E96A07227C2246009A3E04 /* CouponViewController.swift in Sources */,
@@ -362,8 +372,10 @@
 				D68E3EB722840D9F004EE3EC /* CartTableViewCell.swift in Sources */,
 				D67B8F8C22685F3D009FEBD5 /* ViewController.swift in Sources */,
 				D67B8FA022687A43009FEBD5 /* DetailViewController.swift in Sources */,
+				D670AEAD228B3B5A0034D94D /* CartOrderInfoViewController.swift in Sources */,
 				D67B8F8A22685F3D009FEBD5 /* AppDelegate.swift in Sources */,
 				D67B8F9E226869D4009FEBD5 /* MenuTableViewController.swift in Sources */,
+				D670AEAF228B3DB40034D94D /* CartOrderCell.swift in Sources */,
 				D6E96A03227C100C009A3E04 /* HomeViewController.swift in Sources */,
 				57D92525227ED12E0044E96B /* MypageViewController.swift in Sources */,
 			);

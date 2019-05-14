@@ -1,72 +1,62 @@
 //
-//  CartViewController.swift
+//  CartOrderInfoViewController.swift
 //  SmartOrder
 //
-//  Created by 하영 on 08/05/2019.
+//  Created by 하영 on 15/05/2019.
 //  Copyright © 2019 하영. All rights reserved.
 //
 
 import UIKit
 
-class CartViewController: UITableViewController {
+class CartOrderInfoViewController: UIViewController, UITableViewDataSource {
+
+    @IBOutlet weak var cartTable: UITableView!
+    @IBOutlet weak var totalOrderPrice: UILabel!
+    @IBOutlet weak var cartOrderBtn: UIButton!
     
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        tableView.reloadData()
-    }
-    
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         //데이터 삭제
         myCart.selectedMenu.remove(at: indexPath.row)
         //셀 삭제
         tableView.deleteRows(at: [indexPath], with: .automatic)
+        
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let selectedItem = myCart.selectedMenu[indexPath.row]
         
         print("장바구니...\(selectedItem)")
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        
-        return 2
+    
+        return 1
         //section 갯수
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        
        
-        if section == 1 {
-            return myCart.selectedMenu.count
-        } else {
-            return 1
-        }
+       return myCart.selectedMenu.count
+       
         //cell 갯수
     }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 1 {
+   /*
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
             return 111
         } else {
-            return 68
+            return 111
         }
     }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    */
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if indexPath.section == 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "MyCart", for: indexPath) as! CartTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MyCart", for: indexPath) as! CartOrderCell
             
             let CartForTheRow:Order = myCart.selectedMenu[indexPath.row]
             cell.price.text = "금액 \(CartForTheRow.price)원"
@@ -81,25 +71,11 @@ class CartViewController: UITableViewController {
             cell.option.text = "사이즈\(CartForTheRow.size) / 얼음\(CartForTheRow.ice) / 샷추가\(CartForTheRow.shot)"
             
             cell.cnt.text = "수량 \(CartForTheRow.count)개"
-            
-           // cell.selectBtn?.image = UIImage(named: "select")
-            
+        
+        
+            cell.cartNumber.text = String(indexPath.row)
             return cell
-        } else {
-             let cell = tableView.dequeueReusableCell(withIdentifier: "MyCartOrderInfo", for: indexPath) as! CartOrderInfoCell
-            
-            var totalPrice:Int = 0
-            for item in 0..<cartSelectedArray.count {
-                if cartSelectedArray[item] == 1 {
-                    totalPrice += myCart.selectedMenu[item].price
-                }
-            }
-            cell.orderPrice.text = "\(totalPrice) 원"
-            
-            cell.backgroundColor = UIColor(red: 229/255, green: 229/255, blue: 229/255, alpha: 1.0)
-           // cell.backgroundColor = UIColor(red: 98/255, green: 92/255, blue: 89/255, alpha: 0.2)
-            return cell
-        }
+        
     }
     
     
@@ -152,9 +128,53 @@ class CartViewController: UITableViewController {
          destVC.coffeeForview = selectedCoffee
          */
         let destVC = segue.destination as! CartDetailViewController
-        let selectedCart = myCart.selectedMenu[self.tableView.indexPathForSelectedRow!.row]
+        let selectedCart = myCart.selectedMenu[self.cartTable.indexPathForSelectedRow!.row]
         destVC.CartForView = selectedCart
     }
+
     
-   
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.cartTable.rowHeight = 111
+        
+        cartOrderBtn.backgroundColor = UIColor(red: 98/255, green: 92/255, blue: 89/255, alpha: 1.0)
+        cartOrderBtn.layer.cornerRadius = 5
+        cartOrderBtn.layer.borderWidth = 1
+        cartOrderBtn.layer.borderColor = UIColor(red: 98/255, green: 92/255, blue: 89/255, alpha: 1.0).cgColor
+        
+        for _ in 0..<myCart.selectedMenu.count {
+            print("counting ... ")
+        }
+        var totalPrice:Int = 0
+        for item in 0..<cartSelectedArray.count {
+            if cartSelectedArray[item] == 1 {
+                totalPrice += myCart.selectedMenu[item].price
+            }
+        }
+        totalOrderPrice.text = "\(totalPrice) 원"
+        
+        
+        print(cartSelectedArray)
+        cartTable.reloadData()
+       
+        // Do any additional setup after loading the view.
+    }
+ 
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+       
+        self.viewDidLoad()
+    }
+    
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
 }
