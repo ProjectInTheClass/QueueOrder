@@ -17,6 +17,7 @@ class CartOrderCell: UITableViewCell{
     @IBOutlet weak var option: UILabel!
     @IBOutlet weak var selectBox: UIButton!
     @IBOutlet weak var cartNumber: UILabel!
+   
     var isSelect = false
     
     
@@ -41,13 +42,25 @@ class CartOrderCell: UITableViewCell{
         if(isSelect) {
             selectBox.setImage(UIImage(named: "checked30"), for: UIControl.State.normal)
             cartSelectedArray[number] = 1
+           
           
         } else {
             selectBox.setImage(UIImage(named: "Unchecked30"), for: UIControl.State.normal)
             cartSelectedArray[number] = 0
+            
         }
         
+        for _ in 0..<myCart.selectedMenu.count {
+            print("counting ... ")
+        }
+        var totalPrice:Int = 0
+        for item in 0..<cartSelectedArray.count {
+            if cartSelectedArray[item] == 1 {
+                totalPrice += myCart.selectedMenu[item].price
+            }
+        }
      
+       
         //UITableView().reloadData()
         
         //UITableView.reloadData(CartViewController)

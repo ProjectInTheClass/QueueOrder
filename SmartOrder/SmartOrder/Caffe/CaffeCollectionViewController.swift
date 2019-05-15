@@ -21,6 +21,7 @@ class CaffeCollectionViewController: UICollectionViewController {
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         
+       
         // Do any additional setup after loading the view.
     }
     
@@ -60,6 +61,10 @@ class CaffeCollectionViewController: UICollectionViewController {
         }
         
         cell.info.text = CaffeForTheRow.name
+        cell.layer.cornerRadius = 30
+        cell.layer.borderWidth = 1
+        cell.layer.borderColor = UIColor.white.cgColor
+        cell.layer.backgroundColor = UIColor.white.cgColor
         return cell
     }
     

@@ -9,6 +9,10 @@
 import UIKit
 
 class MenuTableViewController: UITableViewController {
+    
+    //var menuForView:[Menu]? //추가-ㅎㅇ
+    var cafeInfo:Int = 0 //카페 고유번호
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -33,7 +37,10 @@ class MenuTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return MenuSubscript.count
+        //return MenuSubscript.count
+        
+        //수정-ㅎㅇ
+        return ((caffeList[cafeInfo])?.menu.count)!
         //cell 갯수
     }
 
@@ -47,8 +54,9 @@ class MenuTableViewController: UITableViewController {
         cell.textLabel?.text = coffeeForTheRow.name
         cell.detailTextLabel?.text = coffeeForTheRow.origin
          */
-        
-        let MenuForTheRow:Menu = MenuSubscript[indexPath.row]
+        //수정중-ㅎㅇ
+        //let MenuForTheRow:Menu = MenuSubscript[indexPath.row]
+        let MenuForTheRow:Menu = ((caffeList[cafeInfo])?.menu[indexPath.row])!
         cell.textLabel?.text = MenuForTheRow.coffee
         cell.detailTextLabel?.text = String(MenuForTheRow.price)+"원"
         
@@ -122,6 +130,7 @@ class MenuTableViewController: UITableViewController {
         let destVC = segue.destination as! DetailViewController
         let selectedCoffee = MenuSubscript[self.tableView.indexPathForSelectedRow!.row]
         destVC.coffeeForView = selectedCoffee
+        destVC.caffeInfo = cafeInfo
     }
      
      //segue : 연결된 선 ? 통로 ? main.stroyboard 에서 control 누르고 연결햇을때 나타나는 선.

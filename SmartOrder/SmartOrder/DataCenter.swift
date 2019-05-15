@@ -45,6 +45,10 @@ var iceteaP = Menu(coffee:"아이스티복숭아", image:nil, price:3000, shot:f
 
 var MenuSubscript:[Menu] = [moca,latte,iceLatte,macchiatos,iceAmericano,Americano,chocolate,iceChocolate,iceteaL,iceteaP]
 
+var MenuSubscript2:[Menu] = [moca,latte,iceLatte]
+
+var MenuSubscript3:[Menu] = [iceAmericano,Americano,iceteaL,iceteaP]
+
 //카페
 struct Caffe {
     var caffeInfo:Int //카페 고유넘버
@@ -59,8 +63,8 @@ struct Caffe {
 
 var caffe1 = Caffe(caffeInfo:0, logo:"queue", photo:"queueIn", name:"카페큐", location:"한양대학교 산학기술관(IT/BT관) 3층 로비", menu:MenuSubscript, stampToCoupon:10, sizeUp:500)
 
-var caffe2 = Caffe(caffeInfo:1, logo: "tiamo", photo:nil, name:"TIAMO MK점", location:"한양대학교 노천", menu:MenuSubscript, stampToCoupon:10, sizeUp:500)
-var caffe3 = Caffe(caffeInfo:2, logo: nil, photo:nil, name:"TIAMO 학술정보관점", location:"제2공학관", menu:MenuSubscript, stampToCoupon:10, sizeUp:500)
+var caffe2 = Caffe(caffeInfo:1, logo: "tiamo", photo:nil, name:"TIAMO MK점", location:"한양대학교 노천", menu:MenuSubscript2, stampToCoupon:10, sizeUp:500)
+var caffe3 = Caffe(caffeInfo:2, logo: nil, photo:nil, name:"TIAMO 학술정보관점", location:"제2공학관", menu:MenuSubscript3, stampToCoupon:10, sizeUp:500)
 
 var caffeList:[Int:Caffe] = [caffe1.caffeInfo:caffe1, caffe2.caffeInfo:caffe2, caffe3.caffeInfo:caffe3]
 
@@ -86,11 +90,12 @@ struct cart {
     var selectedMenu:[Order]
 }
 
-var cartSelectedArray:[Int] = [1,1,1]
-
 var selected1 = order1
-var myCart = cart(selectedMenu: [selected1,selected1,selected1])
+var selected2 = order2
 
+//장바구니
+var myCart = cart(selectedMenu: [])
+var cartSelectedArray:[Int] = []
 
 //주문내역
 struct OrderList {

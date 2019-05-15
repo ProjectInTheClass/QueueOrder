@@ -27,7 +27,7 @@ class DetailViewController: UITableViewController {
     
     
     var coffeeForView:Menu?
-    var caffeInfo = 0 //카페 고유 번호 받아와야함 -> 추후 수정.
+    var caffeInfo:Int? //카페 고유 번호
     
     let alertController = UIAlertController(title: "음료를 담으시겠습니까?", message:
         "", preferredStyle: .alert)
@@ -103,9 +103,10 @@ class DetailViewController: UITableViewController {
                 shotInt = Int(sht)
             }
             
-            let addCart = Order(caffeInfo: self.caffeInfo, coffee: coffeeName, price: cost!,
+            let addCart = Order(caffeInfo: self.caffeInfo!, coffee: coffeeName, price: cost!,
                                 count: amount!, size: cofeeSize, ice: iceSize, shot: shotInt!, orderDate: "")
             myCart.selectedMenu.append(addCart)
+            cartSelectedArray.append(1)
         })
         
         
@@ -149,8 +150,8 @@ class DetailViewController: UITableViewController {
             price.isHidden = true
             ifLarge.isHidden = false
             
-            if caffeList[caffeInfo] != nil {
-                add = caffeList[caffeInfo]!.sizeUp
+            if caffeList[caffeInfo!] != nil {
+                add = caffeList[caffeInfo!]!.sizeUp
             } else {
                 add = 600
             }
@@ -229,7 +230,7 @@ class DetailViewController: UITableViewController {
         calculation()
     }
     @IBAction func onClikLikeBtn(_ sender: Any) {
-        while MyMenu.count-1 < caffeInfo{
+        while MyMenu.count-1 < caffeInfo!{
             MyMenu.append([])
         }
         print(coffeeForView!.isLiked)
@@ -238,10 +239,10 @@ class DetailViewController: UITableViewController {
         
         if(!coffeeForView!.isLiked) {
             likeBtn.setImage(UIImage(named: "Unlike"), for: UIControl.State.normal)
-            MyMenu[caffeInfo] = MyMenu[caffeInfo].filter({$0.coffee != coffeeForView?.coffee})
+            MyMenu[caffeInfo!] = MyMenu[caffeInfo!].filter({$0.coffee != coffeeForView?.coffee})
         } else {
             likeBtn.setImage(UIImage(named: "like"), for: UIControl.State.normal)
-            MyMenu[caffeInfo].append(coffeeForView!)
+            MyMenu[caffeInfo!].append(coffeeForView!)
         }
         
         MenuSubscript = MenuSubscript.map({x -> Menu in
@@ -271,7 +272,7 @@ class DetailViewController: UITableViewController {
             let Today = NSDate()
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy년 M월 d일"
-            let new_order : Order = Order(caffeInfo : caffeInfo, coffee : coffeeName.text!, price:
+            let new_order : Order = Order(caffeInfo : caffeInfo!, coffee : coffeeName.text!, price:
                 Int(resultPrice.text!)!, count: Int(amount.text!)!, size: Drink_size, ice: Ice_size, shot: Int(shot.text!)!, orderDate: dateFormatter.string(from : Today as Date))
             let one_Order : cart = cart(selectedMenu : [new_order])
            

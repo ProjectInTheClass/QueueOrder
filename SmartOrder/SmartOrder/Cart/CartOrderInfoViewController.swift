@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CartOrderInfoViewController: UIViewController, UITableViewDataSource {
+class CartOrderInfoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var cartTable: UITableView!
     @IBOutlet weak var totalOrderPrice: UILabel!
@@ -18,6 +18,7 @@ class CartOrderInfoViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         //데이터 삭제
         myCart.selectedMenu.remove(at: indexPath.row)
+        cartSelectedArray.remove(at: indexPath.row)
         //셀 삭제
         tableView.deleteRows(at: [indexPath], with: .automatic)
         
@@ -157,6 +158,7 @@ class CartOrderInfoViewController: UIViewController, UITableViewDataSource {
         print(cartSelectedArray)
         cartTable.reloadData()
        
+       
         // Do any additional setup after loading the view.
     }
  
@@ -177,4 +179,5 @@ class CartOrderInfoViewController: UIViewController, UITableViewDataSource {
      // Pass the selected object to the new view controller.
      }
      */
+    
 }

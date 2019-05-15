@@ -36,19 +36,15 @@
                                     <rect key="frame" x="0.0" y="0.0" width="131" height="143"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="circleBorderWhite100" translatesAutoresizingMaskIntoConstraints="NO" id="AWW-PG-OWK">
-                                            <rect key="frame" x="0.0" y="4" width="128" height="135"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KbY-67-BHx">
-                                            <rect key="frame" x="12" y="111" width="103" height="20"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KbY-67-BHx">
+                                            <rect key="frame" x="14" y="107" width="103" height="27"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yvR-hi-ITp">
-                                            <rect key="frame" x="12" y="20" width="103" height="89"/>
+                                            <rect key="frame" x="14" y="16" width="103" height="89"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                     </subviews>
@@ -159,7 +155,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="hB6-W9-Fqo" kind="show" id="D4Z-43-0Fy"/>
+                                    <segue destination="hB6-W9-Fqo" kind="show" identifier="coffe" id="D4Z-43-0Fy"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -333,7 +329,7 @@
                                     <segue destination="8Tw-ow-qjz" kind="show" id="ycx-35-YtB"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="관심메뉴" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVS-mL-zlY">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="선호메뉴" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVS-mL-zlY">
                                 <rect key="frame" x="276" y="212" width="59" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -396,7 +392,7 @@
                         <segue destination="GZT-gr-AWh" kind="relationship" relationship="viewControllers" id="0WT-PJ-2CR"/>
                         <segue destination="13p-Cl-zai" kind="relationship" relationship="viewControllers" id="CdY-99-Zkl"/>
                         <segue destination="aKl-qh-ppk" kind="relationship" relationship="viewControllers" id="7tB-Bp-TUq"/>
-                        <segue destination="hIz-gs-OeA" kind="relationship" relationship="viewControllers" id="hMI-dg-omo"/>
+                        <segue destination="x4U-QB-LTo" kind="relationship" relationship="viewControllers" id="Bct-ko-Fks"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iNL-CO-iRw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -449,7 +445,7 @@
             </objects>
             <point key="canvasLocation" x="1862" y="488"/>
         </scene>
-        <!--내 계정-->
+        <!--마이페이지-->
         <scene sceneID="erU-t0-8Bs">
             <objects>
                 <viewController id="x4U-QB-LTo" sceneMemberID="viewController">
@@ -479,11 +475,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="CIY-9N-iVs"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="내 계정" image="유저소" id="5TB-uD-oOp"/>
+                    <tabBarItem key="tabBarItem" title="마이페이지" image="user_mini" id="5TB-uD-oOp"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K0Z-lN-M2M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1080" y="1246"/>
+            <point key="canvasLocation" x="-841" y="1059"/>
         </scene>
         <!--홈-->
         <scene sceneID="oi1-1S-6ff">
@@ -729,10 +725,10 @@
         <image name="queue" width="428" height="428"/>
         <image name="skyBackground" width="532" height="346"/>
         <image name="under2" width="209" height="43"/>
+        <image name="user_mini" width="30" height="34"/>
         <image name="white20" width="209" height="43"/>
         <image name="white70" width="209" height="43"/>
         <image name="돼지소" width="27" height="27"/>
-        <image name="유저소" width="30" height="34"/>
         <image name="핸드폰50" width="144" height="144"/>
     </resources>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
