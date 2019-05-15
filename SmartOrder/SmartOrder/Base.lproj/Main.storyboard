@@ -146,6 +146,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="아니오"/>
+                                <connections>
+                                    <action selector="noBtn:" destination="JAV-nK-fdr" eventType="touchUpInside" id="0lh-xa-CHz"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2wv-xd-zPj">
                                 <rect key="frame" x="228" y="473" width="100" height="30"/>
@@ -392,7 +395,7 @@
                         <segue destination="GZT-gr-AWh" kind="relationship" relationship="viewControllers" id="0WT-PJ-2CR"/>
                         <segue destination="13p-Cl-zai" kind="relationship" relationship="viewControllers" id="CdY-99-Zkl"/>
                         <segue destination="aKl-qh-ppk" kind="relationship" relationship="viewControllers" id="7tB-Bp-TUq"/>
-                        <segue destination="x4U-QB-LTo" kind="relationship" relationship="viewControllers" id="Bct-ko-Fks"/>
+                        <segue destination="hIz-gs-OeA" kind="relationship" relationship="viewControllers" id="WB8-ka-xQS"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iNL-CO-iRw" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -99,4 +99,9 @@ class CaffePreViewController: UIViewController {
         
     }
     
+    @IBAction func noBtn(_ sender: Any) {
+        if let navController = self.navigationController {
+            navController.popViewController(animated: true)
+        }
+    }
 }

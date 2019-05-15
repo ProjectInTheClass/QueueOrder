@@ -208,6 +208,9 @@
                                                     <color key="backgroundColor" red="0.82998889590000002" green="0.82998889590000002" blue="0.82998889590000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <state key="normal" title="취소"/>
+                                                    <connections>
+                                                        <action selector="cancleBtn:" destination="vqN-Zj-Q7r" eventType="touchUpInside" id="eud-g5-v3K"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0oD-KY-pVp">
                                                     <rect key="frame" x="27" y="340" width="173" height="38"/>

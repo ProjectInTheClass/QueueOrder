@@ -282,4 +282,10 @@ class DetailViewController: UITableViewController {
             
         }
     }
+    
+    @IBAction func cancleBtn(_ sender: Any) {
+        if let navController = self.navigationController {
+            navController.popViewController(animated: true)
+        }
+    }
 }
