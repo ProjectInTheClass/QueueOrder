@@ -20,11 +20,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="j1z-Tx-faw"/>
                     </view>
+                    <navigationItem key="navigationItem" id="jEw-aY-G9C"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oih-Pw-yFk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-125" y="40"/>
+            <point key="canvasLocation" x="124.6376811594203" y="19.419642857142858"/>
         </scene>
     </scenes>
 </document>

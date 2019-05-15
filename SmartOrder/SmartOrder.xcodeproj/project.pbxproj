@@ -12,6 +12,7 @@
 		57D92521227DAFAE0044E96B /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D92520227DAFAE0044E96B /* KakaoOpenSDK.framework */; };
 		57D92525227ED12E0044E96B /* MypageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D92524227ED12E0044E96B /* MypageViewController.swift */; };
 		B1CA3EB62283E3B6004A49A9 /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CA3EB52283E3B6004A49A9 /* PayViewController.swift */; };
+		B1E9EE27228A6FCD00E44687 /* MyMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E9EE26228A6FCD00E44687 /* MyMenuTableViewController.swift */; };
 		D67B8F8A22685F3D009FEBD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67B8F8922685F3D009FEBD5 /* AppDelegate.swift */; };
 		D67B8F8C22685F3D009FEBD5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67B8F8B22685F3D009FEBD5 /* ViewController.swift */; };
 		D67B8F8F22685F3D009FEBD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D67B8F8D22685F3D009FEBD5 /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 		57D92524227ED12E0044E96B /* MypageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageViewController.swift; sourceTree = "<group>"; };
 		A0CFF9ED595C02FCDA07475B /* Pods_SmartOrder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartOrder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1CA3EB52283E3B6004A49A9 /* PayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
+		B1E9EE26228A6FCD00E44687 /* MyMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMenuTableViewController.swift; sourceTree = "<group>"; };
 		BE24E8A5F404F852E5CDA5F2 /* Pods-SmartOrder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartOrder.debug.xcconfig"; path = "Target Support Files/Pods-SmartOrder/Pods-SmartOrder.debug.xcconfig"; sourceTree = "<group>"; };
 		D67B8F8622685F3D009FEBD5 /* SmartOrder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartOrder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D67B8F8922685F3D009FEBD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				D6E96A0A227C4891009A3E04 /* MyMenu.storyboard */,
+				B1E9EE26228A6FCD00E44687 /* MyMenuTableViewController.swift */,
 			);
 			path = MyMenu;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				D68E3EB722840D9F004EE3EC /* CartTableViewCell.swift in Sources */,
 				D67B8F8C22685F3D009FEBD5 /* ViewController.swift in Sources */,
 				D67B8FA022687A43009FEBD5 /* DetailViewController.swift in Sources */,
+				B1E9EE27228A6FCD00E44687 /* MyMenuTableViewController.swift in Sources */,
 				D67B8F8A22685F3D009FEBD5 /* AppDelegate.swift in Sources */,
 				D67B8F9E226869D4009FEBD5 /* MenuTableViewController.swift in Sources */,
 				D6E96A03227C100C009A3E04 /* HomeViewController.swift in Sources */,
