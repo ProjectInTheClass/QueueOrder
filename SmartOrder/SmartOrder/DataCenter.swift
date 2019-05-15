@@ -14,6 +14,15 @@ struct Menu {
     var image:String? //음료사진
     var price:Int //음료가격
     var shot : Bool
+    var isLiked : Bool
+    
+    init(coffee: String, image: String?, price : Int, shot : Bool){
+        self.coffee = coffee
+        self.image = image
+        self.price = price
+        self.shot = shot
+        isLiked = false
+    }
 }
 
 // 주문정보 받는 구조체.
@@ -40,7 +49,7 @@ var iceChocolate = Menu(coffee:"아이스초코", image:nil, price:3500, shot:fa
 var iceteaL = Menu(coffee:"아이스티레몬", image:nil, price:3000, shot:false)
 var iceteaP = Menu(coffee:"아이스티복숭아", image:nil, price:3000, shot:false)
 
-let MenuSubscript:[Menu] = [moca,latte,iceLatte,macchiatos,iceAmericano,Americano,chocolate,iceChocolate,iceteaL,iceteaP]
+var MenuSubscript:[Menu] = [moca,latte,iceLatte,macchiatos,iceAmericano,Americano,chocolate,iceChocolate,iceteaL,iceteaP]
 
 //카페
 struct Caffe {
@@ -188,4 +197,4 @@ var couponList = CouponList(coupons:[coupon1,coupon2])
 //couponList.addCoupon(coupon2)
 
 //선호 메뉴
-var MyMenu : [Order] = [];
+var MyMenu : [[Menu]] = [];

@@ -15,6 +15,7 @@
 		D670AEAB228AC7D70034D94D /* CartOrderInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D670AEAA228AC7D70034D94D /* CartOrderInfoCell.swift */; };
 		D670AEAD228B3B5A0034D94D /* CartOrderInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D670AEAC228B3B5A0034D94D /* CartOrderInfoViewController.swift */; };
 		D670AEAF228B3DB40034D94D /* CartOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D670AEAE228B3DB40034D94D /* CartOrderCell.swift */; };
+		B1E9EE27228A6FCD00E44687 /* MyMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E9EE26228A6FCD00E44687 /* MyMenuTableViewController.swift */; };
 		D67B8F8A22685F3D009FEBD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67B8F8922685F3D009FEBD5 /* AppDelegate.swift */; };
 		D67B8F8C22685F3D009FEBD5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67B8F8B22685F3D009FEBD5 /* ViewController.swift */; };
 		D67B8F8F22685F3D009FEBD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D67B8F8D22685F3D009FEBD5 /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 		57D92524227ED12E0044E96B /* MypageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageViewController.swift; sourceTree = "<group>"; };
 		A0CFF9ED595C02FCDA07475B /* Pods_SmartOrder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartOrder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1CA3EB52283E3B6004A49A9 /* PayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
+		B1E9EE26228A6FCD00E44687 /* MyMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMenuTableViewController.swift; sourceTree = "<group>"; };
 		BE24E8A5F404F852E5CDA5F2 /* Pods-SmartOrder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartOrder.debug.xcconfig"; path = "Target Support Files/Pods-SmartOrder/Pods-SmartOrder.debug.xcconfig"; sourceTree = "<group>"; };
 		D670AEAA228AC7D70034D94D /* CartOrderInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartOrderInfoCell.swift; sourceTree = "<group>"; };
 		D670AEAC228B3B5A0034D94D /* CartOrderInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartOrderInfoViewController.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				D6E96A0A227C4891009A3E04 /* MyMenu.storyboard */,
+				B1E9EE26228A6FCD00E44687 /* MyMenuTableViewController.swift */,
 			);
 			path = MyMenu;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				D67B8F8C22685F3D009FEBD5 /* ViewController.swift in Sources */,
 				D67B8FA022687A43009FEBD5 /* DetailViewController.swift in Sources */,
 				D670AEAD228B3B5A0034D94D /* CartOrderInfoViewController.swift in Sources */,
+				B1E9EE27228A6FCD00E44687 /* MyMenuTableViewController.swift in Sources */,
 				D67B8F8A22685F3D009FEBD5 /* AppDelegate.swift in Sources */,
 				D67B8F9E226869D4009FEBD5 /* MenuTableViewController.swift in Sources */,
 				D670AEAF228B3DB40034D94D /* CartOrderCell.swift in Sources */,

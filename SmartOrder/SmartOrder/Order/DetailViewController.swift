@@ -25,17 +25,17 @@ class DetailViewController: UITableViewController {
     @IBOutlet weak var shotIncrease: UIButton!
     @IBOutlet weak var shotDecrease: UIButton!
     
+    
     var coffeeForView:Menu?
     var caffeInfo = 0 //카페 고유 번호 받아와야함 -> 추후 수정.
     
     let alertController = UIAlertController(title: "음료를 담으시겠습니까?", message:
         "", preferredStyle: .alert)
     
-    var isLiked = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ifLarge.isHidden = true
+         ifLarge.isHidden = true
         
         //샷 추가 가능하지 않으면 보이지 않게
         if coffeeForView?.shot == false {
@@ -111,7 +111,12 @@ class DetailViewController: UITableViewController {
         
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(dismissFunc), name: Notification.Name.NSExtensionHostWillResignActive, object: nil)
-  
+       
+        if coffeeForView!.isLiked {
+            likeBtn.setImage(UIImage(named: "like" ), for: UIControl.State.normal)
+        } else {
+        likeBtn.setImage(UIImage(named: "Unlike"), for: UIControl.State.normal)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -157,10 +162,10 @@ class DetailViewController: UITableViewController {
             price.isHidden = false
         }
         let count = num!
-        let price = cp!
+        let Lprice = cp!
         let shotCnt = sc!
         
-        let total = count * ((price + add) + (shotCnt * 500))
+        let total = count * ((Lprice + add) + (shotCnt * 500))
         resultPrice.text = "\(total)"
     }
     
@@ -224,13 +229,56 @@ class DetailViewController: UITableViewController {
         calculation()
     }
     @IBAction func onClikLikeBtn(_ sender: Any) {
+        while MyMenu.count-1 < caffeInfo{
+            MyMenu.append([])
+        }
+        print(coffeeForView!.isLiked)
         
-        if(isLiked) {
+        coffeeForView!.isLiked = !coffeeForView!.isLiked
+        
+        if(!coffeeForView!.isLiked) {
             likeBtn.setImage(UIImage(named: "Unlike"), for: UIControl.State.normal)
+            MyMenu[caffeInfo] = MyMenu[caffeInfo].filter({$0.coffee != coffeeForView?.coffee})
         } else {
             likeBtn.setImage(UIImage(named: "like"), for: UIControl.State.normal)
+            MyMenu[caffeInfo].append(coffeeForView!)
         }
         
-        isLiked = !isLiked
+        MenuSubscript = MenuSubscript.map({x -> Menu in
+            if x.coffee == coffeeForView!.coffee{
+                return coffeeForView!
+            }
+            else { return x }
+        })
+        
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier! == "Payment"{
+            var Ice_size : String
+            if let isz = ice.titleForSegment(at: self.ice.selectedSegmentIndex){
+                Ice_size = isz
+            }
+            else{
+                Ice_size = "보통"
+            }
+            var Drink_size : String
+            if let dsz = coffeeSize.titleForSegment(at: self.coffeeSize.selectedSegmentIndex){
+                Drink_size = dsz
+            }
+            else {
+                Drink_size = "small"
+            }
+            let Today = NSDate()
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy년 M월 d일"
+            let new_order : Order = Order(caffeInfo : caffeInfo, coffee : coffeeName.text!, price:
+                Int(resultPrice.text!)!, count: Int(amount.text!)!, size: Drink_size, ice: Ice_size, shot: Int(shot.text!)!, orderDate: dateFormatter.string(from : Today as Date))
+            let one_Order : cart = cart(selectedMenu : [new_order])
+           
+            
+            let destVC = segue.destination as! PayViewController
+            destVC.items = one_Order
+            
+        }
     }
 }
