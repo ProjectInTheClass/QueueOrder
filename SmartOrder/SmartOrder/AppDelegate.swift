@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyBootpay
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         BootpayAnalytics.sharedInstance.appLaunch(application_id: "59a4d328396fa607b9e75de6")
+        FirebaseApp.configure()
         return true
     }
     

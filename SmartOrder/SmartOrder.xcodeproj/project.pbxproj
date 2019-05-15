@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		57091A8D228B089000C82641 /* MypageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57091A8C228B089000C82641 /* MypageDetailViewController.swift */; };
+		57091A8F228B962F00C82641 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57091A8E228B962F00C82641 /* GoogleService-Info.plist */; };
 		57D9251B227DAF190044E96B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D9251A227DAF190044E96B /* LoginViewController.swift */; };
 		57D9251D227DAF6B0044E96B /* KakaoLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D9251C227DAF6B0044E96B /* KakaoLoginButton.swift */; };
 		57D92521227DAFAE0044E96B /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D92520227DAFAE0044E96B /* KakaoOpenSDK.framework */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		4FF2CD8C9BFE9FF5014DFBDE /* Pods-SmartOrder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartOrder.release.xcconfig"; path = "Target Support Files/Pods-SmartOrder/Pods-SmartOrder.release.xcconfig"; sourceTree = "<group>"; };
 		57091A8C228B089000C82641 /* MypageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageDetailViewController.swift; sourceTree = "<group>"; };
+		57091A8E228B962F00C82641 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		57D9251A227DAF190044E96B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		57D9251C227DAF6B0044E96B /* KakaoLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginButton.swift; sourceTree = "<group>"; };
 		57D92520227DAFAE0044E96B /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				B1CA3EB72283E3E6004A49A9 /* Pay */,
 				57D92519227DAF080044E96B /* Kakao */,
 				D67B8F8922685F3D009FEBD5 /* AppDelegate.swift */,
+				57091A8E228B962F00C82641 /* GoogleService-Info.plist */,
 				D6BC363C22855FE900ADF9EA /* Assets.xcassets */,
 				D6E96A0E2281E571009A3E04 /* CartViewController.swift */,
 				D6E96A102281F76A009A3E04 /* CartDetailViewController.swift */,
@@ -252,6 +255,7 @@
 			files = (
 				D6E96A0D227C4906009A3E04 /* PayStoryboard.storyboard in Resources */,
 				D67B8F9422685F3E009FEBD5 /* LaunchScreen.storyboard in Resources */,
+				57091A8F228B962F00C82641 /* GoogleService-Info.plist in Resources */,
 				D6E96A09227C4819009A3E04 /* MyPageStoryboard.storyboard in Resources */,
 				D68E3EB922843B5F004EE3EC /* Order.storyboard in Resources */,
 				D6E96A0B227C4891009A3E04 /* MyMenu.storyboard in Resources */,
@@ -294,9 +298,22 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SmartOrder/Pods-SmartOrder-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SmartOrder/Pods-SmartOrder-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SmartOrder/Pods-SmartOrder-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

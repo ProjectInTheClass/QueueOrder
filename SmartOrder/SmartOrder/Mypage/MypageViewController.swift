@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import Firebase
 
 class MypageViewController: UIViewController {
    
-    @IBOutlet weak var userEmailLabel: UILabel!
+    var ref : DatabaseReference!
+    
+    //@IBOutlet weak var userEmailLabel: UILabel!
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var btnKakao: KKakaoLoginButton!
@@ -28,12 +31,19 @@ class MypageViewController: UIViewController {
                     loginUserInfo = profile!
                     //userImage.image = UIImage(data: loginUserInfo.)
                     self.userNameLabel.text = loginUserInfo?.nickname
-                    self.userEmailLabel.text = loginUserInfo?.account?.email
+                    //self.userEmailLabel.text = loginUserInfo?.account?.email
                     
+                    // firebase 서버 데이터 저장
+                    self.ref = Database.database().reference()
+                self.ref.child("users").child((loginUserInfo?.id)!).setValue(["username": loginUserInfo?.nickname])
+                    
+                //self.ref.child("users").child((loginUserInfo?.id)!).setValue(userOrdered.orders, andPriority: 1)
                 })
                 
         })
     }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if let loginUserInfo = loginUserInfo{
@@ -48,7 +58,7 @@ class MypageViewController: UIViewController {
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if identifier == "NeedOrderedSegue" {
-            /*
+            
             guard let loginUserInfo = loginUserInfo else{
                 self.performSegue(withIdentifier: "NoLoginSegue", sender: nil)
                 return false
@@ -57,7 +67,7 @@ class MypageViewController: UIViewController {
             if userOrdered.orders.count == 0 {
                 self.performSegue(withIdentifier: "NoOrderedSegue", sender: nil)
                 return false
-            }*/
+            }
         }
         return true
     }
