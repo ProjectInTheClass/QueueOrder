@@ -11,6 +11,7 @@ import UIKit
 class MypageViewController: UIViewController {
    
     @IBOutlet weak var btnKakao: KKakaoLoginButton!
+    @IBOutlet weak var userNameLabel: UILabel!
     
     @IBAction func kakaoAction(_ sender: Any) {
         btnKakao.actionSigninButton(view: self
@@ -56,10 +57,7 @@ class MypageViewController: UIViewController {
                     if let profileImage = profile!.profileImageURL as? String{
                         print("Kakao Profile Image = \(profileImage)")
                     }
-                    print("READY FOR KAKAO PROFILE!!\n")
-                    
                     loginUserInfo = profile!
-                    print("loginUserInfo nickname = \(loginUserInfo?.nickname)")
                     
                     ////응급조치!!!!!////
                     
@@ -69,8 +67,39 @@ class MypageViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if let loginUserInfo = loginUserInfo{
+            //userImage.image = UIImage(data: loginUserInfo.)
+            userNameLabel.text = loginUserInfo.nickname
+        }
+        else{
+            userNameLabel.text = "로그인이 필요합니다"
+        }
         // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "NeedOrderedSegue" {
+            
+            guard let loginUserInfo = loginUserInfo else{
+                self.performSegue(withIdentifier: "NoLoginSegue", sender: nil)
+                return false
+            }
+            
+            if userOrdered.orders.count == 0 {
+                self.performSegue(withIdentifier: "NoOrderedSegue", sender: nil)
+                return false
+            }
+        }
+        return true
     }
     
 

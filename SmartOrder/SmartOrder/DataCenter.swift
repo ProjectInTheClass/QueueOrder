@@ -25,18 +25,12 @@ struct Menu {
     }
 }
 
-// 주문정보 받는 구조체.
-struct OrderInfo {
-    var menu : [Menu]
-    var priceSum : Int
-    var date : String
-}
-
 // 로그인된 유저 정보를 들고있는 프로퍼티
 var loginUserInfo : KOUserMe?
 
 // 유저가 주문했던 정보를 들고있는 프로퍼티
-var userOrdered : [OrderInfo]?
+var userOrdered : OrderList = OrderList(title: "Test", orders:[ordertest])
+var ordertest = Order(caffeInfo:caffe1.caffeInfo, coffee:"카페라떼", price:2500, count:1, size:"small", ice:"보통", shot:0, orderDate:"19.03.30")
 
 var moca = Menu(coffee:"카페모카", image:nil, price:3500, shot:true)
 var latte = Menu(coffee:"카페라떼", image:nil, price:2500, shot:true)

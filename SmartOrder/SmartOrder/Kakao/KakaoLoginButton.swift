@@ -62,10 +62,11 @@ class KKakaoLoginButton : KOLoginButton{
             session.close()
         }
         
+        print ("A")
         session.presentingViewController = view
         session.open(completionHandler: { (error) in
             session.presentingViewController = nil;
-            
+            print ("B")
             // 카카오 로그인 화면에서 벋어날 시 호출.
             if error != nil {
                 print("Kakao login Error Massage : \(error?.localizedDescription ?? "")")
@@ -80,7 +81,9 @@ class KKakaoLoginButton : KOLoginButton{
                         print("has no id")
                     }
                 })*/
+                
                KOSessionTask.userMeTask(completion: { (error, profile) in
+                print ("C")
                     let info: KOUserMe? = profile as? KOUserMe
                 
                     if  info == nil {
