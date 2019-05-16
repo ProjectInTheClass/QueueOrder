@@ -9,13 +9,19 @@
 import UIKit
 
 class MyMenuTableViewController: UITableViewController {
-    var FavoriteIndex : [Int] = []
-    var FavoriteMenu : [[Menu]] = MyMenu.filter({ !$0.isEmpty })
+    var CaffeName : [String] = []
+    var FavoriteMenu : [[Menu]] = []
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        for i in 0 ..< MyMenu.count{
+            if !MyMenu[i].isEmpty{
+                CaffeName.append(caffeList[i]!.name)
+                FavoriteMenu.append(MyMenu[i])
+            }
+        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -34,11 +40,12 @@ class MyMenuTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return FavoriteMenu[section].count
     }
-/*
+
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         //add header for each section
+       
+        return CaffeName[section]
     }
-*/
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteMenu", for: indexPath)

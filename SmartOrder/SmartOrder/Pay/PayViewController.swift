@@ -17,6 +17,7 @@ class PayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(items)
         goBuy()
         // Do any additional setup after loading the view.
     }
