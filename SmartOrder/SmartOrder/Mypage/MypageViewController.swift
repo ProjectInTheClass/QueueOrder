@@ -7,11 +7,31 @@
 //
 
 import UIKit
+import Firebase
+import GoogleSignIn
 
-class MypageViewController: UIViewController {
-   
+class MypageViewController: UIViewController, GIDSignInUIDelegate {
+    
+    let alertController = UIAlertController(title: "로그인이 필요한 항목입니다", message:
+        "", preferredStyle: .alert)
+    
+    var ref : DatabaseReference!
+    
     @IBOutlet weak var btnKakao: KKakaoLoginButton!
+    
+    @IBOutlet weak var btnGoogle: GIDSignInButton!
+    
+    @IBOutlet weak var userImage: UIImageView!
+    
     @IBOutlet weak var userNameLabel: UILabel!
+    
+    @IBAction func alertAction(_ sender: Any) {
+        guard let loginUserInfo = loginUserInfo else{
+            self.present(alertController, animated: true, completion: {})
+            return
+        }
+        self.performSegue(withIdentifier: "NeedOrderedSegue", sender: nil)
+    }
     
     @IBAction func kakaoAction(_ sender: Any) {
         btnKakao.actionSigninButton(view: self
@@ -20,18 +40,6 @@ class MypageViewController: UIViewController {
                     print("error : \(error!)")
                     return
                 }
-                print ("####################################")
-                print ("####################################")
-                print ("####################################")
-                print ("####################################")
-                print ("####################################")
-                print ("####################################")
-                print ("####################################")
-                print ("####################################")
-                print ("####################################")
-                print ("####################################")
-                print ("####################################")
-                
                 
                 guard profile != nil else {
                     print ("profile이 닐이다!!!!!")
@@ -59,26 +67,69 @@ class MypageViewController: UIViewController {
                     }
                     loginUserInfo = profile!
                     
-                    ////응급조치!!!!!////
+                    // firebase 서버 데이터 저장
+                    self.ref = Database.database().reference()
+                    self.ref.child("users").child((loginUserInfo?.id)!).setValue(["username": loginUserInfo?.nickname])
                     
+                    // firebase에 저장된 데이터 받아오기
+                    //let userID = Auth.auth().currentUser?.uid
+                    let userID = loginUserInfo?.id
+                    self.ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+                        // Get user value
+                        let value = snapshot.value as? NSDictionary
+                        let username = value?["username"] as? String ?? ""
+                        //let user = User(username: username)
+                        print("value : \(value)")
+                        print("username :" + username)
+                        // ...
+                    }) { (error) in
+                        print(error.localizedDescription)
+                    }
+                    if let loginUserInfo = loginUserInfo{
+                        //userImage.image = UIImage(data: loginUserInfo.)
+                        self.userNameLabel.text = loginUserInfo.nickname
+                    }
                 })
                 
         })
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Google Signin버튼
+        GIDSignIn.sharedInstance().uiDelegate = self
+        
+        // userInfo 초기화
+        if let loginUserInfo = loginUserInfo{
+            //userImage.image = UIImage(data: loginUserInfo.)
+           // let data = Data(contentsOf: loginUserInfo.profileImageURL)
+           // let profileimage = UIImage(data: data)
+            //userImage.image = profileimage
+            self.userNameLabel.text = loginUserInfo.nickname
+        } else {
+            self.userNameLabel.text = "로그인이 필요합니다"
+        }
+        
+        
+        // 주문내역 alert처리.
+        alertController.addAction(UIAlertAction(title: "확인", style: .default))
+        
+        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+        print ("ViewWillAppear")
+        /*
         if let loginUserInfo = loginUserInfo{
             //userImage.image = UIImage(data: loginUserInfo.)
             userNameLabel.text = loginUserInfo.nickname
         }
         else{
             userNameLabel.text = "로그인이 필요합니다"
-        }
-        // Do any additional setup after loading the view.
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
+        }*/
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -88,12 +139,6 @@ class MypageViewController: UIViewController {
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if identifier == "NeedOrderedSegue" {
-            
-            guard let loginUserInfo = loginUserInfo else{
-                self.performSegue(withIdentifier: "NoLoginSegue", sender: nil)
-                return false
-            }
-            
             if userOrdered.orders.count == 0 {
                 self.performSegue(withIdentifier: "NoOrderedSegue", sender: nil)
                 return false

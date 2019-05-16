@@ -7,6 +7,10 @@ target 'SmartOrder' do
   
   pod 'CryptoSwift' , '~> 0.15.0'
   pod 'SwiftyBootpay', '~> 2.1.18'
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
+  pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
 
   # Pods for SmartOrder
 

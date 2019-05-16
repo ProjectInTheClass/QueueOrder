@@ -54,7 +54,21 @@ class CaffePreViewController: UIViewController {
         
         
     }
-    
+   /*
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destvc = segue.destination as! MenuTableViewController //Your ViewController class
+        if let cell = sender as? UICollectionViewCell,
+            let indexPath = caffeForView?.caffeInfo{
+            let item = caffeList[indexPath]
+            destvc.menuForView = item?.menu
+            print("preview ...")
+            print(item?.menu)
+            print("preview 에서 넘기는 카페고유번호는 ...")
+            destvc.cafeInfo = item?.caffeInfo
+            print(item?.caffeInfo)
+        }
+    }
+    */
 
     /*
     // MARK: - Navigation
@@ -65,5 +79,29 @@ class CaffePreViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    /*
+    @IBAction func next(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "coffe", sender: self)
+    }
+    */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destvc = segue.destination as! MenuTableViewController //Your ViewController class
+        let indexPath:Int? = caffeForView?.caffeInfo
+            let item = caffeList[indexPath!] as! Caffe?
+            //destvc.menuForView = item?.menu
+            print("preview ...")
+            //print(item?.menu)
+            print("preview 에서 MenuTableViewController로 넘기는 카페고유번호는 ...")
+        destvc.cafeInfo = (item?.caffeInfo)!
+            print(destvc.cafeInfo)
+        
+    }
+    
+    @IBAction func noBtn(_ sender: Any) {
+        if let navController = self.navigationController {
+            navController.popViewController(animated: true)
+        }
+    }
 }

@@ -14,6 +14,7 @@
 		57E8D617228C0D55003EBC05 /* MypageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E8D616228C0D55003EBC05 /* MypageTableViewController.swift */; };
 		57E8D619228C0E1C003EBC05 /* MypageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E8D618228C0E1C003EBC05 /* MypageDetailViewController.swift */; };
 		57E8D61B228C11D4003EBC05 /* MypageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E8D61A228C11D4003EBC05 /* MypageTableViewCell.swift */; };
+		57E8D61D228C1F4B003EBC05 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57E8D61C228C1F4B003EBC05 /* GoogleService-Info.plist */; };
 		B1CA3EB62283E3B6004A49A9 /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CA3EB52283E3B6004A49A9 /* PayViewController.swift */; };
 		B1E72EA6228D066200485306 /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E72EA5228D066200485306 /* ConfirmViewController.swift */; };
 		B1E72EAA228D60F100485306 /* ConfirmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E72EA9228D60F100485306 /* ConfirmTableViewCell.swift */; };
@@ -56,6 +57,7 @@
 		57E8D616228C0D55003EBC05 /* MypageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageTableViewController.swift; sourceTree = "<group>"; };
 		57E8D618228C0E1C003EBC05 /* MypageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageDetailViewController.swift; sourceTree = "<group>"; };
 		57E8D61A228C11D4003EBC05 /* MypageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageTableViewCell.swift; sourceTree = "<group>"; };
+		57E8D61C228C1F4B003EBC05 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A0CFF9ED595C02FCDA07475B /* Pods_SmartOrder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartOrder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1CA3EB52283E3B6004A49A9 /* PayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
 		B1E72EA5228D066200485306 /* ConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 				B1ECAB752285690C006CC8FD /* Order */,
 				B1ECAB74228568E4006CC8FD /* MyMenu */,
 				D67B8F8922685F3D009FEBD5 /* AppDelegate.swift */,
+				57E8D61C228C1F4B003EBC05 /* GoogleService-Info.plist */,
 				D67B8F9B22685F8F009FEBD5 /* DataCenter.swift */,
 				D6E96A02227C100C009A3E04 /* HomeViewController.swift */,
 				D67B8F9222685F3E009FEBD5 /* LaunchScreen.storyboard */,
@@ -260,6 +263,7 @@
 				D67B8F8322685F3D009FEBD5 /* Frameworks */,
 				D67B8F8422685F3D009FEBD5 /* Resources */,
 				EE2E2CD3021BAC286C0411E6 /* [CP] Embed Pods Frameworks */,
+				601BB464DDDDDDEEFE68539A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -310,6 +314,7 @@
 			files = (
 				D6E96A0D227C4906009A3E04 /* PayStoryboard.storyboard in Resources */,
 				D67B8F9422685F3E009FEBD5 /* LaunchScreen.storyboard in Resources */,
+				57E8D61D228C1F4B003EBC05 /* GoogleService-Info.plist in Resources */,
 				D6E96A09227C4819009A3E04 /* MyPageStoryboard.storyboard in Resources */,
 				D68E3EB922843B5F004EE3EC /* Order.storyboard in Resources */,
 				D6E96A0B227C4891009A3E04 /* MyMenu.storyboard in Resources */,
@@ -322,6 +327,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		601BB464DDDDDDEEFE68539A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SmartOrder/Pods-SmartOrder-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SmartOrder/Pods-SmartOrder-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		802B669CBB8DD6BB6413194C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -355,6 +382,11 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SmartOrder/Pods-SmartOrder-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -362,6 +394,11 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

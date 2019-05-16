@@ -124,7 +124,7 @@
             </objects>
             <point key="canvasLocation" x="-10.144927536231885" y="1210.0446428571429"/>
         </scene>
-        <!--Item-->
+        <!--장바구니-->
         <scene sceneID="Gdm-r6-0Ls">
             <objects>
                 <viewController storyboardIdentifier="MyCart2" id="tFT-Su-2U1" customClass="CartOrderInfoViewController" customModule="SmartOrder" customModuleProvider="target" sceneMemberID="viewController">
@@ -141,7 +141,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="MyCart" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyCart" rowHeight="111" id="wqN-GH-qLJ" customClass="CartOrderCell" customModule="SmartOrder" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="MyCart" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="MyCart" rowHeight="111" id="wqN-GH-qLJ" customClass="CartOrderCell" customModule="SmartOrder" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="111"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wqN-GH-qLJ" id="Z3J-Go-tRF">
@@ -153,7 +153,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" image="checked30"/>
                                                     <connections>
-                                                        <action selector="selectBtnClick:" destination="wqN-GH-qLJ" eventType="touchUpInside" id="z7t-A4-e5v"/>
+                                                        <action selector="selectBtnClick:" destination="wqN-GH-qLJ" eventType="touchUpInside" id="Lc9-Jk-nu3"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uUz-pr-F6x">
@@ -188,8 +188,8 @@
                                                     <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uax-xV-fA9">
-                                                    <rect key="frame" x="14" y="11" width="42" height="21"/>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uha-z9-O8H">
+                                                    <rect key="frame" x="14" y="69" width="42" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -198,7 +198,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="cartNumber" destination="uax-xV-fA9" id="tze-eI-XDT"/>
+                                            <outlet property="cartNumber" destination="uha-z9-O8H" id="UYr-km-xCB"/>
                                             <outlet property="cnt" destination="uUz-pr-F6x" id="IBZ-zx-3d6"/>
                                             <outlet property="img" destination="KMT-lB-gBs" id="FqA-IJ-rD5"/>
                                             <outlet property="name" destination="9e1-Oc-coK" id="lJg-qX-uQi"/>
@@ -238,7 +238,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="BuF-Vh-Nbe"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="coffee_mini" id="IaZ-O5-SDW"/>
+                    <tabBarItem key="tabBarItem" title="장바구니" image="coffee_mini" id="IaZ-O5-SDW"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="cartOrderBtn" destination="jFY-bN-JUJ" id="HbJ-Tv-9aC"/>

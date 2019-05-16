@@ -44,18 +44,7 @@ class KKakaoLoginButton : KOLoginButton{
     ///   - view: 카카오 버튼 표시할 View
     ///   - handler: 카카오 정보 가져왔을 시 이벤트 핸들러
     func actionSigninButton(view: UIViewController, completion handler: @escaping (_ result: KOUserMe?, _ error: Error?)->()){
-        print ("**************SigninButton***************")
-                print ("**************SigninButton***************")
-                print ("**************SigninButton***************") 
-                print ("**************SigninButton***************")
-                print ("**************SigninButton***************")
-                print ("**************SigninButton***************")
-                print ("**************SigninButton***************")
-                print ("**************SigninButton***************")
-                print ("**************SigninButton***************")
-                print ("**************SigninButton***************")
-                print ("**************SigninButton***************")
-        
+       
         let session : KOSession = KOSession.shared()
         
         if session.isOpen(){
