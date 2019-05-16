@@ -295,11 +295,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wlP-K0-pRq">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo2" translatesAutoresizingMaskIntoConstraints="NO" id="W2t-SU-RBM">
                                 <rect key="frame" x="103" y="44" width="209" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="logo2"/>
-                            </button>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="white20" translatesAutoresizingMaskIntoConstraints="NO" id="VHz-vO-pyz">
                                 <rect key="frame" x="20" y="121" width="179" height="152"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -343,12 +342,12 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="bgr-wl-cIw"/>
                     </view>
-                    <navigationItem key="navigationItem" id="348-c1-AbI"/>
+                    <navigationItem key="navigationItem" id="yYr-a0-3m2"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dQ7-5A-yhL" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1762" y="44"/>
+            <point key="canvasLocation" x="1760.8695652173915" y="43.526785714285715"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="hHf-Tk-yke">

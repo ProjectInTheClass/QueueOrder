@@ -65,16 +65,7 @@ class MenuTableViewController: UITableViewController {
         } else{
             cell.imageView?.image = UIImage(named: "coffee_picture_white")
         }
-        /*
-        if indexPath.row > 4 {
-            cell.textLabel?.text = "d"
-            cell.detailTextLabel?.text = "Columbia"
-            
-        } else {
-            cell.textLabel?.text = "Robusta"
-            cell.detailTextLabel?.text = "vietnam"
-        }
-         */
+       
         return cell
     }
  
@@ -127,10 +118,13 @@ class MenuTableViewController: UITableViewController {
         let selectedCoffee = coffeeSubscript[self.tableView.indexPathForSelectedRow.row] // 여기서 self : tableView Controller
         destVC.coffeeForview = selectedCoffee
  */
-        let destVC = segue.destination as! DetailViewController
-        let selectedCoffee = MenuSubscript[self.tableView.indexPathForSelectedRow!.row]
-        destVC.coffeeForView = selectedCoffee
-        destVC.caffeInfo = cafeInfo
+        let dVC = segue.destination as! DetailViewController
+        let selectedCoffee = (caffeList[cafeInfo])?.menu[self.tableView.indexPathForSelectedRow!.row]
+        dVC.coffeeForView = selectedCoffee
+        dVC.caffeInfo = cafeInfo
+        dVC.coffeeNum = self.tableView.indexPathForSelectedRow!.row
+        print("선택한 메뉴 .. ")
+        print(selectedCoffee)
     }
      
      //segue : 연결된 선 ? 통로 ? main.stroyboard 에서 control 누르고 연결햇을때 나타나는 선.

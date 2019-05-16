@@ -103,6 +103,7 @@ class MyMenuTableViewController: UITableViewController {
         let destVC = segue.destination as! DetailViewController
         let selectedCoffee = FavoriteMenu[self.tableView.indexPathForSelectedRow!.section][self.tableView.indexPathForSelectedRow!.row]
         destVC.coffeeForView = selectedCoffee
+        destVC.caffeInfo = self.tableView.indexPathForSelectedRow!.section
     }
     
 

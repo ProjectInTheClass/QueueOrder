@@ -45,7 +45,7 @@ var iceteaP = Menu(coffee:"아이스티복숭아", image:nil, price:3000, shot:f
 
 var MenuSubscript:[Menu] = [moca,latte,iceLatte,macchiatos,iceAmericano,Americano,chocolate,iceChocolate,iceteaL,iceteaP]
 
-var MenuSubscript2:[Menu] = [moca,latte,iceLatte]
+var MenuSubscript2:[Menu] = [iceChocolate,iceteaL,iceteaP]
 
 var MenuSubscript3:[Menu] = [iceAmericano,Americano,iceteaL,iceteaP]
 
