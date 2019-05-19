@@ -45,39 +45,29 @@ class KKakaoLoginButton : KOLoginButton{
     ///   - handler: 카카오 정보 가져왔을 시 이벤트 핸들러
     func actionSigninButton(view: UIViewController, completion handler: @escaping (_ result: KOUserMe?, _ error: Error?)->()){
        
+        //세션 불러오기
         let session : KOSession = KOSession.shared()
         
+        //이미 열려있는 경우.
         if session.isOpen(){
             session.close()
         }
         
-        print ("A")
+        //카카오 로그인 화면 불러오기.
         session.presentingViewController = view
         session.open(completionHandler: { (error) in
             session.presentingViewController = nil;
-            print ("B")
             // 카카오 로그인 화면에서 벋어날 시 호출.
             if error != nil {
                 print("Kakao login Error Massage : \(error?.localizedDescription ?? "")")
             }else if session.isOpen(){
-                /*
-                KOSessionTask.userMeTask(completion: { (error, me) in
-                    if let error = error as NSError? {
-                        //UIAlertController.showMessage(error.description)
-                    } else if let me = me as KOUserMe? {
-                        print("id: \(String(describing: me.id))")
-                    } else {
-                        print("has no id")
-                    }
-                })*/
-                
+            
+                //user me task = 사용자 전체 정보 얻어오기
                KOSessionTask.userMeTask(completion: { (error, profile) in
-                print ("C")
                     let info: KOUserMe? = profile as? KOUserMe
                 
                     if  info == nil {
                         handler(nil, error)
-                                        print ("info가 닐이다!!!!")
                         return
                     }
                     

@@ -15,6 +15,9 @@ import GoogleSignIn
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
+    public var mypageViewController: MypageViewController!
+    var databaseRef: DatabaseReference!
+    
     var window: UIWindow?
     
     
@@ -28,6 +31,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         //google login
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
+        
+        //db정보 가져오기
+        self.databaseRef = Database.database().reference()
+        
+        mypageViewController = UIStoryboard(name: "MyPageStoryboard", bundle: nil).instantiateViewController(withIdentifier: "MypageVCID" ) as! MypageViewController
         
         return true
     }
@@ -85,30 +93,74 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     // 여기서는 로그인 시도 시 구현된 ViewController에서 실행하도록 하였습니다.
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
         
+        mypageViewController.sign(signIn!, didSignInFor: user, withError: error)
+    }
+    
+    @nonobjc func signIn(signIn: GIDSignIn!, didDisconnectWithUser user:GIDGoogleUser!,
+                         withError error: NSError!) {
+        // Perform any operations when the user disconnects from app here.
+        // ...
         
-        
-        if let err = error {
-            print("LoginViewController:error = \(err)")
-            return
-        }
-        
-        guard let authentication = user.authentication else { return }
-        
-        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
-        
-        Auth.auth().signIn(with: credential) { (user, error) in
-            // ...
-            if let err = error {
-                print("LoginViewController:    error = \(err)")
-                return
-            }
-            
-            // todo...
-            // 넘어오는 값을 기준으로 회원가입을 진행하면 됩니다.
-            
+        if let clintID = signIn.clientID {
+            print("AppDelegate:signIn:clintID : \(clintID)")
         }
     }
     
-
+    // 데이터베이스 참조 가져오기
+    func getDatabaseRef() -> DatabaseReference! {
+        guard databaseRef != nil else {
+            return nil
+        }
+        
+        return databaseRef
+    }
+    
+    // 유저 등록
+    func updateGoogleDB(uid: String?, userInfo: UserInfo){
+        if let databaseRef =  getDatabaseRef() {
+            let databaseRootChild = databaseRef.child("user_profiles").child(uid!)
+            databaseRootChild.observeSingleEvent(of: .value, with: { (snapshot) in
+                
+                let snapshot = snapshot.value as? NSDictionary
+                
+                if(snapshot == nil){
+                    
+                    databaseRootChild.child("name").setValue(userInfo.name)
+                    databaseRootChild.child("id").setValue(userInfo.id)
+                    databaseRootChild.child("join_address").setValue(userInfo.joinAddress)
+                }
+            })
+        }
+    }
+    
+    func addUserProfile(uid: String?, userInfo: UserInfo){
+        //ID 존재여부 체크
+        if let databaseRef =  getDatabaseRef() {
+            
+            let targetId = userInfo.id
+            let loginAddress = userInfo.joinAddress
+            
+            let databaseRootChild = databaseRef.child("user_profiles")
+            databaseRootChild.observeSingleEvent(of: .value, with: { (snapshot) in
+                
+                let snapshot = snapshot.value as? NSDictionary
+                
+                if(snapshot != nil){
+                    
+                    let existIds = snapshot?.allValues as! [NSDictionary]
+                    for info in existIds{
+                        if let joinAddress = info.value(forKey: "join_address") as? String{
+                            if let id = info.value(forKey: "id") as? String{
+                                if id == targetId && loginAddress == joinAddress{
+                                    return
+                                }
+                            }
+                        }
+                    }
+                }
+                self.updateGoogleDB(uid: uid, userInfo: userInfo)
+            })
+        }
+    }
 }
 
