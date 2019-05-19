@@ -277,7 +277,7 @@ class DetailViewController: UITableViewController {
             let one_Order : cart = cart(selectedMenu : [new_order])
            
             
-            let destVC = segue.destination as! PayViewController
+            let destVC = segue.destination as! ConfirmViewController
             destVC.items = one_Order
             
         }

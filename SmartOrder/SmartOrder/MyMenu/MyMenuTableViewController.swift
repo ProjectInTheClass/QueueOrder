@@ -15,38 +15,34 @@ class MyMenuTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //사용자가 선호메뉴로 등록한 메뉴만을 저장한 caffemenu와 해당 menu를 판매하는 caffe의 이름 저장
         for i in 0 ..< MyMenu.count{
             if !MyMenu[i].isEmpty{
                 CaffeName.append(caffeList[i]!.name)
                 FavoriteMenu.append(MyMenu[i])
             }
         }
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
-
+    // 사용자가 좋아하는 메뉴를 판매하는 카페의 수만큼 section 생성
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return FavoriteMenu.count
     }
-
+    //각 카페별 사용자가 선호메뉴로 지정한 메뉴의 수 만큼 row 생성
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return FavoriteMenu[section].count
     }
-
+    //각 카페별 header를 설정해 어떤 카페의 메뉴인지 알 수 있도록 함.
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         //add header for each section
        
         return CaffeName[section]
     }
     
+    //cell의 data 설정
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteMenu", for: indexPath)
         
@@ -63,46 +59,7 @@ class MyMenuTableViewController: UITableViewController {
         return cell
     }
     
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    //사용자가 한 cell 선택시 해당 cell의 메뉴의 option선택창으로 이동
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
@@ -110,6 +67,7 @@ class MyMenuTableViewController: UITableViewController {
         let destVC = segue.destination as! DetailViewController
         let selectedCoffee = FavoriteMenu[self.tableView.indexPathForSelectedRow!.section][self.tableView.indexPathForSelectedRow!.row]
         destVC.coffeeForView = selectedCoffee
+        destVC.caffeInfo = self.tableView.indexPathForSelectedRow!.section
     }
     
 

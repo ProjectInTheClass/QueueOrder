@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--My Menu Table View Controller-->
+        <!--선호메뉴-->
         <scene sceneID="AHz-bs-OlQ">
             <objects>
-                <tableViewController storyboardIdentifier="MyMenu" id="wq8-Tb-Xaw" customClass="MyMenuTableViewController" customModule="SmartOrder" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MyMenu" title="선호메뉴" id="wq8-Tb-Xaw" customClass="MyMenuTableViewController" customModule="SmartOrder" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="4YI-SX-ga5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -55,7 +55,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X3s-3C-8B6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="386.95652173913044" y="89.732142857142847"/>
+            <point key="canvasLocation" x="1297.1014492753625" y="89.732142857142847"/>
         </scene>
         <!--Order-->
         <scene sceneID="MXl-tN-cmh">
@@ -63,7 +63,7 @@
                 <viewControllerPlaceholder storyboardName="Order" referencedIdentifier="Order" id="Ybi-1i-2zr" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gAE-d4-bbR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1111" y="-6"/>
+            <point key="canvasLocation" x="2021.0144927536232" y="-6.0267857142857144"/>
         </scene>
     </scenes>
 </document>
