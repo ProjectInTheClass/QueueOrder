@@ -25,7 +25,34 @@ struct Menu {
     }
 }
 
-// 로그인된 유저 정보를 들고있는 프로퍼티
+struct UserInfo {
+    var name: String
+    var id: String
+    var joinAddress: String
+    var orderList : OrderList
+    //var likeList : //타입이랑 변수 선언 후 초기화메서드까지 작성 부탁드립니다.
+    //var stampList
+    //var couponList
+    
+    init(name: String?, id: String?, joinAddress: String?){
+        self.name = name!
+        self.id = id!
+        self.joinAddress = joinAddress!
+        self.orderList = OrderList(title: "User", orders:[])
+    }
+    
+    init(){
+        self.name = ""
+        self.id = ""
+        self.joinAddress  = ""
+        self.orderList = OrderList(title: "User", orders:[])
+    }
+}
+
+// 유저 정보 최종 저장 프로퍼티
+var currentUserInfo : UserInfo = UserInfo()
+
+// 로그인된 유저 정보(카카오)를 들고있는 프로퍼티
 var loginUserInfo : KOUserMe?
 
 // 유저가 주문했던 정보를 들고있는 프로퍼티
@@ -45,7 +72,7 @@ var iceteaP = Menu(coffee:"아이스티복숭아", image:nil, price:3000, shot:f
 
 var MenuSubscript:[Menu] = [moca,latte,iceLatte,macchiatos,iceAmericano,Americano,chocolate,iceChocolate,iceteaL,iceteaP]
 
-var MenuSubscript2:[Menu] = [moca,latte,iceLatte]
+var MenuSubscript2:[Menu] = [iceChocolate,iceteaL,iceteaP]
 
 var MenuSubscript3:[Menu] = [iceAmericano,Americano,iceteaL,iceteaP]
 

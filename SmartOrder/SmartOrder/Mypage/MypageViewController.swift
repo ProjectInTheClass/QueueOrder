@@ -15,7 +15,7 @@ class MypageViewController: UIViewController, GIDSignInUIDelegate {
     let alertController = UIAlertController(title: "로그인이 필요한 항목입니다", message:
         "", preferredStyle: .alert)
     
-    var ref : DatabaseReference!
+   // var ref : DatabaseReference!
     
     @IBOutlet weak var btnKakao: KKakaoLoginButton!
     
@@ -23,7 +23,9 @@ class MypageViewController: UIViewController, GIDSignInUIDelegate {
     
     @IBOutlet weak var userImage: UIImageView!
     
+    @IBOutlet weak var joinAddress: UILabel!
     @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var userEmailLabel: UILabel!
     
     @IBAction func alertAction(_ sender: Any) {
         guard let loginUserInfo = loginUserInfo else{
@@ -42,39 +44,38 @@ class MypageViewController: UIViewController, GIDSignInUIDelegate {
                 }
                 
                 guard profile != nil else {
-                    print ("profile이 닐이다!!!!!")
                     return
                 }
+                
                 DispatchQueue.main.async(execute: { () -> Void in
-                    print("SUCCESS GET PROFILE!!\n")
-                    if let email = profile?.account as? String{
-                        print("Kakao email = \(email)")
+                    
+                    guard (self.getAppDelegate()) != nil else{
+                        return
                     }
-                    if let nickName = profile!.nickname as? String{
-                        print("Kakao Nick Name = \(nickName)")
+                    //Google DB Update
+                    var info = UserInfo()
+                    info.joinAddress = "kakao"
+                    
+                    if let nickName = profile!.nickname{
+                        print("kakao nickname : \(nickName)")
+                        info.name = "\(nickName)"
                     }
-                    // @property hasSignedUp
-                    //* @abstract 현재 로그인한 사용자가 앱에 연결(signup)되어 있는지 여부
-                    //* @discussion 사용자관리 설정에서 자동연결 옵션을 off한 앱에서만 사용되는 값입니다. 자동연결의 //기본값은 on이며 이 경우 값이 null로 반환되고 이미 연결되어 있음을 의미합니다.
-                    if let hassignedUp = profile?.hasSignedUp{
-                        print("Kakao hassignedup = \(hassignedUp.rawValue)")
+                    
+                    if let value = profile!.id{
+                        print("kakao id : \(value)\r\n")
+                        info.id =  "\(value)"
                     }
-                    if let iD = profile?.id as? String{
-                        print("Kakao ID num = \(iD)")
-                    }
-                    if let profileImage = profile!.profileImageURL as? String{
-                        print("Kakao Profile Image = \(profileImage)")
-                    }
+                    
+                    
                     loginUserInfo = profile!
                     
-                    // firebase 서버 데이터 저장
-                    self.ref = Database.database().reference()
-                    self.ref.child("users").child((loginUserInfo?.id)!).setValue(["username": loginUserInfo?.nickname])
+                    let appDelegate = self.getAppDelegate()
+                    appDelegate?.addUserProfile(uid: appDelegate?.getDatabaseRef().childByAutoId().key, userInfo: info)
                     
                     // firebase에 저장된 데이터 받아오기
                     //let userID = Auth.auth().currentUser?.uid
                     let userID = loginUserInfo?.id
-                    self.ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+                    appDelegate?.databaseRef.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
                         // Get user value
                         let value = snapshot.value as? NSDictionary
                         let username = value?["username"] as? String ?? ""
@@ -88,40 +89,60 @@ class MypageViewController: UIViewController, GIDSignInUIDelegate {
                     if let loginUserInfo = loginUserInfo{
                         //userImage.image = UIImage(data: loginUserInfo.)
                         self.userNameLabel.text = loginUserInfo.nickname
+                        self.userImage.image = UIImage(named : "Kakao")
+                        self.joinAddress.text = "Kakao"
+                        self.joinAddress.isHidden = false
+                        
+                        //self.userEmailLabel.isHidden = false
+                        currentUserInfo.id = loginUserInfo.id!
                     }
                 })
                 
         })
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Google Signin버튼
-        GIDSignIn.sharedInstance().uiDelegate = self
-        
-        // userInfo 초기화
+    func setUserInfo() {
         if let loginUserInfo = loginUserInfo{
             //userImage.image = UIImage(data: loginUserInfo.)
-           // let data = Data(contentsOf: loginUserInfo.profileImageURL)
-           // let profileimage = UIImage(data: data)
-            //userImage.image = profileimage
             self.userNameLabel.text = loginUserInfo.nickname
-        } else {
-            self.userNameLabel.text = "로그인이 필요합니다"
+            self.userImage.image = UIImage(named : "Kakao")
+            self.joinAddress.text = "Kakao"
+            self.joinAddress.isHidden = false
+            
+            //self.userEmailLabel.isHidden = false
+            currentUserInfo.id = loginUserInfo.id!
+        } else{
+            
         }
-        
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        print ("ViewDidLoad")
+        // Google Signin버튼
+        GIDSignIn.sharedInstance().uiDelegate = self
         
         // 주문내역 alert처리.
         alertController.addAction(UIAlertAction(title: "확인", style: .default))
         
+        userNameLabel.text = "로그인이 필요합니다"
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        // userInfo 초기화
+        print ("viewDidAppear")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
         print ("ViewWillAppear")
+        if currentUserInfo.id == "" {
+            joinAddress.isHidden = true
+            userEmailLabel.isHidden = true
+        } else {
+            btnKakao.isHidden = true
+            btnGoogle.isHidden = true
+        }
         /*
         if let loginUserInfo = loginUserInfo{
             //userImage.image = UIImage(data: loginUserInfo.)
@@ -147,7 +168,46 @@ class MypageViewController: UIViewController, GIDSignInUIDelegate {
         return true
     }
     
+    /// AppDelegate 가져오기
+    ///
+    /// - Returns: AppDelegate
+    func getAppDelegate() -> AppDelegate!{
+        return UIApplication.shared.delegate as! AppDelegate
+    }
+    
+    /// 구글 로그인 정보 가져옵니다.
+    ///
+    /// - Parameters:
+    ///   - signIn: SignIn 된 정보를 가져옵니다
+    ///   - user: 구글 로그인 정보를 가져옵니다
+    ///   - error: 에러 메시지를 가져옵니다
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
 
+        
+        if let err = error {
+            print("LoginViewController:error = \(err)")
+            return
+        }
+        
+        guard let authentication = user.authentication else { return }
+        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                       accessToken: authentication.accessToken)
+        Auth.auth().signIn(with: credential) { (user, error) in
+            // ...
+            if let err = error {
+                print("LoginViewController:error = \(err)")
+                return
+            }
+            
+            
+            if let appDelegate = self.getAppDelegate(){
+                
+                let info = UserInfo(name: user?.user.displayName, id: user?.user.providerID, joinAddress: "google")
+                
+                appDelegate.addUserProfile(uid: (user?.user.uid)!, userInfo: info)
+            }
+        }
+    }
     /*
     // MARK: - Navigation
 

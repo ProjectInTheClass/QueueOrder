@@ -28,6 +28,7 @@ class DetailViewController: UITableViewController {
     
     var coffeeForView:Menu?
     var caffeInfo:Int? //카페 고유 번호
+    var coffeeNum:Int?
     
     let alertController = UIAlertController(title: "음료를 담으시겠습니까?", message:
         "", preferredStyle: .alert)
@@ -116,11 +117,15 @@ class DetailViewController: UITableViewController {
         if coffeeForView!.isLiked {
             likeBtn.setImage(UIImage(named: "like" ), for: UIControl.State.normal)
         } else {
+            print("선호메뉴가 아님")
+            print(coffeeForView?.coffee)
         likeBtn.setImage(UIImage(named: "Unlike"), for: UIControl.State.normal)
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        print("넙겨받은 고유번호")
+        print(caffeInfo)
         print(coffeeForView?.coffee)
         
     }
@@ -235,8 +240,10 @@ class DetailViewController: UITableViewController {
         }
         print(coffeeForView!.isLiked)
         
-        coffeeForView!.isLiked = !coffeeForView!.isLiked
         
+        coffeeForView!.isLiked = !coffeeForView!.isLiked
+   
+       
         if(!coffeeForView!.isLiked) {
             likeBtn.setImage(UIImage(named: "Unlike"), for: UIControl.State.normal)
             MyMenu[caffeInfo!] = MyMenu[caffeInfo!].filter({$0.coffee != coffeeForView?.coffee})
@@ -244,6 +251,9 @@ class DetailViewController: UITableViewController {
             likeBtn.setImage(UIImage(named: "like"), for: UIControl.State.normal)
             MyMenu[caffeInfo!].append(coffeeForView!)
         }
+        
+        print("선호메뉴")
+        print(MyMenu)
         
         MenuSubscript = MenuSubscript.map({x -> Menu in
             if x.coffee == coffeeForView!.coffee{
