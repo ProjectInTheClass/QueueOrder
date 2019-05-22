@@ -180,4 +180,15 @@ class CartOrderInfoViewController: UIViewController, UITableViewDataSource, UITa
      }
      */
     
+    @IBAction func selected(_ sender: Any) {
+        
+        var totalPrice:Int = 0
+        for item in 0..<cartSelectedArray.count {
+            if cartSelectedArray[item] == 1 {
+                totalPrice += myCart.selectedMenu[item].price
+            }
+        }
+        totalOrderPrice.text = "\(totalPrice) 원"
+        
+    }
 }

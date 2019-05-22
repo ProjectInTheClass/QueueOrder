@@ -154,6 +154,7 @@
                                                     <state key="normal" image="checked30"/>
                                                     <connections>
                                                         <action selector="selectBtnClick:" destination="wqN-GH-qLJ" eventType="touchUpInside" id="Lc9-Jk-nu3"/>
+                                                        <action selector="selected:" destination="tFT-Su-2U1" eventType="touchUpInside" id="auR-o5-eMO"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uUz-pr-F6x">
