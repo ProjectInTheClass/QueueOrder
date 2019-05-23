@@ -25,7 +25,9 @@ class MypageViewController: UIViewController, GIDSignInUIDelegate {
     
     @IBOutlet weak var joinAddress: UILabel!
     @IBOutlet weak var userNameLabel: UILabel!
-    @IBOutlet weak var userEmailLabel: UILabel!
+    @IBOutlet weak var label1: UILabel!
+    @IBOutlet weak var label2: UILabel!
+    @IBOutlet weak var label3: UILabel!
     
     @IBAction func alertAction(_ sender: Any) {
         guard let loginUserInfo = loginUserInfo else{
@@ -92,7 +94,10 @@ class MypageViewController: UIViewController, GIDSignInUIDelegate {
                         self.userImage.image = UIImage(named : "Kakao")
                         self.joinAddress.text = "Kakao"
                         self.joinAddress.isHidden = false
-                        
+                        self.userNameLabel.isHidden = false
+                        self.label1.isHidden = true
+                        self.label2.isHidden = true
+                        self.label3.isHidden = true
                         //self.userEmailLabel.isHidden = false
                         currentUserInfo.id = loginUserInfo.id!
                     }
@@ -123,7 +128,8 @@ class MypageViewController: UIViewController, GIDSignInUIDelegate {
         // 주문내역 alert처리.
         alertController.addAction(UIAlertAction(title: "확인", style: .default))
         
-        userNameLabel.text = "로그인이 필요합니다"
+        userNameLabel.isHidden = true
+        joinAddress.isHidden = true
         // Do any additional setup after loading the view.
     }
     
@@ -136,13 +142,6 @@ class MypageViewController: UIViewController, GIDSignInUIDelegate {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
         print ("ViewWillAppear")
-        if currentUserInfo.id == "" {
-            joinAddress.isHidden = true
-            userEmailLabel.isHidden = true
-        } else {
-            btnKakao.isHidden = true
-            btnGoogle.isHidden = true
-        }
         /*
         if let loginUserInfo = loginUserInfo{
             //userImage.image = UIImage(data: loginUserInfo.)
