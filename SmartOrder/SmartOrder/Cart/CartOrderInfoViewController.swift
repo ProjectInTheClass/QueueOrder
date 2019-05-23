@@ -14,6 +14,16 @@ class CartOrderInfoViewController: UIViewController, UITableViewDataSource, UITa
     @IBOutlet weak var totalOrderPrice: UILabel!
     @IBOutlet weak var cartOrderBtn: UIButton!
     
+    //총 금액 계산하는 함수
+    func totalPrice(){
+        var totalPrice:Int = 0
+        for item in 0..<cartSelectedArray.count {
+            if cartSelectedArray[item] == 1 {
+                totalPrice += myCart.selectedMenu[item].price
+            }
+        }
+        totalOrderPrice.text = "\(totalPrice) 원"
+    }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         //데이터 삭제
@@ -22,6 +32,8 @@ class CartOrderInfoViewController: UIViewController, UITableViewDataSource, UITa
         //셀 삭제
         tableView.deleteRows(at: [indexPath], with: .automatic)
         
+        //장바구니 테이블 셀 삭제 시 총 금액 계산하는 함수 call
+        totalPrice()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -146,13 +158,8 @@ class CartOrderInfoViewController: UIViewController, UITableViewDataSource, UITa
         for _ in 0..<myCart.selectedMenu.count {
             print("counting ... ")
         }
-        var totalPrice:Int = 0
-        for item in 0..<cartSelectedArray.count {
-            if cartSelectedArray[item] == 1 {
-                totalPrice += myCart.selectedMenu[item].price
-            }
-        }
-        totalOrderPrice.text = "\(totalPrice) 원"
+        
+        totalPrice()
         
         
         print(cartSelectedArray)
@@ -181,14 +188,7 @@ class CartOrderInfoViewController: UIViewController, UITableViewDataSource, UITa
      */
     
     @IBAction func selected(_ sender: Any) {
-        
-        var totalPrice:Int = 0
-        for item in 0..<cartSelectedArray.count {
-            if cartSelectedArray[item] == 1 {
-                totalPrice += myCart.selectedMenu[item].price
-            }
-        }
-        totalOrderPrice.text = "\(totalPrice) 원"
-        
+        //장바구니 테이블 셀 체크박스 선택/해제 시 총 금액 계산하는 함수 call
+         totalPrice()
     }
 }
