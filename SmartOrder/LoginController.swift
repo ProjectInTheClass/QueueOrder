@@ -9,8 +9,10 @@ import UIKit
 import Firebase
 import GoogleSignIn
 
-class LoginController: UIViewController, GIDSignInUIDelegate {
-    
+class LoginController: UIViewController, GIDSignInUIDelegate, SignUpDelegate {
+    func signupCompleted() {
+        self.dismiss(animated: true, completion: nil)
+    }
     //Mark : - Properties
     let alertController = UIAlertController(title: "형식이 올바르지 않습니다.\n 이메일 형식, 비밀번호 6자리 이상", message:
         "", preferredStyle: .alert)
@@ -156,7 +158,9 @@ class LoginController: UIViewController, GIDSignInUIDelegate {
     }
     
     @objc func handleShowSignUp() {
-        self.present(SignUpController(), animated: true, completion: nil)
+        let signUpVC = SignUpController();
+        signUpVC.delegate = self
+        self.present(signUpVC, animated: true, completion: nil)
     }
     
     // MARK: - API

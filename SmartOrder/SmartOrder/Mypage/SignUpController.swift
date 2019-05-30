@@ -10,7 +10,13 @@ import UIKit
 import Firebase
 import GoogleSignIn
 
+protocol SignUpDelegate {
+    func signupCompleted()
+}
+
 class SignUpController: UIViewController, GIDSignInUIDelegate {
+    
+    var delegate: SignUpDelegate?
     
     // MARK: - Properties
     let alertController = UIAlertController(title: "형식이 올바르지 않습니다.\n 이메일 형식, 비밀번호 6자리 이상", message:
@@ -185,7 +191,8 @@ class SignUpController: UIViewController, GIDSignInUIDelegate {
                 
                 print ("successful signup")
 //                self.dismiss(animated: true, completion: {
-                    self.presentingViewController?.dismiss(animated: true, completion: nil)
+                self.dismiss(animated: true, completion: nil)
+                self.delegate?.signupCompleted()
 //                })
                 /*
                 guard let navController = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController else { return }
