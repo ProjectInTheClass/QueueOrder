@@ -18,6 +18,7 @@
 		B1CA3EB62283E3B6004A49A9 /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CA3EB52283E3B6004A49A9 /* PayViewController.swift */; };
 		B1E72EA6228D066200485306 /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E72EA5228D066200485306 /* ConfirmViewController.swift */; };
 		B1E9EE27228A6FCD00E44687 /* MyMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E9EE26228A6FCD00E44687 /* MyMenuTableViewController.swift */; };
+		D63AE79E229F178D0043985B /* StampsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63AE79D229F178D0043985B /* StampsCollectionViewCell.swift */; };
 		D670AEAB228AC7D70034D94D /* CartOrderInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D670AEAA228AC7D70034D94D /* CartOrderInfoCell.swift */; };
 		D670AEAD228B3B5A0034D94D /* CartOrderInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D670AEAC228B3B5A0034D94D /* CartOrderInfoViewController.swift */; };
 		D670AEAF228B3DB40034D94D /* CartOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D670AEAE228B3DB40034D94D /* CartOrderCell.swift */; };
@@ -62,6 +63,7 @@
 		B1E72EA5228D066200485306 /* ConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
 		B1E9EE26228A6FCD00E44687 /* MyMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMenuTableViewController.swift; sourceTree = "<group>"; };
 		BE24E8A5F404F852E5CDA5F2 /* Pods-SmartOrder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartOrder.debug.xcconfig"; path = "Target Support Files/Pods-SmartOrder/Pods-SmartOrder.debug.xcconfig"; sourceTree = "<group>"; };
+		D63AE79D229F178D0043985B /* StampsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampsCollectionViewCell.swift; sourceTree = "<group>"; };
 		D670AEAA228AC7D70034D94D /* CartOrderInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartOrderInfoCell.swift; sourceTree = "<group>"; };
 		D670AEAC228B3B5A0034D94D /* CartOrderInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartOrderInfoViewController.swift; sourceTree = "<group>"; };
 		D670AEAE228B3DB40034D94D /* CartOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartOrderCell.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 			children = (
 				D6E96A06227C2246009A3E04 /* CouponViewController.swift */,
 				D6E96A04227C133A009A3E04 /* StampViewController.swift */,
+				D63AE79D229F178D0043985B /* StampsCollectionViewCell.swift */,
 			);
 			path = Stamp;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 			files = (
 				D670AEAB228AC7D70034D94D /* CartOrderInfoCell.swift in Sources */,
 				57D9251B227DAF190044E96B /* LoginViewController.swift in Sources */,
+				D63AE79E229F178D0043985B /* StampsCollectionViewCell.swift in Sources */,
 				B1CA3EB62283E3B6004A49A9 /* PayViewController.swift in Sources */,
 				B1E72EA6228D066200485306 /* ConfirmViewController.swift in Sources */,
 				D6E96A07227C2246009A3E04 /* CouponViewController.swift in Sources */,

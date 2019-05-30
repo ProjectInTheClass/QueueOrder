@@ -11,6 +11,7 @@ import UIKit
 class CaffePreViewController: UIViewController {
 
     var caffeForView:Caffe?
+    var item:String?
     
     @IBOutlet weak var storePhoto: UIImageView!
     @IBOutlet weak var storeLocation: UILabel!
@@ -19,7 +20,7 @@ class CaffePreViewController: UIViewController {
     @IBOutlet weak var yesBtn: UIButton!
     
     override func viewDidLoad() {
-        
+
         super.viewDidLoad()
         print(caffeForView?.logo)
         print(caffeForView?.photo)
@@ -87,21 +88,35 @@ class CaffePreViewController: UIViewController {
     */
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destvc = segue.destination as! MenuTableViewController //Your ViewController class
-        let indexPath:Int? = caffeForView?.caffeInfo
-            let item = caffeList[indexPath!] as! Caffe?
-            //destvc.menuForView = item?.menu
-            print("preview ...")
-            //print(item?.menu)
-            print("preview 에서 MenuTableViewController로 넘기는 카페고유번호는 ...")
-        destvc.cafeInfo = (item?.caffeInfo)!
-            print(destvc.cafeInfo)
+        
+         let destvc = segue.destination as! MenuTableViewController //Your ViewController class
+         let indexPath:Int? = caffeForView?.caffeInfo
+         let item = caffeList[indexPath!] as! Caffe?
+         //destvc.menuForView = item?.menu
+         print("preview ...")
+         //print(item?.menu)
+         print("preview 에서 MenuTableViewController로 넘기는 카페고유번호는 ...")
+         destvc.cafeInfo = (item?.caffeInfo)!
+         print(destvc.cafeInfo)
         
     }
     
     @IBAction func noBtn(_ sender: Any) {
         if let navController = self.navigationController {
             navController.popViewController(animated: true)
+        }
+    }
+    
+    @IBAction func toBack(segue:UIStoryboardSegue) {
+        
+        if item == "back" {
+            if let navController = self.navigationController {
+               // navController.popViewController(animated: true)
+                //navController.popToViewController( CaffeCollectionViewController, animated: true)
+               
+                let viewControllers : [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
+                self.navigationController?.popToViewController(viewControllers[viewControllers.count - 3 ], animated: true)
+            }
         }
     }
 }

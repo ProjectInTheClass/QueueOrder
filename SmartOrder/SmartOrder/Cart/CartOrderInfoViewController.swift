@@ -11,8 +11,11 @@ import UIKit
 class CartOrderInfoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var cartTable: UITableView!
+    @IBOutlet weak var totTitle: UILabel!
     @IBOutlet weak var totalOrderPrice: UILabel!
     @IBOutlet weak var cartOrderBtn: UIButton!
+    @IBOutlet weak var noItem: UILabel!
+    @IBOutlet weak var img: UIButton!
     
     //총 금액 계산하는 함수
     func totalPrice(){
@@ -58,15 +61,21 @@ class CartOrderInfoViewController: UIViewController, UITableViewDataSource, UITa
        
         //cell 갯수
     }
-   /*
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0 {
-            return 111
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        //add header for each section
+        if myCart.selectedMenu.count == 0 {
+            return "장바구니가 비어있습니다."
         } else {
-            return 111
+            return caffeList[myCart.selectedMenu[0].caffeInfo]?.name
         }
     }
-    */
+    
+   
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 101
+    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
             let cell = tableView.dequeueReusableCell(withIdentifier: "MyCart", for: indexPath) as! CartOrderCell
@@ -79,6 +88,7 @@ class CartOrderInfoViewController: UIViewController, UITableViewDataSource, UITa
                 cell.img?.image = UIImage(named: "coffee_picture_blue")
             } else{
                 cell.img?.image = UIImage(named: "coffee_picture_white")
+                cell.backgroundColor = UIColor(red:239/255, green:239/255, blue:244/255, alpha: 1.0)
             }
             
             cell.option.text = "사이즈\(CartForTheRow.size) / 얼음\(CartForTheRow.ice) / 샷추가\(CartForTheRow.shot)"
@@ -150,10 +160,12 @@ class CartOrderInfoViewController: UIViewController, UITableViewDataSource, UITa
         super.viewDidLoad()
         self.cartTable.rowHeight = 111
         
-        cartOrderBtn.backgroundColor = UIColor(red: 98/255, green: 92/255, blue: 89/255, alpha: 1.0)
+        //cartOrderBtn.backgroundColor = UIColor(red: 98/255, green: 92/255, blue: 89/255, alpha: 1.0)
+        cartOrderBtn.backgroundColor = UIColor(red: 72/255, green: 127/255, blue: 247/255, alpha: 1.0)
+        
         cartOrderBtn.layer.cornerRadius = 5
         cartOrderBtn.layer.borderWidth = 1
-        cartOrderBtn.layer.borderColor = UIColor(red: 98/255, green: 92/255, blue: 89/255, alpha: 1.0).cgColor
+        cartOrderBtn.layer.borderColor = UIColor(red: 72/255, green: 127/255, blue: 247/255, alpha: 1.0).cgColor
         
         for _ in 0..<myCart.selectedMenu.count {
             print("counting ... ")
@@ -165,6 +177,21 @@ class CartOrderInfoViewController: UIViewController, UITableViewDataSource, UITa
         print(cartSelectedArray)
         cartTable.reloadData()
        
+        if myCart.selectedMenu.count == 0 {
+            cartTable.isHidden = true
+            totTitle.isHidden = true
+            totalOrderPrice.isHidden = true
+            cartOrderBtn.isHidden = true
+            img.isHidden = false
+            noItem.isHidden = false
+        } else {
+            img.isHidden = true
+            noItem.isHidden = true
+            cartTable.isHidden = false
+            totTitle.isHidden = false
+            totalOrderPrice.isHidden = false
+            cartOrderBtn.isHidden = false
+        }
        
         // Do any additional setup after loading the view.
     }

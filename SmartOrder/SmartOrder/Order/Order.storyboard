@@ -288,4 +288,5 @@
     <resources>
         <image name="Unlike" width="150" height="134"/>
     </resources>
+    <color key="tintColor" red="0.28061923384666443" green="0.49708396196365356" blue="0.96871286630630493" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>

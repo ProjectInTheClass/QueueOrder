@@ -10,6 +10,9 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var item1: UIImageView!
+    @IBOutlet weak var item2: UIImageView!
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
@@ -21,6 +24,14 @@ class HomeViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+    
+        item1.layer.borderWidth = 3
+        item1.layer.borderColor = UIColor.white.cgColor
+        item1.layer.cornerRadius = 3
+        item2.layer.borderWidth = 3
+        item2.layer.borderColor = UIColor.white.cgColor
+        item2.layer.cornerRadius = 3
+        
         super.viewDidLoad()
        
        //navigation bar back 글씨 지우기
