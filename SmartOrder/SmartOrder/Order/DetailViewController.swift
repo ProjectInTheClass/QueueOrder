@@ -52,62 +52,68 @@ class DetailViewController: UITableViewController {
         coffeeName.text = coffeeForView?.coffee
         price.text = "\(str!) 원"
         resultPrice.text = "\(str!)"
-        
-        alertController.addAction(UIAlertAction(title: "취소", style: .cancel))
+        shotTit.text = "샷 추가(+ \(caffeList[caffeInfo!]!.shotPrice)원)"
+        alertController.addAction(UIAlertAction(title: "취소", style: .destructive))
         alertController.addAction(UIAlertAction(title: "확인", style: .default)
         {
             UIAlertAction in
-            /*
-             let storyBoard = self.storyboard!
-             let cartView = storyBoard.instantiateViewController(withIdentifier: "cartView") as! CartViewController
-             cartView.delegate = self
-             
-             self.present(cartView, animated: true, completion: nil)
-             */
             
-            /*
-            let storyboard: UIStoryboard = UIStoryboard(name: "Cart", bundle: nil)
-            let nextView = storyboard.instantiateViewController(withIdentifier: "MyCart") as! CartViewController
-            self.present(nextView, animated: true, completion: nil)
-            */
-            var coffeeName = ""
-            if let coffee = self.coffeeForView?.coffee {
-                coffeeName = coffee
+            if myCart.selectedMenu.count > 0 && myCart.selectedMenu[0].caffeInfo != self.caffeInfo {
+                let confirmAlert = UIAlertController(title: "음료를 담을 수 없습니다.", message: "장바구니에 다른 카페의 음료가 있습니다.", preferredStyle: .alert)
+                self.present(confirmAlert, animated: true, completion: nil)
+                
+                let when = DispatchTime.now() + 2
+                DispatchQueue.main.asyncAfter(deadline: when){
+                    confirmAlert.dismiss(animated: true, completion: nil)
+                }
+            } else {
+                var coffeeName = ""
+                if let coffee = self.coffeeForView?.coffee {
+                    coffeeName = coffee
+                }
+                
+                var cost:Int? = 0
+                if let res = self.resultPrice?.text {
+                    cost = Int(res)
+                }
+                
+                var coffeePrice:Int = 0
+                if let cp = self.coffeeForView?.price {
+                    coffeePrice = cp
+                }
+                
+                var amount:Int? = 0
+                if let am = self.amount?.text {
+                    amount = Int(am)
+                }
+                
+                var cofeeSize = "Small"
+                if let sz = self.coffeeSize.titleForSegment(at: self.coffeeSize.selectedSegmentIndex) {
+                    cofeeSize = sz
+                }
+                var iceSize = "보통"
+                if let ice = self.ice.titleForSegment(at: self.ice.selectedSegmentIndex) {
+                    iceSize = ice
+                }
+                
+                var shotInt:Int? = 0
+                if let sht = self.shot?.text {
+                    shotInt = Int(sht)
+                }
+                
+                let addCart = Order(caffeInfo: self.caffeInfo!, coffee: coffeeName, price: cost!,
+                                    count: amount!, size: cofeeSize, ice: iceSize, shot: shotInt!, orderDate: "")
+                myCart.selectedMenu.append(addCart)
+                cartSelectedArray.append(1)
+                
+                let confirmAlert = UIAlertController(title: "", message: "음료가 담겼습니다.", preferredStyle: .alert)
+                self.present(confirmAlert, animated: true, completion: nil)
+                
+                let when = DispatchTime.now() + 1
+                DispatchQueue.main.asyncAfter(deadline: when){
+                    confirmAlert.dismiss(animated: true, completion: nil)
+                }
             }
-            
-            var cost:Int? = 0
-            if let res = self.resultPrice?.text {
-                cost = Int(res)
-            }
-            
-            var coffeePrice:Int = 0
-            if let cp = self.coffeeForView?.price {
-                coffeePrice = cp
-            }
-            
-            var amount:Int? = 0
-            if let am = self.amount?.text {
-                amount = Int(am)
-            }
-            
-            var cofeeSize = "Small"
-            if let sz = self.coffeeSize.titleForSegment(at: self.coffeeSize.selectedSegmentIndex) {
-                cofeeSize = sz
-            }
-            var iceSize = "보통"
-            if let ice = self.ice.titleForSegment(at: self.ice.selectedSegmentIndex) {
-                iceSize = ice
-            }
-            
-            var shotInt:Int? = 0
-            if let sht = self.shot?.text {
-                shotInt = Int(sht)
-            }
-            
-            let addCart = Order(caffeInfo: self.caffeInfo!, coffee: coffeeName, price: cost!,
-                                count: amount!, size: cofeeSize, ice: iceSize, shot: shotInt!, orderDate: "")
-            myCart.selectedMenu.append(addCart)
-            cartSelectedArray.append(1)
         })
         
         
@@ -119,12 +125,12 @@ class DetailViewController: UITableViewController {
         } else {
             print("선호메뉴가 아님")
             print(coffeeForView?.coffee)
-        likeBtn.setImage(UIImage(named: "Unlike"), for: UIControl.State.normal)
+            likeBtn.setImage(UIImage(named: "Unlike"), for: UIControl.State.normal)
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        print("넙겨받은 고유번호")
+        print("넘겨받은 고유번호")
         print(caffeInfo)
         print(coffeeForView?.coffee)
         
@@ -170,8 +176,8 @@ class DetailViewController: UITableViewController {
         let count = num!
         let Lprice = cp!
         let shotCnt = sc!
-        
-        let total = count * ((Lprice + add) + (shotCnt * 500))
+        let shotAddPrice = caffeList[caffeInfo!]!.shotPrice
+        let total = count * ((Lprice + add) + (shotCnt * shotAddPrice))
         resultPrice.text = "\(total)"
     }
     
@@ -240,27 +246,33 @@ class DetailViewController: UITableViewController {
         }
         print(coffeeForView!.isLiked)
         
-        
-        coffeeForView!.isLiked = !coffeeForView!.isLiked
+        var liked:Bool?
+        if let tmpLike = caffeList[caffeInfo!]?.menu[coffeeForView!.menuId]?.isLiked { caffeList[caffeInfo!]?.menu[coffeeForView!.menuId]?.isLiked = !tmpLike
+            liked = !tmpLike
+        }
+        //coffeeForView!.isLiked = !coffeeForView!.isLiked
    
-       
-        if(!coffeeForView!.isLiked) {
+        if(!liked!) {
             likeBtn.setImage(UIImage(named: "Unlike"), for: UIControl.State.normal)
             MyMenu[caffeInfo!] = MyMenu[caffeInfo!].filter({$0.coffee != coffeeForView?.coffee})
         } else {
             likeBtn.setImage(UIImage(named: "like"), for: UIControl.State.normal)
-            MyMenu[caffeInfo!].append(coffeeForView!)
+            //MyMenu[caffeInfo!].append(coffeeForView!)
+            MyMenu[caffeInfo!].append((caffeList[caffeInfo!]?.menu[coffeeForView!.menuId])!)
         }
         
         print("선호메뉴")
         print(MyMenu)
         
+        /* 주석 부탁드립니다.
         MenuSubscript = MenuSubscript.map({x -> Menu in
             if x.coffee == coffeeForView!.coffee{
                 return coffeeForView!
             }
             else { return x }
         })
+        */
+      
         
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -12,15 +12,16 @@ private let reuseIdentifier = "Cell"
 
 class CaffeCollectionViewController: UICollectionViewController {
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
+        //self.view.backgroundColor = UIColor(red: 229/255, green: 229/255, blue: 229/255, alpha: 1.0)
         
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        
        
         // Do any additional setup after loading the view.
     }
@@ -39,12 +40,14 @@ class CaffeCollectionViewController: UICollectionViewController {
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
+        print("카페 section")
         return 1
     }
     
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
+        print("카페 row")
         return caffeList.count
     }
     
@@ -65,16 +68,21 @@ class CaffeCollectionViewController: UICollectionViewController {
         cell.layer.borderWidth = 1
         cell.layer.borderColor = UIColor.white.cgColor
         cell.layer.backgroundColor = UIColor.white.cgColor
+        
         return cell
     }
+  
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destvc = segue.destination as! CaffePreViewController //Your ViewController class
-        if let cell = sender as? UICollectionViewCell,
-            let indexPath = self.collectionView.indexPath(for: cell){
-            let item = caffeList[indexPath.row]
-            destvc.caffeForView = item
-        }
+
+    
+            let destvc = segue.destination as! CaffePreViewController //Your ViewController class
+            if let cell = sender as? UICollectionViewCell,
+                let indexPath = self.collectionView.indexPath(for: cell){
+                let item = caffeList[indexPath.row]
+                destvc.caffeForView = item
+            }
+        
     }
     
     // MARK: UICollectionViewDelegate
@@ -108,4 +116,6 @@ class CaffeCollectionViewController: UICollectionViewController {
      }
      */
     
+   
+  
 }

@@ -25,6 +25,9 @@ class MenuTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+      
+        
     }
 
     // MARK: - Table view data source
@@ -56,6 +59,8 @@ class MenuTableViewController: UITableViewController {
          */
         //수정중-ㅎㅇ
         //let MenuForTheRow:Menu = MenuSubscript[indexPath.row]
+        print(caffeList[cafeInfo])
+        
         let MenuForTheRow:Menu = ((caffeList[cafeInfo])?.menu[indexPath.row])!
         cell.textLabel?.text = MenuForTheRow.coffee
         cell.detailTextLabel?.text = String(MenuForTheRow.price)+"원"
@@ -118,13 +123,22 @@ class MenuTableViewController: UITableViewController {
         let selectedCoffee = coffeeSubscript[self.tableView.indexPathForSelectedRow.row] // 여기서 self : tableView Controller
         destVC.coffeeForview = selectedCoffee
  */
-        let dVC = segue.destination as! DetailViewController
-        let selectedCoffee = (caffeList[cafeInfo])?.menu[self.tableView.indexPathForSelectedRow!.row]
-        dVC.coffeeForView = selectedCoffee
-        dVC.caffeInfo = cafeInfo
-        dVC.coffeeNum = self.tableView.indexPathForSelectedRow!.row
-        print("선택한 메뉴 .. ")
-        print(selectedCoffee)
+        
+        if segue.identifier == "toBack" {
+            let dVC = segue.destination as! CaffePreViewController
+            dVC.item = "back"
+        } else {
+            
+            let dVC = segue.destination as! DetailViewController
+            let selectedCoffee = (caffeList[cafeInfo])?.menu[self.tableView.indexPathForSelectedRow!.row]
+            dVC.coffeeForView = selectedCoffee
+            dVC.caffeInfo = cafeInfo
+            dVC.coffeeNum = self.tableView.indexPathForSelectedRow!.row
+            print("선택한 메뉴 .. ")
+            print(selectedCoffee)
+            
+        
+        }
     }
      
      //segue : 연결된 선 ? 통로 ? main.stroyboard 에서 control 누르고 연결햇을때 나타나는 선.

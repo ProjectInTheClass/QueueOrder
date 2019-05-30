@@ -12,6 +12,9 @@ class MyMenuTableViewController: UITableViewController {
     var CaffeName : [String] = []
     var FavoriteMenu : [[Menu]] = []
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 65
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

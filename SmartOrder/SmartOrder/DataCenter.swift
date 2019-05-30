@@ -10,17 +10,19 @@ import Foundation
 
 //메뉴
 struct Menu {
+    var menuId:Int
     var coffee:String //음료이름
     var image:String? //음료사진
     var price:Int //음료가격
     var shot : Bool
     var isLiked : Bool
     
-    init(coffee: String, image: String?, price : Int, shot : Bool){
+    init(menuId:Int, coffee: String, image: String?, price : Int, shot : Bool){
         self.coffee = coffee
         self.image = image
         self.price = price
         self.shot = shot
+        self.menuId = menuId
         isLiked = false
     }
 }
@@ -59,22 +61,33 @@ var loginUserInfo : KOUserMe?
 var userOrdered : OrderList = OrderList(title: "Test", orders:[ordertest])
 var ordertest = Order(caffeInfo:caffe1.caffeInfo, coffee:"카페라떼", price:2500, count:1, size:"small", ice:"보통", shot:0, orderDate:"19.03.30")
 
-var moca = Menu(coffee:"카페모카", image:nil, price:3500, shot:true)
-var latte = Menu(coffee:"카페라떼", image:nil, price:2500, shot:true)
-var iceLatte = Menu(coffee:"아이스카페라떼", image:nil, price:2500, shot:true)
-var macchiatos = Menu(coffee:"카라멜마끼야또", image:nil, price:3500, shot:true)
-var iceAmericano = Menu(coffee:"아메리카노", image:nil, price:1800, shot:true)
-var Americano = Menu(coffee:"아이스아메리카노", image:nil, price:1500, shot:true)
-var chocolate = Menu(coffee:"핫초코", image:nil, price:3000, shot:false)
-var iceChocolate = Menu(coffee:"아이스초코", image:nil, price:3500, shot:false)
-var iceteaL = Menu(coffee:"아이스티레몬", image:nil, price:3000, shot:false)
-var iceteaP = Menu(coffee:"아이스티복숭아", image:nil, price:3000, shot:false)
+var moca = Menu(menuId:0, coffee:"카페모카", image:nil, price:3500, shot:true)
+var latte = Menu(menuId:1, coffee:"카페라떼", image:nil, price:2500, shot:true)
+var iceLatte = Menu(menuId:2, coffee:"아이스카페라떼", image:nil, price:2500, shot:true)
+var macchiatos = Menu(menuId:3,coffee:"카라멜마끼야또", image:nil, price:3500, shot:true)
+var iceAmericano = Menu(menuId:4,coffee:"아메리카노", image:nil, price:1800, shot:true)
+var Americano = Menu(menuId:5,coffee:"아이스아메리카노", image:nil, price:1500, shot:true)
+var chocolate = Menu(menuId:6,coffee:"핫초코", image:nil, price:3000, shot:false)
+var iceChocolate = Menu(menuId:7,coffee:"아이스초코", image:nil, price:3500, shot:false)
+var iceteaL = Menu(menuId:8, coffee:"아이스티레몬", image:nil, price:3000, shot:false)
+var iceteaP = Menu(menuId:9, coffee:"아이스티복숭아", image:nil, price:3000, shot:false)
 
-var MenuSubscript:[Menu] = [moca,latte,iceLatte,macchiatos,iceAmericano,Americano,chocolate,iceChocolate,iceteaL,iceteaP]
+var MenuSubscript:[Int:Menu] = [moca.menuId:moca,latte.menuId:latte,iceLatte.menuId:iceLatte,macchiatos.menuId:macchiatos,iceAmericano.menuId:iceAmericano,Americano.menuId:Americano,chocolate.menuId:chocolate,iceChocolate.menuId:iceChocolate,iceteaL.menuId:iceteaL,iceteaP.menuId:iceteaP]
 
-var MenuSubscript2:[Menu] = [iceChocolate,iceteaL,iceteaP]
+var macchiatos2 = Menu(menuId:0,coffee:"카라멜마끼야또", image:nil, price:3500, shot:true)
+var iceAmericano2 = Menu(menuId:1,coffee:"아메리카노", image:nil, price:1800, shot:true)
+var Americano2 = Menu(menuId:2,coffee:"아이스아메리카노", image:nil, price:1500, shot:true)
 
-var MenuSubscript3:[Menu] = [iceAmericano,Americano,iceteaL,iceteaP]
+var MenuSubscript2:[Int:Menu] = [macchiatos2.menuId:macchiatos2,iceAmericano2.menuId:iceAmericano2,Americano2.menuId:Americano2]
+
+var iceAmericano3 = Menu(menuId:0,coffee:"아메리카노", image:nil, price:1800, shot:true)
+var Americano3 = Menu(menuId:1,coffee:"아이스아메리카노", image:nil, price:1500, shot:true)
+var chocolate3 = Menu(menuId:2,coffee:"핫초코", image:nil, price:3000, shot:false)
+var iceChocolate3 = Menu(menuId:3,coffee:"아이스초코", image:nil, price:3500, shot:false)
+var iceteaL3 = Menu(menuId:4, coffee:"아이스티레몬", image:nil, price:3000, shot:false)
+var iceteaP3 = Menu(menuId:5, coffee:"아이스티복숭아", image:nil, price:3000, shot:false)
+
+var MenuSubscript3:[Int:Menu] = [iceAmericano3.menuId:iceAmericano3,Americano3.menuId:Americano3,chocolate3.menuId:chocolate3,iceChocolate3.menuId:iceChocolate3,iceteaL3.menuId:iceteaL3,iceteaP3.menuId:iceteaP3]
 
 //카페
 struct Caffe {
@@ -83,15 +96,16 @@ struct Caffe {
     var photo:String? //카페 내부 사진
     var name:String //카페이름
     var location:String //카페위치
-    var menu:[Menu]
+    var menu:[Int:Menu]
     var stampToCoupon:Int
     var sizeUp:Int //Large 추가 금액
+    var shotPrice:Int // shot 추가 금액
 }
 
-var caffe1 = Caffe(caffeInfo:0, logo:"queue", photo:"queueIn", name:"카페큐", location:"한양대학교 산학기술관(IT/BT관) 3층 로비", menu:MenuSubscript, stampToCoupon:10, sizeUp:500)
+var caffe1 = Caffe(caffeInfo:0, logo:"queue", photo:"queueIn", name:"카페큐", location:"한양대학교 산학기술관(IT/BT관) 3층 로비", menu:MenuSubscript, stampToCoupon:10, sizeUp:500, shotPrice:500)
 
-var caffe2 = Caffe(caffeInfo:1, logo: "tiamo", photo:nil, name:"TIAMO MK점", location:"한양대학교 노천", menu:MenuSubscript2, stampToCoupon:10, sizeUp:500)
-var caffe3 = Caffe(caffeInfo:2, logo: nil, photo:nil, name:"TIAMO 학술정보관점", location:"제2공학관", menu:MenuSubscript3, stampToCoupon:10, sizeUp:500)
+var caffe2 = Caffe(caffeInfo:1, logo: "tiamo", photo:"tiamo_photo.JPG", name:"TIAMO MK점", location:"한양대학교 노천", menu:MenuSubscript2, stampToCoupon:10, sizeUp:500, shotPrice:400)
+var caffe3 = Caffe(caffeInfo:2, logo: "tiamo", photo:nil, name:"TIAMO 학술정보관점", location:"제2공학관", menu:MenuSubscript3, stampToCoupon:10, sizeUp:500, shotPrice:400)
 
 var caffeList:[Int:Caffe] = [caffe1.caffeInfo:caffe1, caffe2.caffeInfo:caffe2, caffe3.caffeInfo:caffe3]
 
@@ -108,8 +122,8 @@ struct Order {
     var orderDate:String
 }
 
-var order1 = Order(caffeInfo:caffe1.caffeInfo, coffee:"카페라떼", price:2500, count:1, size:"small", ice:"보통", shot:0, orderDate:"2019-03-30")
-var order2 = Order(caffeInfo:caffe1.caffeInfo, coffee:"아이스아메리카노", price:1800, count:1, size:"small", ice:"보통", shot:0, orderDate:"2019-04-30")
+var order1 = Order(caffeInfo:caffe1.caffeInfo, coffee:"카페라떼", price:2500, count:1, size:"small", ice:"보통", shot:0, orderDate:"2019.03.30")
+var order2 = Order(caffeInfo:caffe1.caffeInfo, coffee:"아이스아메리카노", price:1800, count:1, size:"small", ice:"보통", shot:0, orderDate:"2019.04.30")
 
 
 //담기
@@ -203,10 +217,19 @@ struct Coupon {
     var issueDate:String //쿠폰 발급 일자
     var expireDate:String //쿠폰 만료 일자
     var use:Bool //쿠폰 사용 여부 (ex. 사용 true, 미사용 false)
+    
+    init(name: String, caffe: String, price: Int, issueDate: String, expireDate: String, use:Bool){
+        self.name = name
+        self.caffe = caffe
+        self.price = price
+        self.issueDate = issueDate
+        self.expireDate = expireDate
+        self.use = use
+    }
 }
 
-var coupon1 = Coupon(name:"아이스아메리카노", caffe:"QUEUE", price:1800, issueDate:"2019-04-01", expireDate:"2019-05-01", use:true)
-var coupon2 = Coupon(name:"2000원 할인쿠폰", caffe:"QUEUE", price:2000, issueDate:"2019-04-03", expireDate:"2019-05-03", use:false)
+var coupon1 = Coupon(name:"아이스아메리카노", caffe:"QUEUE", price:1800, issueDate:"2019.04.01", expireDate:"2019.05.01", use:true)
+var coupon2 = Coupon(name:"2000원 할인쿠폰", caffe:"QUEUE", price:2000, issueDate:"2019.04.03", expireDate:"2019.05.03", use:false)
 
 //쿠폰 리스트
 struct CouponList {

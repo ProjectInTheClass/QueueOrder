@@ -96,6 +96,7 @@ class CartViewController: UITableViewController {
             }
             cell.orderPrice.text = "\(totalPrice) 원"
             
+            
             cell.backgroundColor = UIColor(red: 229/255, green: 229/255, blue: 229/255, alpha: 1.0)
            // cell.backgroundColor = UIColor(red: 98/255, green: 92/255, blue: 89/255, alpha: 0.2)
             return cell
