@@ -41,7 +41,7 @@ class MypageTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCustomCell", for: indexPath) as! MypageTableViewCell
         let order = userOrdered.orders[indexPath.row]
         // Configure the cell...
-
+        
         return cell
     }
     

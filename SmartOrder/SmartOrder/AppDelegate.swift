@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         //db정보 가져오기
         self.databaseRef = Database.database().reference()
-        
+ 
         mypageViewController = UIStoryboard(name: "MyPageStoryboard", bundle: nil).instantiateViewController(withIdentifier: "MypageVCID" ) as! MypageViewController
         
         return true
