@@ -93,7 +93,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     // 여기서는 로그인 시도 시 구현된 ViewController에서 실행하도록 하였습니다.
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
         
-        mypageViewController.sign(signIn!, didSignInFor: user, withError: error)
+        //LoginController.sign(signIn!, didSignInFor: user, withError: error)
     }
     
     @nonobjc func signIn(signIn: GIDSignIn!, didDisconnectWithUser user:GIDGoogleUser!,

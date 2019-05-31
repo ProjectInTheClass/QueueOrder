@@ -10,6 +10,7 @@ import Firebase
 import GoogleSignIn
 
 class LoginController: UIViewController, GIDSignInUIDelegate, SignUpDelegate {
+    
     func signupCompleted() {
         self.dismiss(animated: true, completion: nil)
     }
@@ -143,6 +144,7 @@ class LoginController: UIViewController, GIDSignInUIDelegate, SignUpDelegate {
     
     @objc func handleGoogleSignIn() {
         GIDSignIn.sharedInstance()?.signIn()
+        loadUserData()
     }
     
     @objc func handleClose() {
@@ -262,7 +264,7 @@ extension LoginController: GIDSignInDelegate {
             Database.database().reference().child("users").child(uid).updateChildValues(values, withCompletionBlock: { (error, ref) in
                 
                 self.loadUserData()
-                self.navigationController?.popToRootViewController(animated: true)
+                self.handleClose()
                 /*
                 guard let navController = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController else { return }
                 guard let controller = navController.viewControllers[0] as? HomeController else { return }
