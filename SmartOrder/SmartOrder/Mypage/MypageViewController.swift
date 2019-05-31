@@ -12,10 +12,10 @@ import GoogleSignIn
 
 class MypageViewController: UIViewController, GIDSignInUIDelegate {
     
-    let alertController = UIAlertController(title: "로그인이 필요한 항목입니다", message:
+    let alertController = UIAlertController(title: "로그인이 필요한 항목입니다.", message:
         "", preferredStyle: .alert)
-    
-   // var ref : DatabaseReference!
+    let logoutalertController = UIAlertController(title: "로그아웃 하시겠습니까?", message:
+        "", preferredStyle: .alert)
     
     @IBOutlet weak var btnKakao: KKakaoLoginButton!
     
@@ -25,18 +25,30 @@ class MypageViewController: UIViewController, GIDSignInUIDelegate {
     
     @IBOutlet weak var joinAddress: UILabel!
     @IBOutlet weak var userNameLabel: UILabel!
-    @IBOutlet weak var label1: UILabel!
     @IBOutlet weak var label2: UILabel!
-    @IBOutlet weak var label3: UILabel!
     
-    @IBAction func alertAction(_ sender: Any) {
-        guard let loginUserInfo = loginUserInfo else{
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var orderInfoButton: UIButton!
+    
+    // 로그아웃 버튼 눌렀을때 동작 처리.
+    @IBAction func pressLogout(_ sender: Any) {
+        self.present(logoutalertController, animated: true, completion: {})
+    }
+    
+    // 주문내역 버튼 눌렀을때 동작 처리.
+    @IBAction func pressOrderButton(_ sender: Any) {
+        // 로그인 되어있지 않으면
+        guard let currentUser = Auth.auth().currentUser else{
+            //alert 발생 (취소, login)
             self.present(alertController, animated: true, completion: {})
             return
         }
+        // 로그인 되어있으면 (NeedOrderSegue를 통해 테이블뷰로 이동)
         self.performSegue(withIdentifier: "NeedOrderedSegue", sender: nil)
     }
     
+    // 카카오 버튼 눌렀을때 동작 처리
     @IBAction func kakaoAction(_ sender: Any) {
         btnKakao.actionSigninButton(view: self
             , completion: {(profile, error) -> Void in
@@ -95,9 +107,7 @@ class MypageViewController: UIViewController, GIDSignInUIDelegate {
                         self.joinAddress.text = "Kakao"
                         self.joinAddress.isHidden = false
                         self.userNameLabel.isHidden = false
-                        self.label1.isHidden = true
                         self.label2.isHidden = true
-                        self.label3.isHidden = true
                         //self.userEmailLabel.isHidden = false
                         currentUserInfo.id = loginUserInfo.id!
                     }
@@ -105,36 +115,37 @@ class MypageViewController: UIViewController, GIDSignInUIDelegate {
                 
         })
     }
-    func setUserInfo() {
-        if let loginUserInfo = loginUserInfo{
-            //userImage.image = UIImage(data: loginUserInfo.)
-            self.userNameLabel.text = loginUserInfo.nickname
-            self.userImage.image = UIImage(named : "Kakao")
-            self.joinAddress.text = "Kakao"
-            self.joinAddress.isHidden = false
-            
-            //self.userEmailLabel.isHidden = false
-            currentUserInfo.id = loginUserInfo.id!
-        } else{
-            
-        }
-    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         print ("ViewDidLoad")
         // Google Signin버튼
-        GIDSignIn.sharedInstance().uiDelegate = self
+        //GIDSignIn.sharedInstance().uiDelegate = self
         
         // 주문내역 alert처리.
-        alertController.addAction(UIAlertAction(title: "확인", style: .default))
+        alertController.addAction(UIAlertAction(title: "취소", style: .cancel))
+        alertController.addAction(UIAlertAction(title: "로그인", style: .default)
+            {UIAlertAction in
+            self.performSegue(withIdentifier: "LoginVCSegue", sender: nil)
+            })
         
-        userNameLabel.isHidden = true
-        joinAddress.isHidden = true
-        // Do any additional setup after loading the view.
+        // 로그아웃 alert처리
+        logoutalertController.addAction(UIAlertAction(title: "취소", style: .cancel))
+        logoutalertController.addAction(UIAlertAction(title: "확인", style: .default){
+            UIAlertAction in
+            do{
+            try Auth.auth().signOut()
+                self.authenticationUser()
+            } catch let error {
+                print("fail to signout")
+            }
+            })
+        
+        setDefault()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        // userInfo 초기화
         print ("viewDidAppear")
     }
     
@@ -142,14 +153,7 @@ class MypageViewController: UIViewController, GIDSignInUIDelegate {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
         print ("ViewWillAppear")
-        /*
-        if let loginUserInfo = loginUserInfo{
-            //userImage.image = UIImage(data: loginUserInfo.)
-            userNameLabel.text = loginUserInfo.nickname
-        }
-        else{
-            userNameLabel.text = "로그인이 필요합니다"
-        }*/
+        authenticationUser()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -157,6 +161,7 @@ class MypageViewController: UIViewController, GIDSignInUIDelegate {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
+    // 세그웨이 실행전 조건 확인.
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if identifier == "NeedOrderedSegue" {
             if userOrdered.orders.count == 0 {
@@ -216,5 +221,44 @@ class MypageViewController: UIViewController, GIDSignInUIDelegate {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    // 인증 조건에 맞춰서 뷰 변화주기
+    func authenticationUser(){
+        guard let currentUser = Auth.auth().currentUser else{
+            loginButton.isHidden = false
+            logoutButton.isHidden = true
+            label2.isHidden = false
+            userNameLabel.text = "회원서비스 이용을 위해 로그인해주세요."
+            joinAddress.text = "안녕하세요!"
+            return
+        }
+        loginButton.isHidden = true
+        logoutButton.isHidden = false
+        label2.isHidden = true
+        userNameLabel.text = Auth.auth().currentUser?.displayName
+        joinAddress.text = Auth.auth().currentUser?.email
+    }
+    
+    // 처음에 보여줄 뷰 결정하기
+    func setDefault(){
+        // 처음에 로그인 전에 이름값 숨겨주기
+        userNameLabel.text = "회원서비스 이용을 위해 로그인해주세요."
+        joinAddress.text = "안녕하세요!"
+        
+        //버튼 디자인 요소 추가
+        loginButton.setTitle("로그인", for: .normal)
+        loginButton.titleLabel?.font = UIFont.systemFont(ofSize: 18)
+        loginButton.setTitleColor(UIColor.white, for: .normal)
+        loginButton.layer.cornerRadius = 5
+        orderInfoButton.layer.cornerRadius = 5
+        // Do any additional setup after loading the view.
+        
+        logoutButton.setTitle("로그아웃", for: .normal)
+        logoutButton.titleLabel?.font = UIFont.systemFont(ofSize: 18)
+        logoutButton.setTitleColor(UIColor.white, for: .normal)
+        logoutButton.layer.cornerRadius = 5
+        
+        logoutButton.isHidden = true
+        loginButton.isHidden = false
+    }
 }
