@@ -45,7 +45,6 @@ class ConfirmViewController: UIViewController, UITableViewDataSource, UITableVie
         cafeImage.image = UIImage(named:(caffeList[items.selectedMenu[0].caffeInfo]!.logo)!)
         cafeName.text = caffeList[items.selectedMenu[0].caffeInfo]!.name
         cafeLocation.text = caffeList[items.selectedMenu[0].caffeInfo]!.location
-        cafeLocation.lineBreakMode = .byWordWrapping
         cafeLocation.numberOfLines = 0
         
         for i in 0 ..< couponList.coupons.count{
@@ -89,7 +88,8 @@ class ConfirmViewController: UIViewController, UITableViewDataSource, UITableVie
         let cell = tableView.dequeueReusableCell(withIdentifier: "coupon", for: indexPath)
         
         if let selected = CouponSelected{
-            if selected.0 == indexPath.row{
+            print("\(selected.0)와 \(indexPath.row)는 같은가요?")
+            if selected.0 == self.couponindex[indexPath.row]{
                 self.present(cancelController[indexPath.row], animated: true)
                 }
             else{
