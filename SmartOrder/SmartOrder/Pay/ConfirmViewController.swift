@@ -181,7 +181,7 @@ class ConfirmViewController: UIViewController, UITableViewDataSource, UITableVie
         cancelController[indexPath.row].addAction(UIAlertAction(title: "취소", style: .cancel))
         
         //image setting인데 이건 coupon마다 image생성시 바꾸겠습니다.
-        if(indexPath.row == 1){
+        if couponlist[indexPath.row].name.hasPrefix("2000"){
             cell.imageView?.image = UIImage(named: "2000coupon")
         }else{
             cell.imageView?.image = UIImage(named: "freeCoupon")
