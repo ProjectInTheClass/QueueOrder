@@ -22,7 +22,7 @@ class LoginController: UIViewController, GIDSignInUIDelegate, SignUpDelegate {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
         iv.clipsToBounds = true
-        iv.image = #imageLiteral(resourceName: "coffee_picture")
+        iv.image = #imageLiteral(resourceName: "freeCoupon")
         return iv
     }()
     
@@ -51,7 +51,7 @@ class LoginController: UIViewController, GIDSignInUIDelegate, SignUpDelegate {
         button.setTitle("취소", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = UIColor.mainBlue()
+        button.backgroundColor = .mainBrown()
         button.addTarget(self, action: #selector(handleClose), for: .touchUpInside)
         button.layer.cornerRadius = 5
         return button
@@ -61,7 +61,7 @@ class LoginController: UIViewController, GIDSignInUIDelegate, SignUpDelegate {
         let button = UIButton(type: .system)
         button.setTitle("로그인", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18)
-        button.setTitleColor(UIColor.mainBlue(), for: .normal)
+        button.setTitleColor(.mainBrown(), for: .normal)
         button.backgroundColor = .white
         button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         button.layer.cornerRadius = 5
@@ -100,8 +100,8 @@ class LoginController: UIViewController, GIDSignInUIDelegate, SignUpDelegate {
         button.layer.cornerRadius = 5
         button.setTitle("구글 계정으로 로그인", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18)
-        button.backgroundColor = .googleRed()
-        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .white
+        button.setTitleColor(.black, for: .normal)
         button.addTarget(self, action: #selector(handleGoogleSignIn), for: .touchUpInside)
         return button
     }()
@@ -111,7 +111,7 @@ class LoginController: UIViewController, GIDSignInUIDelegate, SignUpDelegate {
         button.layer.cornerRadius = 5
         button.setTitle("카카오 계정으로 로그인", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18)
-        button.backgroundColor = .yellow
+        button.backgroundColor = .white
         button.setTitleColor(.black, for: .normal)
         //button.addTarget(self, action: #selector(handleGoogleSignIn), for: .touchUpInside)
         return button
@@ -204,7 +204,7 @@ class LoginController: UIViewController, GIDSignInUIDelegate, SignUpDelegate {
     }
     
     func configureViewComponents() {
-        view.backgroundColor = UIColor.mainBlue()
+        view.backgroundColor = UIColor.mainBrown()
         navigationController?.navigationBar.isHidden = true
         
         view.addSubview(closeButton)

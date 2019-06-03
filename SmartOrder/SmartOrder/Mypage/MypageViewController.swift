@@ -46,7 +46,12 @@ class MypageViewController: UIViewController, GIDSignInUIDelegate {
             return
         }
         // 로그인 되어있으면 (NeedOrderSegue를 통해 테이블뷰로 이동)
-        self.performSegue(withIdentifier: "NeedOrderedSegue", sender: nil)
+        if (currentUserInfo.orderList.count == 0){
+            self.performSegue(withIdentifier: "NoOrderedSegue", sender: nil)
+        }
+        else {
+            self.performSegue(withIdentifier: "NeedOrderedSegue", sender: nil)
+        }
     }
     /*
     // 카카오 버튼 눌렀을때 동작 처리
@@ -162,16 +167,19 @@ class MypageViewController: UIViewController, GIDSignInUIDelegate {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
-    // 세그웨이 실행전 조건 확인.
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if identifier == "NeedOrderedSegue" {
-            if userOrdered.orders.count == 0 {
-                self.performSegue(withIdentifier: "NoOrderedSegue", sender: nil)
-                return false
-            }
-        }
-        return true
-    }
+//    // 세그웨이 실행전 조건 확인.
+//    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+//        print("shouldPerformSegue")
+//        if identifier == "NeedOrderedSegue" {
+//            if currentUserInfo.orderList.orders.count == 0 {
+//
+//
+//                self.performSegue(withIdentifier: "NoOrderedSegue", sender: nil)
+//                return false
+//            }
+//        }
+//        return true
+//    }
     
     /// AppDelegate 가져오기
     ///
@@ -237,7 +245,7 @@ class MypageViewController: UIViewController, GIDSignInUIDelegate {
         loginButton.isHidden = true
         logoutButton.isHidden = false
         label2.isHidden = true
-        userNameLabel.text = Auth.auth().currentUser?.displayName
+        userNameLabel.text = "님 안녕하세요!"
         joinAddress.text = Auth.auth().currentUser?.email
     }
     

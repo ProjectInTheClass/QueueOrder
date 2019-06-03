@@ -65,7 +65,7 @@ class SignUpController: UIViewController, GIDSignInUIDelegate {
         let button = UIButton(type: .system)
         button.setTitle("회원 가입", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18)
-        button.setTitleColor(UIColor.mainBlue(), for: .normal)
+        button.setTitleColor(UIColor.mainBrown(), for: .normal)
         button.backgroundColor = .white
         button.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
         button.layer.cornerRadius = 5
@@ -212,7 +212,7 @@ class SignUpController: UIViewController, GIDSignInUIDelegate {
     // MARK: - Helper Functions
     
     func configureViewComponents() {
-        view.backgroundColor = UIColor.mainBlue()
+        view.backgroundColor = UIColor.mainBrown()
         navigationController?.navigationBar.isHidden = true
         
         view.addSubview(logoImageView)
