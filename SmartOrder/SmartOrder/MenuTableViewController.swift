@@ -65,12 +65,15 @@ class MenuTableViewController: UITableViewController {
         cell.textLabel?.text = MenuForTheRow.coffee
         cell.detailTextLabel?.text = String(MenuForTheRow.price)+"원"
         
+        cell.imageView?.layer.cornerRadius = (cell.imageView?.layer.borderWidth)!/2.0
+        
         if (indexPath.row % 2) == 0 {
-        cell.imageView?.image = UIImage(named: "coffee_picture_blue")
+            cell.imageView?.image = UIImage(named: "coffee_picture_blue")
         } else{
             cell.imageView?.image = UIImage(named: "coffee_picture_white")
         }
-       
+        cell.imageView?.contentMode = UIView.ContentMode.scaleAspectFill
+        cell.imageView?.clipsToBounds = true
         return cell
     }
  
