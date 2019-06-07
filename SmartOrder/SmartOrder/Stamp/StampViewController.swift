@@ -82,12 +82,12 @@ class StampViewController: UIViewController, UITableViewDataSource, UITableViewD
             cell.textLabel?.text = "\(name!) \(coupon)"
             cell.detailTextLabel?.text = "유효기간 : \(couponList.coupons[indexPath.row].issueDate)~\(couponList.coupons[indexPath.row].expireDate)"
             
-            
             if coupon.hasPrefix("2000"){
                 cell.imageView?.image = UIImage(named: "2000coupon")
             } else {
                 cell.imageView?.image = UIImage(named: "freeCoupon")
             }
+            
             resCell = cell
         }
         return resCell
@@ -115,6 +115,7 @@ class StampViewController: UIViewController, UITableViewDataSource, UITableViewD
    
         return 1
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items

@@ -6,13 +6,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--선호메뉴-->
+        <!--My Menu Table View Controller-->
         <scene sceneID="AHz-bs-OlQ">
             <objects>
-                <tableViewController storyboardIdentifier="MyMenu" title="선호메뉴" id="wq8-Tb-Xaw" customClass="MyMenuTableViewController" customModule="SmartOrder" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="wq8-Tb-Xaw" customClass="MyMenuTableViewController" customModule="SmartOrder" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="4YI-SX-ga5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -42,9 +43,6 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <connections>
-                                    <segue destination="Ybi-1i-2zr" kind="show" id="VF6-xl-syz"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -57,6 +55,14 @@
             </objects>
             <point key="canvasLocation" x="1297.1014492753625" y="89.732142857142847"/>
         </scene>
+        <!--CafeSelect-->
+        <scene sceneID="j2R-U3-zOg">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="CafeSelect" storyboardName="Main" referencedIdentifier="CafeSelect" id="hVn-TP-wbL" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u5I-t9-uQc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1957" y="-173"/>
+        </scene>
         <!--Order-->
         <scene sceneID="MXl-tN-cmh">
             <objects>
@@ -65,5 +71,108 @@
             </objects>
             <point key="canvasLocation" x="2021.0144927536232" y="-6.0267857142857144"/>
         </scene>
+        <!--선호메뉴-->
+        <scene sceneID="XY8-j6-1W1">
+            <objects>
+                <viewController storyboardIdentifier="MyMenu" title="선호메뉴" id="LOZ-3Z-g2d" customClass="MyMenuViewController" customModule="SmartOrder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vbe-8d-txb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sFC-kg-9jf">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavoriteMenu" id="MvA-Nb-dzd" customClass="MyMenuTableViewCell" customModule="SmartOrder" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MvA-Nb-dzd" id="2G5-G6-rNV">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MenuName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gr0-hN-1yI">
+                                                    <rect key="frame" x="43.5" y="0.0" width="370.5" height="42"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MenuPrice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDE-7q-EgJ">
+                                                    <rect key="frame" x="43.5" y="42" width="370.5" height="1.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nPE-Ah-nG5">
+                                                    <rect key="frame" x="0.0" y="0.0" width="43.5" height="43.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="nPE-Ah-nG5" secondAttribute="height" id="dem-zP-kQY"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Gr0-hN-1yI" firstAttribute="bottom" secondItem="2G5-G6-rNV" secondAttribute="bottom" multiplier="0.5" constant="20" symbolic="YES" id="0hK-pr-J3c"/>
+                                                <constraint firstItem="Gr0-hN-1yI" firstAttribute="top" secondItem="2G5-G6-rNV" secondAttribute="top" id="1Ud-vq-aWq"/>
+                                                <constraint firstItem="QDE-7q-EgJ" firstAttribute="leading" secondItem="nPE-Ah-nG5" secondAttribute="trailing" id="Dwc-xs-F4q"/>
+                                                <constraint firstItem="QDE-7q-EgJ" firstAttribute="trailing" secondItem="2G5-G6-rNV" secondAttribute="trailing" id="Fp1-TN-Wx9"/>
+                                                <constraint firstItem="nPE-Ah-nG5" firstAttribute="top" secondItem="2G5-G6-rNV" secondAttribute="top" id="OTE-vM-8H6"/>
+                                                <constraint firstItem="nPE-Ah-nG5" firstAttribute="leading" secondItem="2G5-G6-rNV" secondAttribute="leading" id="SoO-fP-2UZ"/>
+                                                <constraint firstItem="Gr0-hN-1yI" firstAttribute="trailing" secondItem="2G5-G6-rNV" secondAttribute="trailing" id="eLF-Y5-R7x"/>
+                                                <constraint firstItem="Gr0-hN-1yI" firstAttribute="leading" secondItem="nPE-Ah-nG5" secondAttribute="trailing" id="eye-hV-IB2"/>
+                                                <constraint firstItem="QDE-7q-EgJ" firstAttribute="bottom" secondItem="2G5-G6-rNV" secondAttribute="bottom" id="fXc-W2-f5c"/>
+                                                <constraint firstItem="QDE-7q-EgJ" firstAttribute="top" secondItem="Gr0-hN-1yI" secondAttribute="bottom" id="pKt-ZC-cL1"/>
+                                                <constraint firstItem="nPE-Ah-nG5" firstAttribute="bottom" secondItem="2G5-G6-rNV" secondAttribute="bottom" id="tkq-6K-IKY"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="MenuImage" destination="nPE-Ah-nG5" id="nUh-yk-qao"/>
+                                            <outlet property="MenuName" destination="Gr0-hN-1yI" id="Tin-Ft-gK2"/>
+                                            <outlet property="MenuPrice" destination="QDE-7q-EgJ" id="CvZ-o0-kVD"/>
+                                            <segue destination="Ybi-1i-2zr" kind="show" identifier="Order" id="nWq-hc-90y"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="LOZ-3Z-g2d" id="pc2-JD-Whp"/>
+                                    <outlet property="delegate" destination="LOZ-3Z-g2d" id="jOa-5K-vBU"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dnv-Oz-Z02">
+                                <rect key="frame" x="41" y="218" width="332" height="292"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="cart0img"/>
+                                <connections>
+                                    <segue destination="hVn-TP-wbL" kind="show" identifier="CafeSelect" id="3ye-7u-6Iz"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="선호메뉴 추가하러 가기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dA-WS-b2g">
+                                <rect key="frame" x="107" y="454" width="200" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <color key="textColor" red="0.35968005657196045" green="0.29067340493202209" blue="0.2627386748790741" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="sFC-kg-9jf" firstAttribute="bottom" secondItem="zkb-vz-evV" secondAttribute="bottom" id="Zfk-SD-DWF"/>
+                            <constraint firstItem="zkb-vz-evV" firstAttribute="trailing" secondItem="sFC-kg-9jf" secondAttribute="trailing" id="hoq-Fk-fb6"/>
+                            <constraint firstItem="sFC-kg-9jf" firstAttribute="leading" secondItem="zkb-vz-evV" secondAttribute="leading" id="pOE-cl-Iq5"/>
+                            <constraint firstItem="sFC-kg-9jf" firstAttribute="top" secondItem="zkb-vz-evV" secondAttribute="top" id="qSA-Jv-5Nt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zkb-vz-evV"/>
+                    </view>
+                    <connections>
+                        <outlet property="MyMenutable" destination="sFC-kg-9jf" id="gcq-DP-xrG"/>
+                        <outlet property="NoMenu" destination="5dA-WS-b2g" id="A7n-sB-FKQ"/>
+                        <outlet property="NoMenuBtn" destination="Dnv-Oz-Z02" id="eKA-iZ-FVS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NYk-t6-1Hd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2591" y="90"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="cart0img" width="332" height="292"/>
+    </resources>
 </document>

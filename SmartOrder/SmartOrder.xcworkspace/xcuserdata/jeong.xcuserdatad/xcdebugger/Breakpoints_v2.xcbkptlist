@@ -10,13 +10,137 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartOrder/Mypage/MypageTableViewCell.swift"
-            timestampString = "581164117.135796"
+            timestampString = "581580037.045495"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "6"
             endingLineNumber = "6"
             landmarkName = "unknown"
             landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SmartOrder/Mypage/MypageDetailViewController.swift"
+            timestampString = "581588790.428369"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SmartOrder/Mypage/MypageViewController.swift"
+            timestampString = "581589514.254669"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "MypageViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SmartOrder.MypageViewController.loginIcon.getter : Swift.Optional&lt;__C.UIImageView&gt;"
+                  moduleName = "SmartOrder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jeong/Desktop/QueueOrder/SmartOrder/SmartOrder/Mypage/MypageViewController.swift"
+                  timestampString = "581425065.190119"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "86">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SmartOrder.MypageViewController.loginIcon.setter : Swift.Optional&lt;__C.UIImageView&gt;"
+                  moduleName = "SmartOrder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jeong/Desktop/QueueOrder/SmartOrder/SmartOrder/Mypage/MypageViewController.swift"
+                  timestampString = "581425065.193122"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "106">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SmartOrder.MypageViewController.loginIcon.modify : Swift.Optional&lt;__C.UIImageView&gt;"
+                  moduleName = "SmartOrder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jeong/Desktop/QueueOrder/SmartOrder/SmartOrder/Mypage/MypageViewController.swift"
+                  timestampString = "581425065.195766"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "69">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SmartOrder.MypageViewController.loginIcon.modify : Swift.Optional&lt;__C.UIImageView&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "SmartOrder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jeong/Desktop/QueueOrder/SmartOrder/SmartOrder/Mypage/MypageViewController.swift"
+                  timestampString = "581425065.198278"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SmartOrder.MypageViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; SmartOrder.MypageViewController"
+                  moduleName = "SmartOrder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jeong/Desktop/QueueOrder/SmartOrder/SmartOrder/Mypage/MypageViewController.swift"
+                  timestampString = "581425065.200526"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "219">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SmartOrder.MypageViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;SmartOrder.MypageViewController&gt;"
+                  moduleName = "SmartOrder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jeong/Desktop/QueueOrder/SmartOrder/SmartOrder/Mypage/MypageViewController.swift"
+                  timestampString = "581425065.203549"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "139">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

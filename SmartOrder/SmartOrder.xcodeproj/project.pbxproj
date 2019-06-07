@@ -20,6 +20,8 @@
 		57E8D61B228C11D4003EBC05 /* MypageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E8D61A228C11D4003EBC05 /* MypageTableViewCell.swift */; };
 		57E8D61D228C1F4B003EBC05 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57E8D61C228C1F4B003EBC05 /* GoogleService-Info.plist */; };
 		B1CA3EB62283E3B6004A49A9 /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CA3EB52283E3B6004A49A9 /* PayViewController.swift */; };
+		B1E5D19D22AA49F000F05521 /* MyMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E5D19C22AA49F000F05521 /* MyMenuViewController.swift */; };
+		B1E5D19F22AA4A0A00F05521 /* MyMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E5D19E22AA4A0A00F05521 /* MyMenuTableViewCell.swift */; };
 		B1E72EA6228D066200485306 /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E72EA5228D066200485306 /* ConfirmViewController.swift */; };
 		B1E9EE27228A6FCD00E44687 /* MyMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E9EE26228A6FCD00E44687 /* MyMenuTableViewController.swift */; };
 		D63AE79E229F178D0043985B /* StampsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63AE79D229F178D0043985B /* StampsCollectionViewCell.swift */; };
@@ -69,6 +71,8 @@
 		57E8D61C228C1F4B003EBC05 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A0CFF9ED595C02FCDA07475B /* Pods_SmartOrder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartOrder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1CA3EB52283E3B6004A49A9 /* PayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
+		B1E5D19C22AA49F000F05521 /* MyMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMenuViewController.swift; sourceTree = "<group>"; };
+		B1E5D19E22AA4A0A00F05521 /* MyMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMenuTableViewCell.swift; sourceTree = "<group>"; };
 		B1E72EA5228D066200485306 /* ConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
 		B1E9EE26228A6FCD00E44687 /* MyMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMenuTableViewController.swift; sourceTree = "<group>"; };
 		BE24E8A5F404F852E5CDA5F2 /* Pods-SmartOrder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartOrder.debug.xcconfig"; path = "Target Support Files/Pods-SmartOrder/Pods-SmartOrder.debug.xcconfig"; sourceTree = "<group>"; };
@@ -207,6 +211,8 @@
 			isa = PBXGroup;
 			children = (
 				D6E96A0A227C4891009A3E04 /* MyMenu.storyboard */,
+				B1E5D19C22AA49F000F05521 /* MyMenuViewController.swift */,
+				B1E5D19E22AA4A0A00F05521 /* MyMenuTableViewCell.swift */,
 				B1E9EE26228A6FCD00E44687 /* MyMenuTableViewController.swift */,
 			);
 			path = MyMenu;
@@ -451,9 +457,11 @@
 				D67B8F9C22685F8F009FEBD5 /* DataCenter.swift in Sources */,
 				57D9251D227DAF6B0044E96B /* KakaoLoginButton.swift in Sources */,
 				57E8D617228C0D55003EBC05 /* MypageTableViewController.swift in Sources */,
+				B1E5D19D22AA49F000F05521 /* MyMenuViewController.swift in Sources */,
 				D6BC36382284B0A900ADF9EA /* CaffePreViewController.swift in Sources */,
 				D6E96A0F2281E571009A3E04 /* CartViewController.swift in Sources */,
 				D6E96A05227C133A009A3E04 /* StampViewController.swift in Sources */,
+				B1E5D19F22AA4A0A00F05521 /* MyMenuTableViewCell.swift in Sources */,
 				D68E3EB722840D9F004EE3EC /* CartTableViewCell.swift in Sources */,
 				D67B8F8C22685F3D009FEBD5 /* ViewController.swift in Sources */,
 				D67B8FA022687A43009FEBD5 /* DetailViewController.swift in Sources */,

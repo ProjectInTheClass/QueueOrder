@@ -62,9 +62,9 @@ class CaffeCollectionViewController: UICollectionViewController {
         } else {
             cell.caffeLogo?.image = UIImage(named: "dummy")
         }
-        
+        cell.caffeLogo?.layer.cornerRadius = 10
         cell.info.text = CaffeForTheRow.name
-        cell.layer.cornerRadius = 30
+        cell.layer.cornerRadius = 10
         cell.layer.borderWidth = 1
         cell.layer.borderColor = UIColor.white.cgColor
         cell.layer.backgroundColor = UIColor.white.cgColor

@@ -18,6 +18,9 @@ class MyMenuTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+       /* if(MyMenu.isEmpty){
+            
+        }*/
         //사용자가 선호메뉴로 등록한 메뉴만을 저장한 caffemenu와 해당 menu를 판매하는 caffe의 이름 저장
         for i in 0 ..< MyMenu.count{
             if !MyMenu[i].isEmpty{

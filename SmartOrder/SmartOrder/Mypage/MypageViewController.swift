@@ -12,7 +12,11 @@ import GoogleSignIn
 
 class MypageViewController: UIViewController, GIDSignInUIDelegate {
 
+    @IBOutlet weak var loginIcon: UIImageView!
     
+    @IBOutlet weak var mainImage: UIImageView!
+    @IBOutlet weak var loginButtonLabel: UILabel!
+    @IBOutlet weak var logoutIcon: UIImageView!
     let alertController = UIAlertController(title: "로그인이 필요한 항목입니다.", message:
         "", preferredStyle: .alert)
     let logoutalertController = UIAlertController(title: "로그아웃 하시겠습니까?", message:
@@ -35,6 +39,7 @@ class MypageViewController: UIViewController, GIDSignInUIDelegate {
     // 로그아웃 버튼 눌렀을때 동작 처리.
     @IBAction func pressLogout(_ sender: Any) {
         self.present(logoutalertController, animated: true, completion: {})
+        authenticationUser()
     }
     
     // 주문내역 버튼 눌렀을때 동작 처리.
@@ -236,17 +241,25 @@ class MypageViewController: UIViewController, GIDSignInUIDelegate {
     func authenticationUser(){
         guard let currentUser = Auth.auth().currentUser else{
             loginButton.isHidden = false
+            logoutIcon.isHidden = true
+            loginButtonLabel.text = "로그인"
+            loginIcon.isHidden = false;
             logoutButton.isHidden = true
             label2.isHidden = false
             userNameLabel.text = "회원서비스 이용을 위해 로그인해주세요."
             joinAddress.text = "안녕하세요!"
+            mainImage.image = UIImage(named: "coffeebottle2")
             return
         }
         loginButton.isHidden = true
+        logoutIcon.isHidden = false
+        loginButtonLabel.text = "로그아웃"
+        loginIcon.isHidden = true;
         logoutButton.isHidden = false
         label2.isHidden = true
         userNameLabel.text = "님 안녕하세요!"
         joinAddress.text = Auth.auth().currentUser?.email
+        mainImage.image = UIImage(named: "coffeebottlefilled")
     }
     
     // 처음에 보여줄 뷰 결정하기
@@ -256,19 +269,18 @@ class MypageViewController: UIViewController, GIDSignInUIDelegate {
         joinAddress.text = "안녕하세요!"
         
         //버튼 디자인 요소 추가
-        loginButton.setTitle("로그인", for: .normal)
-        loginButton.titleLabel?.font = UIFont.systemFont(ofSize: 18)
+        //loginButton.setTitle("  로그인", for: .normal)
+        loginButton.titleLabel?.font = UIFont.systemFont(ofSize: 25)
         loginButton.setTitleColor(UIColor.white, for: .normal)
-        loginButton.layer.cornerRadius = 5
-        orderInfoButton.layer.cornerRadius = 5
+        //loginButton.layer.cornerRadius = 5
+        //orderInfoButton.layer.cornerRadius = 5
         // Do any additional setup after loading the view.
         
-        logoutButton.setTitle("로그아웃", for: .normal)
-        logoutButton.titleLabel?.font = UIFont.systemFont(ofSize: 18)
+        //logoutButton.setTitle("  로그아웃", for: .normal)
+        logoutButton.titleLabel?.font = UIFont.systemFont(ofSize: 25)
         logoutButton.setTitleColor(UIColor.white, for: .normal)
-        logoutButton.layer.cornerRadius = 5
+        //logoutButton.layer.cornerRadius = 5
         
-        logoutButton.isHidden = true
-        loginButton.isHidden = false
+        authenticationUser()
     }
 }
