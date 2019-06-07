@@ -45,7 +45,6 @@ class ConfirmViewController: UIViewController, UITableViewDataSource, UITableVie
         cafeImage.image = UIImage(named:(caffeList[items.selectedMenu[0].caffeInfo]!.logo)!)
         cafeName.text = caffeList[items.selectedMenu[0].caffeInfo]!.name
         cafeLocation.text = caffeList[items.selectedMenu[0].caffeInfo]!.location
-        cafeLocation.lineBreakMode = .byWordWrapping
         cafeLocation.numberOfLines = 0
         
         for i in 0 ..< couponList.coupons.count{
@@ -89,7 +88,8 @@ class ConfirmViewController: UIViewController, UITableViewDataSource, UITableVie
         let cell = tableView.dequeueReusableCell(withIdentifier: "coupon", for: indexPath)
         
         if let selected = CouponSelected{
-            if selected.0 == indexPath.row{
+            print("\(selected.0)와 \(indexPath.row)는 같은가요?")
+            if selected.0 == self.couponindex[indexPath.row]{
                 self.present(cancelController[indexPath.row], animated: true)
                 }
             else{
@@ -181,7 +181,7 @@ class ConfirmViewController: UIViewController, UITableViewDataSource, UITableVie
         cancelController[indexPath.row].addAction(UIAlertAction(title: "취소", style: .cancel))
         
         //image setting인데 이건 coupon마다 image생성시 바꾸겠습니다.
-        if(indexPath.row == 1){
+        if couponlist[indexPath.row].name.hasPrefix("2000"){
             cell.imageView?.image = UIImage(named: "2000coupon")
         }else{
             cell.imageView?.image = UIImage(named: "freeCoupon")

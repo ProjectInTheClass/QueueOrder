@@ -9,7 +9,11 @@
 import UIKit
 
 class MypageTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var cafeImage: UIImageView!
+    @IBOutlet weak var cafeName: UILabel!
+    @IBOutlet weak var dayInfo: UILabel!
+    @IBOutlet weak var totalPrice: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

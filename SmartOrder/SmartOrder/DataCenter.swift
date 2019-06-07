@@ -31,7 +31,8 @@ struct UserInfo {
     var name: String
     var id: String
     var joinAddress: String
-    var orderList : OrderList
+    var pushToken : String?
+    var orderList : [OrderList]
     //var likeList : //타입이랑 변수 선언 후 초기화메서드까지 작성 부탁드립니다.
     //var stampList
     //var couponList
@@ -40,14 +41,14 @@ struct UserInfo {
         self.name = name!
         self.id = id!
         self.joinAddress = joinAddress!
-        self.orderList = OrderList(title: "User", orders:[])
+        self.orderList = [orderlisttest]
     }
     
     init(){
         self.name = ""
         self.id = ""
         self.joinAddress  = ""
-        self.orderList = OrderList(title: "User", orders:[])
+        self.orderList = [orderlisttest]
     }
 }
 
@@ -57,9 +58,14 @@ var currentUserInfo : UserInfo = UserInfo()
 // 로그인된 유저 정보(카카오)를 들고있는 프로퍼티
 var loginUserInfo : KOUserMe?
 
-// 유저가 주문했던 정보를 들고있는 프로퍼티
-var userOrdered : OrderList = OrderList(title: "Test", orders:[ordertest])
-var ordertest = Order(caffeInfo:caffe1.caffeInfo, coffee:"카페라떼", price:2500, count:1, size:"small", ice:"보통", shot:0, orderDate:"19.03.30")
+
+var ordertest1 = Order(caffeInfo:caffe1.caffeInfo, coffee:"카페라떼", price:2500, count:1, size:"small", ice:"보통", shot:0, orderDate:"19.03.30")
+var ordertest2 = Order(caffeInfo:caffe1.caffeInfo, coffee:"카페라떼", price:3000, count:1, size:"small", ice:"보통", shot:1, orderDate:"19.03.30")
+var ordertest3 = Order(caffeInfo:caffe1.caffeInfo, coffee:"카페라떼", price:3000, count:1, size:"small", ice:"보통", shot:1, orderDate:"19.03.30")
+var ordertest4 = Order(caffeInfo:caffe1.caffeInfo, coffee:"카페라떼", price:3000, count:1, size:"small", ice:"보통", shot:1, orderDate:"19.03.30")
+var ordertest5 = Order(caffeInfo:caffe1.caffeInfo, coffee:"카페라떼", price:3000, count:1, size:"small", ice:"보통", shot:1, orderDate:"19.03.30")
+
+var orderlisttest = OrderList(caffeInfo: ordertest1.caffeInfo, orderDate: ordertest1.orderDate, totalPrice: ordertest1.price+ordertest2.price, orders:[ordertest1, ordertest2, ordertest3, ordertest4, ordertest5])
 
 var moca = Menu(menuId:0, coffee:"카페모카", image:nil, price:3500, shot:true)
 var latte = Menu(menuId:1, coffee:"카페라떼", image:nil, price:2500, shot:true)
@@ -140,14 +146,14 @@ var cartSelectedArray:[Int] = []
 
 //주문내역
 struct OrderList {
-    var title:String
+    var caffeInfo:Int
+    var orderDate:String
+    var totalPrice:Int
     var orders: [Order]
     mutating func addOrder(_ item:Order){
         self.orders.append(item)
     }
 }
-
-var list = OrderList(title:"03월", orders:[])
 
 
 //내가 방문한 카페

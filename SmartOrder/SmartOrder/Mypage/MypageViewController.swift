@@ -11,15 +11,16 @@ import Firebase
 import GoogleSignIn
 
 class MypageViewController: UIViewController, GIDSignInUIDelegate {
+
     
     let alertController = UIAlertController(title: "로그인이 필요한 항목입니다.", message:
         "", preferredStyle: .alert)
     let logoutalertController = UIAlertController(title: "로그아웃 하시겠습니까?", message:
         "", preferredStyle: .alert)
     
-    @IBOutlet weak var btnKakao: KKakaoLoginButton!
+    //@IBOutlet weak var btnKakao: KKakaoLoginButton!
     
-    @IBOutlet weak var btnGoogle: GIDSignInButton!
+    //@IBOutlet weak var btnGoogle: GIDSignInButton!
     
     @IBOutlet weak var userImage: UIImageView!
     
@@ -45,9 +46,14 @@ class MypageViewController: UIViewController, GIDSignInUIDelegate {
             return
         }
         // 로그인 되어있으면 (NeedOrderSegue를 통해 테이블뷰로 이동)
-        self.performSegue(withIdentifier: "NeedOrderedSegue", sender: nil)
+        if (currentUserInfo.orderList.count == 0){
+            self.performSegue(withIdentifier: "NoOrderedSegue", sender: nil)
+        }
+        else {
+            self.performSegue(withIdentifier: "NeedOrderedSegue", sender: nil)
+        }
     }
-    
+    /*
     // 카카오 버튼 눌렀을때 동작 처리
     @IBAction func kakaoAction(_ sender: Any) {
         btnKakao.actionSigninButton(view: self
@@ -114,7 +120,7 @@ class MypageViewController: UIViewController, GIDSignInUIDelegate {
                 })
                 
         })
-    }
+    }*/
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -161,16 +167,19 @@ class MypageViewController: UIViewController, GIDSignInUIDelegate {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
-    // 세그웨이 실행전 조건 확인.
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if identifier == "NeedOrderedSegue" {
-            if userOrdered.orders.count == 0 {
-                self.performSegue(withIdentifier: "NoOrderedSegue", sender: nil)
-                return false
-            }
-        }
-        return true
-    }
+//    // 세그웨이 실행전 조건 확인.
+//    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+//        print("shouldPerformSegue")
+//        if identifier == "NeedOrderedSegue" {
+//            if currentUserInfo.orderList.orders.count == 0 {
+//
+//
+//                self.performSegue(withIdentifier: "NoOrderedSegue", sender: nil)
+//                return false
+//            }
+//        }
+//        return true
+//    }
     
     /// AppDelegate 가져오기
     ///
@@ -179,39 +188,40 @@ class MypageViewController: UIViewController, GIDSignInUIDelegate {
         return UIApplication.shared.delegate as! AppDelegate
     }
     
-    /// 구글 로그인 정보 가져옵니다.
-    ///
-    /// - Parameters:
-    ///   - signIn: SignIn 된 정보를 가져옵니다
-    ///   - user: 구글 로그인 정보를 가져옵니다
-    ///   - error: 에러 메시지를 가져옵니다
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
-
-        
-        if let err = error {
-            print("LoginViewController:error = \(err)")
-            return
-        }
-        
-        guard let authentication = user.authentication else { return }
-        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
-                                                       accessToken: authentication.accessToken)
-        Auth.auth().signIn(with: credential) { (user, error) in
-            // ...
-            if let err = error {
-                print("LoginViewController:error = \(err)")
-                return
-            }
-            
-            
-            if let appDelegate = self.getAppDelegate(){
-                
-                let info = UserInfo(name: user?.user.displayName, id: user?.user.providerID, joinAddress: "google")
-                
-                appDelegate.addUserProfile(uid: (user?.user.uid)!, userInfo: info)
-            }
-        }
-    }
+//    /// 구글 로그인 정보 가져옵니다.
+//    ///
+//    /// - Parameters:
+//    ///   - signIn: SignIn 된 정보를 가져옵니다
+//    ///   - user: 구글 로그인 정보를 가져옵니다
+//    ///   - error: 에러 메시지를 가져옵니다
+//
+//    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
+//
+//
+//        if let err = error {
+//            print("LoginViewController:error = \(err)")
+//            return
+//        }
+//
+//        guard let authentication = user.authentication else { return }
+//        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+//                                                       accessToken: authentication.accessToken)
+//        Auth.auth().signIn(with: credential) { (user, error) in
+//            // ...
+//            if let err = error {
+//                print("LoginViewController:error = \(err)")
+//                return
+//            }
+//
+//
+//            if let appDelegate = self.getAppDelegate(){
+//
+//                let info = UserInfo(name: user?.user.displayName, id: user?.user.providerID, joinAddress: "google")
+//
+//                appDelegate.addUserProfile(uid: (user?.user.uid)!, userInfo: info)
+//            }
+//        }
+//    }
     /*
     // MARK: - Navigation
 
@@ -235,7 +245,7 @@ class MypageViewController: UIViewController, GIDSignInUIDelegate {
         loginButton.isHidden = true
         logoutButton.isHidden = false
         label2.isHidden = true
-        userNameLabel.text = Auth.auth().currentUser?.displayName
+        userNameLabel.text = "님 안녕하세요!"
         joinAddress.text = Auth.auth().currentUser?.email
     }
     
