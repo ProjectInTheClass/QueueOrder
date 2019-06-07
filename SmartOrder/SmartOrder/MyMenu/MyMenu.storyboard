@@ -55,10 +55,10 @@
             </objects>
             <point key="canvasLocation" x="1297.1014492753625" y="89.732142857142847"/>
         </scene>
-        <!--CafeSelect-->
+        <!--OrderMenu-->
         <scene sceneID="j2R-U3-zOg">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="CafeSelect" storyboardName="Main" referencedIdentifier="CafeSelect" id="hVn-TP-wbL" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="OrderMenu" storyboardName="Main" referencedIdentifier="OrderMenu" id="hVn-TP-wbL" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u5I-t9-uQc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1957" y="-173"/>

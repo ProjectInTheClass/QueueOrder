@@ -13,7 +13,7 @@
         <!--카페선택-->
         <scene sceneID="7Bh-xp-dof">
             <objects>
-                <collectionViewController storyboardIdentifier="CafeSelect" title="카페선택" id="v1J-UE-HZ4" customClass="CaffeCollectionViewController" customModule="SmartOrder" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="OrderMenu" title="카페선택" id="v1J-UE-HZ4" customClass="CaffeCollectionViewController" customModule="SmartOrder" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="A22-ef-Y8M">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
