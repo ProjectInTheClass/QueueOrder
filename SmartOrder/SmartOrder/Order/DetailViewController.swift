@@ -27,7 +27,6 @@ class DetailViewController: UITableViewController, GIDSignInUIDelegate {
     @IBOutlet weak var shotIncrease: UIButton!
     @IBOutlet weak var shotDecrease: UIButton!
     
-    
     var coffeeForView:Menu?
     var caffeInfo:Int? //카페 고유 번호
     var coffeeNum:Int?

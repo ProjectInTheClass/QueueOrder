@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class HomeViewController: UIViewController {
 
@@ -24,7 +25,8 @@ class HomeViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-    
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.sound,.badge], completionHandler: {didAllow,Error in })
+        
         item1.layer.borderWidth = 3
         item1.layer.borderColor = UIColor.white.cgColor
         item1.layer.cornerRadius = 3

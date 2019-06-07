@@ -150,11 +150,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartOrder/Order/DetailViewController.swift"
-            timestampString = "581599050.396832"
+            timestampString = "581601880.739906"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "258"
-            endingLineNumber = "258"
+            startingLineNumber = "257"
+            endingLineNumber = "257"
             landmarkName = "onClikLikeBtn(_:)"
             landmarkType = "7">
          </BreakpointContent>
