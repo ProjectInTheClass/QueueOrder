@@ -13,7 +13,7 @@
         <!--Login Controller-->
         <scene sceneID="Lav-lh-GB3">
             <objects>
-                <viewController storyboardIdentifier="LoginControllerReference" id="hvq-WE-iej" customClass="LoginController" customModule="SmartOrder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LCReference" id="hvq-WE-iej" customClass="LoginController" customModule="SmartOrder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HZZ-KN-rj7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

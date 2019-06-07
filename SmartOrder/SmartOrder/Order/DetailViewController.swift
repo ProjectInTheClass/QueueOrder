@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import Firebase
+import GoogleSignIn
 
-class DetailViewController: UITableViewController {
+class DetailViewController: UITableViewController, GIDSignInUIDelegate {
   
     @IBOutlet weak var likeBtn: UIButton!
     @IBOutlet weak var ifLarge: UILabel!
@@ -33,6 +35,8 @@ class DetailViewController: UITableViewController {
     let alertController = UIAlertController(title: "음료를 담으시겠습니까?", message:
         "", preferredStyle: .alert)
     
+    let alertController2 = UIAlertController(title: "로그인이 필요합니다.", message:
+        "", preferredStyle: .alert)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +57,12 @@ class DetailViewController: UITableViewController {
         price.text = "\(str!) 원"
         resultPrice.text = "\(str!)"
         shotTit.text = "샷 추가(+ \(caffeList[caffeInfo!]!.shotPrice)원)"
+        alertController2.addAction(UIAlertAction(title: "취소", style: .destructive))
+        alertController2.addAction(UIAlertAction(title: "로그인", style:.default)
+        {
+            UIAlertAction in
+            self.performSegue(withIdentifier: "LoginSegue", sender: nil)
+            })
         alertController.addAction(UIAlertAction(title: "취소", style: .destructive))
         alertController.addAction(UIAlertAction(title: "확인", style: .default)
         {
@@ -245,7 +255,11 @@ class DetailViewController: UITableViewController {
             MyMenu.append([])
         }
         print(coffeeForView!.isLiked)
-        
+        guard let currentUser = Auth.auth().currentUser else{
+            //alert 발생 (취소, login)
+            self.present(alertController2, animated: true, completion: {})
+            return
+        }
         var liked:Bool?
         if let tmpLike = caffeList[caffeInfo!]?.menu[coffeeForView!.menuId]?.isLiked { caffeList[caffeInfo!]?.menu[coffeeForView!.menuId]?.isLiked = !tmpLike
             liked = !tmpLike
@@ -304,6 +318,16 @@ class DetailViewController: UITableViewController {
             
         }
     }
+    
+        override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+            if identifier == "Payment" {
+                guard let currentUser = Auth.auth().currentUser else{
+                    self.present(alertController2, animated: true, completion: {})
+                    return false
+                }
+            }
+            return true
+        }
     
     @IBAction func cancleBtn(_ sender: Any) {
         if let navController = self.navigationController {
