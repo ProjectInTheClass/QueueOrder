@@ -22,7 +22,7 @@ class LoginController: UIViewController, GIDSignInUIDelegate, SignUpDelegate {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
         iv.clipsToBounds = true
-        iv.image = #imageLiteral(resourceName: "freeCoupon")
+        iv.image = #imageLiteral(resourceName: "loginicon")
         return iv
     }()
     
@@ -113,7 +113,7 @@ class LoginController: UIViewController, GIDSignInUIDelegate, SignUpDelegate {
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18)
         button.backgroundColor = .white
         button.setTitleColor(.black, for: .normal)
-        //button.addTarget(self, action: #selector(handleGoogleSignIn), for: .touchUpInside)
+        //button.addTarget(self, action: #selector(handleKakaoSignIn), for: .touchUpInside)
         return button
     }()
     
@@ -211,7 +211,7 @@ class LoginController: UIViewController, GIDSignInUIDelegate, SignUpDelegate {
         closeButton.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 30, paddingLeft: 0, paddingBottom: 0, paddingRight: 330, width: 0, height: 50)
         
         view.addSubview(logoImageView)
-        logoImageView.anchor(top: view.topAnchor, left: nil, bottom: nil, right: nil, paddingTop: 100, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 150, height: 150)
+        logoImageView.anchor(top: view.topAnchor, left: nil, bottom: nil, right: nil, paddingTop: 80, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 150, height: 150)
         logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         view.addSubview(emailContainerView)
