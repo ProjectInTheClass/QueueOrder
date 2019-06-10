@@ -34,14 +34,16 @@ struct UserInfo {
     var pushToken : String?
     var orderList : [OrderList]
     //var likeList : //타입이랑 변수 선언 후 초기화메서드까지 작성 부탁드립니다.
-    //var stampList
-    //var couponList
-    
+
+    var stampsList: [Stamp]
+    var couponsList: CouponList
     init(name: String?, id: String?, joinAddress: String?){
         self.name = name!
         self.id = id!
         self.joinAddress = joinAddress!
         self.orderList = [orderlisttest]
+        self.stampsList = stampList
+        self.couponsList = couponList
     }
     
     init(){
@@ -49,6 +51,8 @@ struct UserInfo {
         self.id = ""
         self.joinAddress  = ""
         self.orderList = [orderlisttest]
+        self.stampsList = stampList
+        self.couponsList = couponList
     }
 }
 
