@@ -347,6 +347,7 @@
                         <outlet property="shotIncrease" destination="bKd-EC-Gwo" id="CtE-12-2Wn"/>
                         <outlet property="shotTit" destination="0HP-sX-ha6" id="CMH-R9-KsN"/>
                         <outlet property="sizeOption" destination="lS5-2x-VaY" id="vAW-3n-OGf"/>
+                        <segue destination="NQc-h8-J2a" kind="presentation" identifier="LoginSegue" id="czk-i5-2l4"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xl6-13-52b" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -360,6 +361,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fwg-0b-l6S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5424" y="23"/>
+        </scene>
+        <!--LCReference-->
+        <scene sceneID="iwW-xQ-DmO">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MyPageStoryboard" referencedIdentifier="LCReference" id="NQc-h8-J2a" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pUg-6h-Gm2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5432" y="93"/>
         </scene>
     </scenes>
     <resources>

@@ -197,9 +197,8 @@ class LoginController: UIViewController, GIDSignInUIDelegate, SignUpDelegate {
     
     func loadUserData() {
         guard let uid = Auth.auth().currentUser?.uid else { return }
-        Database.database().reference().child("users").child(uid).child("username").observeSingleEvent(of: .value) { (snapshot) in
+    Database.database().reference().child("users").child(uid).child("username").observeSingleEvent(of: .value) { (snapshot) in
             guard let username = snapshot.value as? String else { return }
-            //self.welcomeLabel.text = "Welcome, \(username)"
         }
     }
     

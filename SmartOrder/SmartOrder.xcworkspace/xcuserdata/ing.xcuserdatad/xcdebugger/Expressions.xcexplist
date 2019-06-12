@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "DetailViewController.onClikLikeBtn(_:):DetailViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "MyMenu">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MyMenuViewController.tableView(_:numberOfRowsInSection:):MyMenuViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "MyMenu">
+            </PersistentString>
+            <PersistentString
+               value = "FavoriteMenu">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

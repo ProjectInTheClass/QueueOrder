@@ -7,9 +7,30 @@
 //
 
 import UIKit
+import UserNotifications
 
 class ConfirmViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBAction func orderButtonPressed(_ sender: Any) {
+        
+        let content = UNMutableNotificationContent()
+        content.title = "주문이 완료되었습니다."
+        content.subtitle = "큐카페 - 카페라떼"
+        content.body = "음료를 찾아가 주세요!"
+        content.summaryArgument = "주문완료"
+        content.summaryArgumentCount = 40
+        
+        //2. Use TimeIntervalNotificationTrigger
+        let TimeIntervalTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+        
+        //Adding Request
+        // MARK: - identifier가 다 달라야만 Notification Grouping이 됩니닷..!!
+        let request = UNNotificationRequest(identifier: "\(index)timerdone", content: content, trigger: TimeIntervalTrigger)
+        
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        
+        
+    }
     //쿠폰의 경우 쿠폰 리스트가 카페별로 저장된게 아니라서
     //일단 테스트를 진행하기 위해서 datacenter의 couponlist를
     //사용했습니다. 추후 쿠폰리스트의 변경시 추가 수정 하겠습니다.
@@ -38,7 +59,11 @@ class ConfirmViewController: UIViewController, UITableViewDataSource, UITableVie
     //init
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        // MARK: - 여기 options에 원하는 option넣기.
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert], completionHandler: { (didAllow, error) in
+            
+        })
+        UNUserNotificationCenter.current().delegate = self
         //이부분의 경우 카페 내부 이미지를 보여주고 싶은데
         //사진이 없는경우 넣어줄 default사진을 정하면 추후 수정하겠습니다.
         //지금은 Logo로 넣어두겠습니다.
@@ -209,5 +234,23 @@ class ConfirmViewController: UIViewController, UITableViewDataSource, UITableVie
         }
     }
     
+    
+}
+
+extension ConfirmViewController : UNUserNotificationCenterDelegate{
+    //To display notifications when app is running  inforeground
+    
+    //앱이 foreground에 있을 때. 즉 앱안에 있어도 push알림을 받게 해줍니다.
+    //viewDidLoad()에 UNUserNotificationCenter.current().delegate = self를 추가해주는 것을 잊지마세요.
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .sound, .badge])
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, openSettingsFor notification: UNNotification?) {
+        let settingsViewController = UIViewController()
+        settingsViewController.view.backgroundColor = .gray
+        self.present(settingsViewController, animated: true, completion: nil)
+        
+    }
     
 }
