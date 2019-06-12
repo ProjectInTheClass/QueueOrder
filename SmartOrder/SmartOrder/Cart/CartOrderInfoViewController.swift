@@ -150,9 +150,9 @@ class CartOrderInfoViewController: UIViewController, UITableViewDataSource, UITa
          let selectedCoffee = coffeeSubscript[self.tableView.indexPathForSelectedRow.row] // 여기서 self : tableView Controller
          destVC.coffeeForview = selectedCoffee
          */
-        let destVC = segue.destination as! CartDetailViewController
-        let selectedCart = myCart.selectedMenu[self.cartTable.indexPathForSelectedRow!.row]
-        destVC.CartForView = selectedCart
+            let destVC = segue.destination as! CartDetailViewController
+            let selectedCart = myCart.selectedMenu[self.cartTable.indexPathForSelectedRow!.row]
+            destVC.CartForView = selectedCart
     }
 
     
@@ -194,6 +194,9 @@ class CartOrderInfoViewController: UIViewController, UITableViewDataSource, UITa
         }
        
         // Do any additional setup after loading the view.
+        img.setBackgroundImage(UIImage(named: "bag0btn"), for: .disabled)
+        
+       
     }
  
 

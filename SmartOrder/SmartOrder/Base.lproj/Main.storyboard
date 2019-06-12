@@ -72,6 +72,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zvj-fW-V3X">
                                 <rect key="frame" x="31.5" y="179" width="351" height="282"/>
+                                <color key="backgroundColor" red="0.3011381662" green="0.1711970213" blue="0.11053404479999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="282" id="GIz-ZT-WWx"/>
                                     <constraint firstAttribute="width" constant="351" id="zwp-L9-h22"/>
@@ -79,6 +80,7 @@
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ec1-7y-Pqf">
                                 <rect key="frame" x="31.5" y="497" width="351" height="226"/>
+                                <color key="backgroundColor" red="0.3011381662" green="0.1711970213" blue="0.11053404479999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="226" id="9PH-7r-GH8"/>
                                     <constraint firstAttribute="width" constant="351" id="yxs-Xl-0MQ"/>
@@ -157,7 +159,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.34394264221191406" green="0.27506762742996216" blue="0.2195858359336853" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.35966598989999998" green="0.29049348829999999" blue="0.2627322674" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="ec1-7y-Pqf" firstAttribute="centerX" secondItem="2Pd-f3-9y1" secondAttribute="centerX" id="26b-3T-8Mb"/>
                             <constraint firstItem="bOY-LO-25S" firstAttribute="centerX" secondItem="2Pd-f3-9y1" secondAttribute="centerX" id="2Nu-88-7H1"/>
@@ -811,7 +813,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="jdv-EY-PRA"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="스탬프" image="coffeebean" id="sWZ-ce-nld"/>
+                    <tabBarItem key="tabBarItem" title="스탬프" image="stamp_mini" id="sWZ-ce-nld"/>
                     <navigationItem key="navigationItem" title="스탬프/쿠폰" id="uQs-1G-Fsc"/>
                     <connections>
                         <outlet property="segmentedStampCoupon" destination="M3Z-TV-0sJ" id="le8-xe-UCA"/>
@@ -879,11 +881,11 @@
             </objects>
             <point key="canvasLocation" x="4071" y="7"/>
         </scene>
-        <!--Home-->
+        <!--홈-->
         <scene sceneID="5sA-w7-6xb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1PL-fa-xVC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="home_mini" id="JWF-K6-U3T"/>
+                    <tabBarItem key="tabBarItem" title="홈" image="home_mini" id="JWF-K6-U3T"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="seh-JD-76u">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -975,7 +977,6 @@
         <image name="circleBlue30" width="456" height="456"/>
         <image name="circleBorderWhite100" width="58" height="58"/>
         <image name="coffee" width="144" height="144"/>
-        <image name="coffeebean" width="28" height="22"/>
         <image name="header3" width="283" height="397"/>
         <image name="header4" width="283" height="72"/>
         <image name="header5" width="283" height="397"/>
@@ -991,6 +992,7 @@
         <image name="queue" width="428" height="428"/>
         <image name="skyBackground" width="532" height="346"/>
         <image name="smartorder" width="283" height="72"/>
+        <image name="stamp_mini" width="40" height="33"/>
         <image name="under2" width="209" height="43"/>
         <image name="user_mini" width="30" height="27"/>
         <image name="white20" width="209" height="43"/>

@@ -43,17 +43,27 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="장바구니에 담긴 음료가 없습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujF-xd-D9o">
-                                <rect key="frame" x="73" y="372" width="266" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="장바구니에 담긴 음료가 없습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujF-xd-D9o">
+                                <rect key="frame" x="74" y="372" width="266" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="266" id="bnc-7G-UK5"/>
+                                    <constraint firstAttribute="height" constant="52" id="t6K-8K-sFL"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gNN-3d-GOB">
-                                <rect key="frame" x="89" y="202" width="235" height="178"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="cart0img"/>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gNN-3d-GOB">
+                                <rect key="frame" x="89.5" y="202" width="235" height="178"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="178" id="M9u-jb-IbQ"/>
+                                    <constraint firstAttribute="width" constant="235" id="gVt-ud-Smk"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="cart0btn"/>
+                                <state key="disabled" image="bag0img"/>
+                                <connections>
+                                    <action selector="noItemInCart:" destination="AHx-Hs-EzG" eventType="touchUpInside" id="fkd-nk-gXn"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="111" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hiI-i2-4gR">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="749"/>
@@ -134,9 +144,15 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ujF-xd-D9o" firstAttribute="centerX" secondItem="SNc-WG-5mU" secondAttribute="centerX" id="Ozr-80-u6H"/>
+                            <constraint firstItem="gNN-3d-GOB" firstAttribute="top" secondItem="SNc-WG-5mU" secondAttribute="topMargin" constant="158" id="Trl-wt-tRx"/>
+                            <constraint firstItem="ujF-xd-D9o" firstAttribute="top" secondItem="SNc-WG-5mU" secondAttribute="topMargin" constant="328" id="W2V-gx-DWj"/>
+                            <constraint firstItem="gNN-3d-GOB" firstAttribute="centerX" secondItem="SNc-WG-5mU" secondAttribute="centerX" id="y5K-ul-ITg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="BuF-Vh-Nbe"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="장바구니" image="cart_mini" id="IaZ-O5-SDW"/>
+                    <tabBarItem key="tabBarItem" title="장바구니" image="bag" id="IaZ-O5-SDW"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="cartOrderBtn" destination="jFY-bN-JUJ" id="HbJ-Tv-9aC"/>
@@ -148,6 +164,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Nn-7c-Eee" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="AHx-Hs-EzG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="749.27536231884062" y="1116.2946428571429"/>
         </scene>
@@ -161,8 +178,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cart0img" width="332" height="292"/>
-        <image name="cart_mini" width="35" height="33"/>
+        <image name="bag" width="50" height="45"/>
+        <image name="bag0img" width="266" height="230"/>
+        <image name="cart0btn" width="266" height="230"/>
         <image name="checked30" width="85" height="85"/>
     </resources>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
