@@ -8,9 +8,11 @@
 
 import UIKit
 
-class CaffePreViewController: UIViewController {
+class CaffePreViewController: UIViewController , MTMapViewDelegate{
+    
+    var mapView:MTMapView?
 
-    var caffeForView:Caffe?
+    var cafeForView:Caffe?
     var item:String?
     
     @IBOutlet weak var storePhoto: UIImageView!
@@ -18,25 +20,52 @@ class CaffePreViewController: UIViewController {
     @IBOutlet weak var detailed: UILabel!
     @IBOutlet weak var noBtn: UIButton!
     @IBOutlet weak var yesBtn: UIButton!
+ 
+    @IBOutlet var mapTest: UIImageView!
     
     override func viewDidLoad() {
 
         super.viewDidLoad()
-        print(caffeForView?.logo)
-        print(caffeForView?.photo)
+        print(cafeForView?.logo)
+        print(cafeForView?.photo)
         // Do any additional setup after loading the view.
 
+        mapView = MTMapView(frame: self.view.bounds)
         
-        let name = caffeForView?.name
+        var locMap:(Double,Double) = cafeMapList[(cafeForView?.caffeInfo)!]
+        
+        if let mapView = mapView {
+            mapView.delegate = self
+            mapView.baseMapType = .standard
+            var items = [MTMapPOIItem]()
+            let item = MTMapPOIItem()
+            item.mapPoint = MTMapPoint(geoCoord: .init( latitude: locMap.0, longitude: locMap.1))
+            item.itemName = "Here!"
+            item.markerType = .redPin
+            item.markerSelectedType = .redPin
+            item.customImageAnchorPointOffset = .init(offsetX: 30, offsetY: 0)
+            
+            items.append(item)
+           /*
+            let item1 = MTMapPOIItem()
+            item1.mapPoint = MTMapPoint(geoCoord: .init( latitude: 37.555792, longitude: 127.049466))
+            items.append(item1)
+ */
+            mapView.addPOIItems(items)
+            mapView.fitAreaToShowAllPOIItems()
+            self.mapTest.addSubview(mapView)
+        }
+        
+        let name = cafeForView?.name
         detailed.text = "\(name!)를 선택하시겠어요?"
-        if caffeForView?.photo != nil {
-            let photo = caffeForView?.photo
+        if cafeForView?.photo != nil {
+            let photo = cafeForView?.photo
             storePhoto.image = UIImage(named: photo!)
         } else {
             storePhoto.image = UIImage(named: "dummy")
         }
         
-        storeLocation.text = caffeForView?.location
+        storeLocation.text = cafeForView?.location
 
         //noBtn.backgroundColor = .clear
         noBtn.backgroundColor = UIColor.white
@@ -90,7 +119,7 @@ class CaffePreViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
          let destvc = segue.destination as! MenuTableViewController //Your ViewController class
-         let indexPath:Int? = caffeForView?.caffeInfo
+         let indexPath:Int? = cafeForView?.caffeInfo
          let item = caffeList[indexPath!] as! Caffe?
          //destvc.menuForView = item?.menu
          print("preview ...")

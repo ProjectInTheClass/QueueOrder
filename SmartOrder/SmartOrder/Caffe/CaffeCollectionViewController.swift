@@ -80,7 +80,7 @@ class CaffeCollectionViewController: UICollectionViewController {
             if let cell = sender as? UICollectionViewCell,
                 let indexPath = self.collectionView.indexPath(for: cell){
                 let item = caffeList[indexPath.row]
-                destvc.caffeForView = item
+                destvc.cafeForView = item
             }
         
     }
