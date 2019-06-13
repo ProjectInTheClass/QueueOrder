@@ -190,50 +190,6 @@
             </objects>
             <point key="canvasLocation" x="1710.144927536232" y="-680.35714285714278"/>
         </scene>
-        <!--카페 선택-->
-        <scene sceneID="cUR-cB-0s7">
-            <objects>
-                <viewController title="카페 선택" id="fIv-xf-CKX" customClass="CaffeCollectionViewController" customModule="SmartOrder" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="kHI-8s-QQp">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="under2" translatesAutoresizingMaskIntoConstraints="NO" id="cBp-sR-3We">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="circleBorderWhite100" translatesAutoresizingMaskIntoConstraints="NO" id="YsQ-eW-to7">
-                                <rect key="frame" x="39" y="119" width="169" height="162"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="(IT/BT관) 3층 로비" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P4V-hk-IPL">
-                                <rect key="frame" x="76" y="249" width="95" height="15"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="한양대학교 산학기술관" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AgV-cp-KgW">
-                                <rect key="frame" x="70" y="232" width="108" height="15"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qah-JA-gzH">
-                                <rect key="frame" x="70" y="137" width="107" height="87"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="queue"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="PHK-fz-5Od"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="b9V-Z9-Lox" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3279.7101449275365" y="-957.58928571428567"/>
-        </scene>
         <!--Caffe Pre View Controller-->
         <scene sceneID="Aas-6J-e4n">
             <objects>
@@ -409,9 +365,10 @@
                                 <rect key="frame" x="0.0" y="74" width="414" height="811"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo2background" translatesAutoresizingMaskIntoConstraints="NO" id="U2r-kh-0Ro">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U2r-kh-0Ro">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="98"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.14006799459457397" green="0.33445435762405396" blue="0.68633776903152466" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo2" translatesAutoresizingMaskIntoConstraints="NO" id="W2t-SU-RBM">
@@ -978,7 +935,6 @@
     <resources>
         <image name="bean" width="130" height="130"/>
         <image name="circleBlue30" width="456" height="456"/>
-        <image name="circleBorderWhite100" width="58" height="58"/>
         <image name="coffee" width="144" height="144"/>
         <image name="header3" width="283" height="397"/>
         <image name="header4" width="283" height="72"/>
@@ -987,12 +943,10 @@
         <image name="likemenu" width="308" height="318"/>
         <image name="likemenu_white" width="308" height="318"/>
         <image name="logo2" width="209" height="43"/>
-        <image name="logo2background" width="209" height="43"/>
         <image name="logo33" width="209" height="43"/>
         <image name="order3" width="666" height="596"/>
         <image name="order3white" width="666" height="596"/>
         <image name="phone" width="144" height="144"/>
-        <image name="queue" width="428" height="428"/>
         <image name="skyBackground" width="532" height="346"/>
         <image name="smartorder" width="283" height="72"/>
         <image name="stamp_mini" width="40" height="33"/>

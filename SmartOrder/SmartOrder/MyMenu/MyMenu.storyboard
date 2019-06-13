@@ -139,7 +139,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dnv-Oz-Z02">
                                 <rect key="frame" x="41" y="218" width="332" height="292"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="click"/>
+                                <state key="normal" image="cart0img"/>
                                 <connections>
                                     <segue destination="hVn-TP-wbL" kind="show" identifier="CafeSelect" id="3ye-7u-6Iz"/>
                                 </connections>
@@ -173,6 +173,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="click" width="332" height="292"/>
+        <image name="cart0img" width="332" height="292"/>
     </resources>
 </document>
