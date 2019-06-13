@@ -122,6 +122,20 @@ class DetailViewController: UITableViewController, GIDSignInUIDelegate {
                 DispatchQueue.main.asyncAfter(deadline: when){
                     confirmAlert.dismiss(animated: true, completion: nil)
                 }
+                
+                if let tabItems = self.tabBarController?.tabBar.items {
+                    // In this case we want to modify the badge number of the third tab:
+                    let tabItem = tabItems[2]
+                    
+                    
+                    var bageValue = 0
+                    
+                    for i in myCart.selectedMenu {
+                        bageValue += i.count
+                    }
+                    
+                    tabItem.badgeValue = "\(bageValue)"
+                }
             }
         })
         
