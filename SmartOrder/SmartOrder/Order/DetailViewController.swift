@@ -41,6 +41,8 @@ class DetailViewController: UITableViewController, GIDSignInUIDelegate {
         super.viewDidLoad()
          ifLarge.isHidden = true
         
+        likeBtn.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
+        
         //샷 추가 가능하지 않으면 보이지 않게
         if coffeeForView?.shot == false {
             shot.isHidden = true
