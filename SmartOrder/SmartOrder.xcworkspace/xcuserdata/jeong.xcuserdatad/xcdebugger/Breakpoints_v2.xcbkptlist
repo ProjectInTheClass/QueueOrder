@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartOrder/Mypage/MypageViewController.swift"
-            timestampString = "581599050.394287"
+            timestampString = "582085439.8093261"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "14"
@@ -150,13 +150,136 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartOrder/Order/DetailViewController.swift"
-            timestampString = "581601880.739906"
+            timestampString = "581751135.434733"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "257"
             endingLineNumber = "257"
             landmarkName = "onClikLikeBtn(_:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LoginController.swift"
+            timestampString = "582087603.247516"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "passwordContainerView"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SmartOrder.LoginController.passwordContainerView.getter : __C.UIView"
+                  moduleName = "SmartOrder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jeong/Desktop/QueueOrder/SmartOrder/LoginController.swift"
+                  timestampString = "582085440.382256"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "206">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; __C.UIView in SmartOrder.LoginController.passwordContainerView.getter : __C.UIView"
+                  moduleName = "SmartOrder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jeong/Desktop/QueueOrder/SmartOrder/LoginController.swift"
+                  timestampString = "582085440.386412"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "26">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SmartOrder.LoginController.passwordContainerView.setter : __C.UIView"
+                  moduleName = "SmartOrder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jeong/Desktop/QueueOrder/SmartOrder/LoginController.swift"
+                  timestampString = "582085440.389954"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "128">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SmartOrder.LoginController.passwordContainerView.modify : __C.UIView"
+                  moduleName = "SmartOrder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jeong/Desktop/QueueOrder/SmartOrder/LoginController.swift"
+                  timestampString = "582085440.3929811"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "26">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SmartOrder.LoginController.passwordContainerView.modify : __C.UIView with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "SmartOrder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jeong/Desktop/QueueOrder/SmartOrder/LoginController.swift"
+                  timestampString = "582085440.3968689"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "27">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SmartOrder.LoginController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; SmartOrder.LoginController"
+                  moduleName = "SmartOrder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jeong/Desktop/QueueOrder/SmartOrder/LoginController.swift"
+                  timestampString = "582085440.401379"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "463">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SmartOrder.LoginController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;SmartOrder.LoginController&gt;"
+                  moduleName = "SmartOrder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jeong/Desktop/QueueOrder/SmartOrder/LoginController.swift"
+                  timestampString = "582085440.406433"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "398">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

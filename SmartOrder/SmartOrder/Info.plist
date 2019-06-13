@@ -44,6 +44,7 @@
 	<string>1a8399e48d3838949189883a2685ab4b</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
+		<string>Settings</string>
 		<string>kakao1a8399e48d3838949189883a2685ab4b</string>
 		<string>kakaokompassauth</string>
 		<string>storykompassauth</string>
