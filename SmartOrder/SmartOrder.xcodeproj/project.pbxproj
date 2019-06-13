@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5719E2D322B216B000B8C1A2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5719E2D222B216B000B8C1A2 /* SettingsViewController.swift */; };
 		57D9251B227DAF190044E96B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D9251A227DAF190044E96B /* LoginViewController.swift */; };
 		57D9251D227DAF6B0044E96B /* KakaoLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D9251C227DAF6B0044E96B /* KakaoLoginButton.swift */; };
 		57D92521227DAFAE0044E96B /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D92520227DAFAE0044E96B /* KakaoOpenSDK.framework */; };
@@ -90,6 +91,7 @@
 
 /* Begin PBXFileReference section */
 		4FF2CD8C9BFE9FF5014DFBDE /* Pods-SmartOrder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartOrder.release.xcconfig"; path = "Target Support Files/Pods-SmartOrder/Pods-SmartOrder.release.xcconfig"; sourceTree = "<group>"; };
+		5719E2D222B216B000B8C1A2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		577E4CB922A3F5ED0022C126 /* SmartOrder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SmartOrder.entitlements; sourceTree = "<group>"; };
 		57D9251A227DAF190044E96B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		57D9251C227DAF6B0044E96B /* KakaoLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginButton.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				D6E96A08227C4819009A3E04 /* MyPageStoryboard.storyboard */,
+				5719E2D222B216B000B8C1A2 /* SettingsViewController.swift */,
 				57E8D618228C0E1C003EBC05 /* MypageDetailViewController.swift */,
 				57E8D61A228C11D4003EBC05 /* MypageTableViewCell.swift */,
 				57E8D616228C0D55003EBC05 /* MypageTableViewController.swift */,
@@ -655,6 +658,7 @@
 				D67B8F8A22685F3D009FEBD5 /* AppDelegate.swift in Sources */,
 				D67B8F9E226869D4009FEBD5 /* MenuTableViewController.swift in Sources */,
 				57E3B24922966AE60090DB7F /* SignUpController.swift in Sources */,
+				5719E2D322B216B000B8C1A2 /* SettingsViewController.swift in Sources */,
 				D670AEAF228B3DB40034D94D /* CartOrderCell.swift in Sources */,
 				D6E96A03227C100C009A3E04 /* HomeViewController.swift in Sources */,
 				57D92525227ED12E0044E96B /* MypageViewController.swift in Sources */,
