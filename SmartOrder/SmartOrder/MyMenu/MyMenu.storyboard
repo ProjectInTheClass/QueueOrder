@@ -90,14 +90,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MenuName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gr0-hN-1yI">
-                                                    <rect key="frame" x="43.5" y="0.0" width="370.5" height="42"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MenuName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gr0-hN-1yI">
+                                                    <rect key="frame" x="53.5" y="0.0" width="360.5" height="42"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MenuPrice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDE-7q-EgJ">
-                                                    <rect key="frame" x="43.5" y="42" width="370.5" height="1.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MenuPrice" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDE-7q-EgJ">
+                                                    <rect key="frame" x="53.5" y="42" width="360.5" height="1.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -112,12 +112,12 @@
                                             <constraints>
                                                 <constraint firstItem="Gr0-hN-1yI" firstAttribute="bottom" secondItem="2G5-G6-rNV" secondAttribute="bottom" multiplier="0.5" constant="20" symbolic="YES" id="0hK-pr-J3c"/>
                                                 <constraint firstItem="Gr0-hN-1yI" firstAttribute="top" secondItem="2G5-G6-rNV" secondAttribute="top" id="1Ud-vq-aWq"/>
-                                                <constraint firstItem="QDE-7q-EgJ" firstAttribute="leading" secondItem="nPE-Ah-nG5" secondAttribute="trailing" id="Dwc-xs-F4q"/>
+                                                <constraint firstItem="QDE-7q-EgJ" firstAttribute="leading" secondItem="nPE-Ah-nG5" secondAttribute="trailing" constant="10" id="Dwc-xs-F4q"/>
                                                 <constraint firstItem="QDE-7q-EgJ" firstAttribute="trailing" secondItem="2G5-G6-rNV" secondAttribute="trailing" id="Fp1-TN-Wx9"/>
                                                 <constraint firstItem="nPE-Ah-nG5" firstAttribute="top" secondItem="2G5-G6-rNV" secondAttribute="top" id="OTE-vM-8H6"/>
                                                 <constraint firstItem="nPE-Ah-nG5" firstAttribute="leading" secondItem="2G5-G6-rNV" secondAttribute="leading" id="SoO-fP-2UZ"/>
                                                 <constraint firstItem="Gr0-hN-1yI" firstAttribute="trailing" secondItem="2G5-G6-rNV" secondAttribute="trailing" id="eLF-Y5-R7x"/>
-                                                <constraint firstItem="Gr0-hN-1yI" firstAttribute="leading" secondItem="nPE-Ah-nG5" secondAttribute="trailing" id="eye-hV-IB2"/>
+                                                <constraint firstItem="Gr0-hN-1yI" firstAttribute="leading" secondItem="nPE-Ah-nG5" secondAttribute="trailing" constant="10" id="eye-hV-IB2"/>
                                                 <constraint firstItem="QDE-7q-EgJ" firstAttribute="bottom" secondItem="2G5-G6-rNV" secondAttribute="bottom" id="fXc-W2-f5c"/>
                                                 <constraint firstItem="QDE-7q-EgJ" firstAttribute="top" secondItem="Gr0-hN-1yI" secondAttribute="bottom" id="pKt-ZC-cL1"/>
                                                 <constraint firstItem="nPE-Ah-nG5" firstAttribute="bottom" secondItem="2G5-G6-rNV" secondAttribute="bottom" id="tkq-6K-IKY"/>
