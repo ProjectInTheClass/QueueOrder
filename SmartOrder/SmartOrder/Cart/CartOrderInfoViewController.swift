@@ -156,6 +156,14 @@ class CartOrderInfoViewController: UIViewController, UITableViewDataSource, UITa
             let selectedCart = myCart.selectedMenu[self.cartTable.indexPathForSelectedRow!.row]
             destVC.CartForView = selectedCart
          */
+        let destVC = segue.destination as! ConfirmViewController
+        var sendingCart = cart(selectedMenu: [])
+        for i in 0 ..< cartSelectedArray.count{
+            if(cartSelectedArray[i] == 1){
+                sendingCart.selectedMenu.append(myCart.selectedMenu[i])
+            }
+        }
+        destVC.items = sendingCart
     }
 
     
