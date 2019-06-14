@@ -1,11 +1,10 @@
-Directive by HTML5 UP
+Miniport by HTML5 UP
 html5up.net | @ajlkn
 Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 
 
-A simple single pager built around an angular motif (powered by SVG awesomeness).
-Should work great for a landing page. Also includes default styling for a bunch of
-standard page elements (uncomment the huge block of commented-out HTML to see it).
+A super simple responsive portfolio template. It's only a single page because hey, sometimes
+you don't need a half dozen pages to make your point.
 
 Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
 you can use for pretty much whatever.

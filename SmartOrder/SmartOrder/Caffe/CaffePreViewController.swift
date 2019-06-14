@@ -32,7 +32,8 @@ class CaffePreViewController: UIViewController , MTMapViewDelegate{
 
         mapView = MTMapView(frame: self.view.bounds)
         
-        var locMap:(Double,Double) = cafeMapList[(cafeForView?.caffeInfo)!]
+        let locMap:(Double,Double) = cafeMapList[(cafeForView?.caffeInfo)!]
+        
         
         if let mapView = mapView {
             mapView.delegate = self
@@ -41,16 +42,21 @@ class CaffePreViewController: UIViewController , MTMapViewDelegate{
             let item = MTMapPOIItem()
             item.mapPoint = MTMapPoint(geoCoord: .init( latitude: locMap.0, longitude: locMap.1))
             item.itemName = "Here!"
+            item.draggable = true
             item.markerType = .redPin
             item.markerSelectedType = .redPin
             item.customImageAnchorPointOffset = .init(offsetX: 30, offsetY: 0)
             
             items.append(item)
-           /*
+            
             let item1 = MTMapPOIItem()
             item1.mapPoint = MTMapPoint(geoCoord: .init( latitude: 37.555792, longitude: 127.049466))
-            items.append(item1)
- */
+            item1.markerType = .redPin
+            //items.append(item1)
+ 
+ 
+            //mapView.setZoomLevel(4, animated: true)
+            //mapView.setMapCenter(MTMapPoint(geoCoord: .init( latitude: locMap.0, longitude: locMap.1)), animated: true)
             mapView.addPOIItems(items)
             mapView.fitAreaToShowAllPOIItems()
             self.mapTest.addSubview(mapView)

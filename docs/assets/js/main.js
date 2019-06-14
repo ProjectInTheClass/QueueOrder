@@ -1,5 +1,5 @@
 /*
-	Directive by HTML5 UP
+	Miniport by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
@@ -7,16 +7,15 @@
 (function($) {
 
 	var	$window = $(window),
-		$body = $('body');
+		$body = $('body'),
+		$nav = $('#nav');
 
 	// Breakpoints.
 		breakpoints({
-			wide:      [ '1281px',  '1680px' ],
-			normal:    [ '981px',   '1280px' ],
-			narrow:    [ '841px',   '980px'  ],
-			narrower:  [ '737px',   '840px'  ],
-			mobile:    [ '481px',   '736px'  ],
-			mobilep:   [ null,      '480px'  ]
+			xlarge:  [ '1281px',  '1680px' ],
+			large:   [ '981px',   '1280px' ],
+			medium:  [ '737px',   '980px'  ],
+			small:   [ null,      '736px'  ]
 		});
 
 	// Play initial animations on page load.
@@ -24,6 +23,12 @@
 			window.setTimeout(function() {
 				$body.removeClass('is-preload');
 			}, 100);
+		});
+
+	// Scrolly.
+		$('#nav a, .scrolly').scrolly({
+			speed: 1000,
+			offset: function() { return $nav.height(); }
 		});
 
 })(jQuery);
