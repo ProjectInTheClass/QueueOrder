@@ -8,12 +8,14 @@
 
 import UIKit
 
-class StampViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate  {
+class StampViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var segmentedStampCoupon: UISegmentedControl!
     @IBOutlet weak var stampOrCouponTable: UITableView!
     @IBOutlet weak var stamps: UICollectionView!
     
+    var isgauge = true
+    var random : Int = 0
     //table view
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -96,6 +98,7 @@ class StampViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("View did load!")
         stampOrCouponTable.isHidden = true
         stamps.isHidden = false
         print("현재 스탬프 갯수")
@@ -105,6 +108,8 @@ class StampViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.stamps.dataSource = self
        
         stampOrCouponTable.rowHeight = 65
+        
+        random = Int.random(in: 0..<5)
         
         // Do any additional setup after loading the view.
     }
@@ -119,11 +124,101 @@ class StampViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        
+        if(isgauge){
+            return caffeList.count
+        }
         return caffe1.stampToCoupon
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if(isgauge){
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Gauge", for: indexPath) as! GaugeCollectionViewCell
+            return cell.Base.bounds.size
+        }
+        else{
+            let width = self.view.bounds.size.width / CGFloat(caffe1.stampToCoupon) - 20
+            return CGSize(width: width, height: width)
+        }
+    }
+        
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if(isgauge){
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Gauge", for: indexPath) as!
+            GaugeCollectionViewCell
+            
+            cell.CaffeImage.image = UIImage(named: caffeList[indexPath.item]!.logo!)
+            cell.CaffeName.text = caffeList[indexPath.item]!.name
+            cell.stamp = Int.random(in: 0 ..< 10)
+            if(indexPath.item == random){
+                cell.stamp += 10
+            }
+            cell.toStamp = caffeList[indexPath.item]!.stampToCoupon
+            cell.HowMany.text = "\(cell.stamp) / \(cell.toStamp)"
+            cell.Boundaries.layer.borderColor = UIColor.black.cgColor
+            cell.Boundaries.layer.borderWidth = 1.0
+            cell.Boundaries.layer.cornerRadius = cell.Boundaries.bounds.size.height / 2
+            cell.Gauge.layer.cornerRadius = cell.Boundaries.bounds.size.height / 2
+            
+            print("\(String(describing: cell.CaffeName.text)) 의 스탬프 수: \(cell.stamp)")
+          
+            
+            cell.couponCreate = UIAlertController(title: "\(caffeList[indexPath.item]!.name)의 쿠폰이 발급됩니다.", message: nil, preferredStyle: UIAlertController.Style.alert)
+            
+            cell.couponCreate.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: { UIAlertAction in
+                cell.rate.constant = 0
+                cell.Base.layoutIfNeeded()
+                
+                cell.stamp -= 10
+                cell.HowMany.text = "\(cell.stamp) / \(cell.toStamp)"
+                var rate : Double = 0
+                
+                
+                let Today = NSDate()
+                let nextMonth = NSDate(timeIntervalSinceNow: 60 * 60 * 24 * 30)
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy년 M월 d일"
+                
+                let newCoupon =  Coupon(name:"2000원 할인쿠폰", caffe:"QUEUE", price:2000, issueDate:dateFormatter.string(from: Today as Date), expireDate:dateFormatter.string(from : nextMonth as Date), use:false)
+
+                
+                print(newCoupon)
+                
+                couponList.addCoupon(newCoupon)
+               
+                UIView.animate(withDuration: 1, animations: {
+                    if(cell.stamp >= cell.toStamp){
+                        rate = Double(cell.toStamp)
+                    } else{
+                        rate = Double(cell.stamp)
+                    }
+                    cell.rate.constant = (cell.CaffeImage.bounds.size.width) * CGFloat(rate) / CGFloat(cell.toStamp)
+                    cell.Base.layoutIfNeeded()
+                })
+            }))
+            
+            var rate : Double = 0
+            cell.Base.layoutIfNeeded()
+            
+            UIView.animate(withDuration: 1, animations: {
+                cell.Base.setNeedsLayout()
+                if(cell.stamp >= 10){
+                    rate = Double(cell.toStamp)
+                } else{
+                    rate = Double(cell.stamp)
+                }
+                cell.rate.constant = (cell.CaffeImage.bounds.size.width) * CGFloat(rate) / CGFloat(cell.toStamp)
+                cell.Base.layoutIfNeeded()
+            }, completion: {
+                yes in
+                if(cell.stamp >= cell.toStamp){
+                    if(self.presentedViewController == nil){
+                        self.present(cell.couponCreate, animated: true)
+                    }
+                }
+            })
+            return cell
+        }
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Stamp", for: indexPath) as! StampsCollectionViewCell
         // Configure the cell
         
@@ -168,4 +263,5 @@ class StampViewController: UIViewController, UITableViewDataSource, UITableViewD
             
         }
     }
+
 }

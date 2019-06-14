@@ -136,28 +136,46 @@
                                     <outlet property="delegate" destination="LOZ-3Z-g2d" id="jOa-5K-vBU"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dnv-Oz-Z02">
-                                <rect key="frame" x="41" y="218" width="332" height="292"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="cart0img"/>
-                                <connections>
-                                    <segue destination="hVn-TP-wbL" kind="show" identifier="CafeSelect" id="3ye-7u-6Iz"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="선호메뉴 추가하러 가기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dA-WS-b2g">
-                                <rect key="frame" x="107" y="454" width="200" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                <color key="textColor" red="0.35968005657196045" green="0.29067340493202209" blue="0.2627386748790741" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F7x-yR-usH">
+                                <rect key="frame" x="0.0" y="129.5" width="414" height="474"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dnv-Oz-Z02">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="474"/>
+                                        <state key="normal" image="cart0img"/>
+                                        <connections>
+                                            <segue destination="hVn-TP-wbL" kind="show" identifier="CafeSelect" id="3ye-7u-6Iz"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="선호메뉴 추가하러 가기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dA-WS-b2g">
+                                        <rect key="frame" x="0.0" y="260.5" width="414" height="166"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                        <color key="textColor" red="0.35968005657196045" green="0.29067340493202209" blue="0.2627386748790741" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Dnv-Oz-Z02" firstAttribute="bottom" secondItem="F7x-yR-usH" secondAttribute="bottom" id="4z5-aI-oe6"/>
+                                    <constraint firstItem="5dA-WS-b2g" firstAttribute="top" secondItem="F7x-yR-usH" secondAttribute="bottom" multiplier="0.55" id="Cv6-rT-VIV"/>
+                                    <constraint firstItem="5dA-WS-b2g" firstAttribute="trailing" secondItem="F7x-yR-usH" secondAttribute="trailing" id="HAx-J7-mPp"/>
+                                    <constraint firstItem="Dnv-Oz-Z02" firstAttribute="leading" secondItem="F7x-yR-usH" secondAttribute="leading" id="IB2-40-8H5"/>
+                                    <constraint firstItem="5dA-WS-b2g" firstAttribute="leading" secondItem="F7x-yR-usH" secondAttribute="leading" id="NWK-Is-Gev"/>
+                                    <constraint firstItem="Dnv-Oz-Z02" firstAttribute="trailing" secondItem="F7x-yR-usH" secondAttribute="trailing" id="VRQ-E2-92N"/>
+                                    <constraint firstItem="5dA-WS-b2g" firstAttribute="bottom" secondItem="F7x-yR-usH" secondAttribute="bottom" multiplier="0.9" id="itq-2X-luL"/>
+                                    <constraint firstItem="Dnv-Oz-Z02" firstAttribute="top" secondItem="F7x-yR-usH" secondAttribute="top" id="umc-Yn-jy5"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="F7x-yR-usH" firstAttribute="leading" secondItem="zkb-vz-evV" secondAttribute="leading" id="0d8-kk-DTL"/>
+                            <constraint firstItem="F7x-yR-usH" firstAttribute="top" secondItem="zkb-vz-evV" secondAttribute="bottom" multiplier="0.15" id="JjF-ju-GCx"/>
                             <constraint firstItem="sFC-kg-9jf" firstAttribute="bottom" secondItem="zkb-vz-evV" secondAttribute="bottom" id="Zfk-SD-DWF"/>
-                            <constraint firstItem="zkb-vz-evV" firstAttribute="trailing" secondItem="sFC-kg-9jf" secondAttribute="trailing" id="hoq-Fk-fb6"/>
+                            <constraint firstItem="sFC-kg-9jf" firstAttribute="trailing" secondItem="zkb-vz-evV" secondAttribute="trailing" id="hoq-Fk-fb6"/>
+                            <constraint firstItem="F7x-yR-usH" firstAttribute="bottom" secondItem="zkb-vz-evV" secondAttribute="bottom" multiplier="0.7" id="l6Y-Wf-3zd"/>
                             <constraint firstItem="sFC-kg-9jf" firstAttribute="leading" secondItem="zkb-vz-evV" secondAttribute="leading" id="pOE-cl-Iq5"/>
                             <constraint firstItem="sFC-kg-9jf" firstAttribute="top" secondItem="zkb-vz-evV" secondAttribute="top" id="qSA-Jv-5Nt"/>
+                            <constraint firstItem="F7x-yR-usH" firstAttribute="trailing" secondItem="zkb-vz-evV" secondAttribute="trailing" id="r5a-Sq-fav"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zkb-vz-evV"/>
                     </view>
