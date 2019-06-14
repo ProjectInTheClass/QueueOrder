@@ -89,7 +89,7 @@ class CartOrderInfoViewController: UIViewController, UITableViewDataSource, UITa
                 cell.img?.image = UIImage(named: "coffee_picture_blue")
             } else{
                 cell.img?.image = UIImage(named: "coffee_picture_white")
-                cell.backgroundColor = UIColor(red:239/255, green:239/255, blue:244/255, alpha: 1.0)
+                //cell.backgroundColor = UIColor(red:239/255, green:239/255, blue:244/255, alpha: 1.0)
             }
             
             cell.option.text = "사이즈\(CartForTheRow.size) / 얼음\(CartForTheRow.ice) / 샷추가\(CartForTheRow.shot)"
@@ -156,6 +156,14 @@ class CartOrderInfoViewController: UIViewController, UITableViewDataSource, UITa
             let selectedCart = myCart.selectedMenu[self.cartTable.indexPathForSelectedRow!.row]
             destVC.CartForView = selectedCart
          */
+        let destVC = segue.destination as! ConfirmViewController
+        var sendingCart = cart(selectedMenu: [])
+        for i in 0 ..< cartSelectedArray.count{
+            if(cartSelectedArray[i] == 1){
+                sendingCart.selectedMenu.append(myCart.selectedMenu[i])
+            }
+        }
+        destVC.items = sendingCart
     }
 
     
