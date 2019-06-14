@@ -41,6 +41,8 @@ class DetailViewController: UITableViewController, GIDSignInUIDelegate {
         super.viewDidLoad()
          ifLarge.isHidden = true
         
+        likeBtn.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
+        
         //샷 추가 가능하지 않으면 보이지 않게
         if coffeeForView?.shot == false {
             shot.isHidden = true
@@ -121,6 +123,20 @@ class DetailViewController: UITableViewController, GIDSignInUIDelegate {
                 let when = DispatchTime.now() + 1
                 DispatchQueue.main.asyncAfter(deadline: when){
                     confirmAlert.dismiss(animated: true, completion: nil)
+                }
+                
+                if let tabItems = self.tabBarController?.tabBar.items {
+                    // In this case we want to modify the badge number of the third tab:
+                    let tabItem = tabItems[2]
+                    
+                    
+                    var bageValue = 0
+                    
+                    for i in myCart.selectedMenu {
+                        bageValue += i.count
+                    }
+                    
+                    tabItem.badgeValue = "\(bageValue)"
                 }
             }
         })

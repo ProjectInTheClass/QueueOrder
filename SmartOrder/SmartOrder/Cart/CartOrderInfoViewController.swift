@@ -37,6 +37,7 @@ class CartOrderInfoViewController: UIViewController, UITableViewDataSource, UITa
         
         //장바구니 테이블 셀 삭제 시 총 금액 계산하는 함수 call
         totalPrice()
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -150,14 +151,24 @@ class CartOrderInfoViewController: UIViewController, UITableViewDataSource, UITa
          let selectedCoffee = coffeeSubscript[self.tableView.indexPathForSelectedRow.row] // 여기서 self : tableView Controller
          destVC.coffeeForview = selectedCoffee
          */
+        /*
             let destVC = segue.destination as! CartDetailViewController
             let selectedCart = myCart.selectedMenu[self.cartTable.indexPathForSelectedRow!.row]
             destVC.CartForView = selectedCart
+         */
     }
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let tabItems = tabBarController?.tabBar.items {
+            // In this case we want to modify the badge number of the third tab:
+            let tabItem = tabItems[2]
+            tabItem.badgeValue = nil
+            
+        }
+        
         self.cartTable.rowHeight = 111
         
         //cartOrderBtn.backgroundColor = UIColor(red: 98/255, green: 92/255, blue: 89/255, alpha: 1.0)
@@ -202,7 +213,7 @@ class CartOrderInfoViewController: UIViewController, UITableViewDataSource, UITa
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-       
+        
         self.viewDidLoad()
     }
     
