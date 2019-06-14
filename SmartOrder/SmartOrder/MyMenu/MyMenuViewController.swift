@@ -49,16 +49,31 @@ class MyMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return FavoriteMenu[section].count
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
-    }
     func numberOfSections(in tableView: UITableView) -> Int {
         return FavoriteMenu.count
     }
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        //add header for each section
+  
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let height = self.view.bounds.size.height
         
-        return CaffeName[section]
+        let myLabel = UILabel()
+        myLabel.frame = CGRect(x: 0, y: 0, width: self.view.bounds.size.height, height: height / 35)
+        myLabel.font = UIFont.boldSystemFont(ofSize: height / 40)
+        myLabel.text = CaffeName[section]
+        
+        let headerView = UIView()
+        headerView.addSubview(myLabel)
+        
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 89
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        let height = self.view.bounds.size.height
+        return height / 35
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteMenu", for: indexPath) as! MyMenuTableViewCell

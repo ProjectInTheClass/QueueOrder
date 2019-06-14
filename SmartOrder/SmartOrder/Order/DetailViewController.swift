@@ -311,6 +311,18 @@ class DetailViewController: UITableViewController, GIDSignInUIDelegate {
       
         
     }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let height = self.tableView.bounds.size.height
+        if(indexPath.row == 0){
+            return CGFloat(height * 0.2)
+        } else if(indexPath.row == 1 || indexPath.row == 2){
+            return CGFloat(height * 0.1)
+        }
+        else{
+            return CGFloat(height * 0.5)
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier! == "Payment"{
             var Ice_size : String

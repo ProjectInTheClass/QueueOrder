@@ -10,7 +10,7 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class CaffeCollectionViewController: UICollectionViewController {
+class CaffeCollectionViewController: UICollectionViewController , UICollectionViewDelegateFlowLayout{
     
     
     override func viewDidLoad() {
@@ -49,6 +49,11 @@ class CaffeCollectionViewController: UICollectionViewController {
         // #warning Incomplete implementation, return the number of items
         print("카페 row")
         return caffeList.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = self.view.bounds.size.width / 3.3
+        return CGSize(width: width, height: width)
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

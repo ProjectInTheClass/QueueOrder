@@ -12,7 +12,6 @@
         <!--Detail View Controller-->
         <scene sceneID="Vba-zK-3Rj">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xl6-13-52b" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController storyboardIdentifier="Order" id="vqN-Zj-Q7r" customClass="DetailViewController" customModule="SmartOrder" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleAspectFit" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="qOM-YI-rZ7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -431,6 +430,7 @@
                         <segue destination="NQc-h8-J2a" kind="presentation" identifier="LoginSegue" id="czk-i5-2l4"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xl6-13-52b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4807.2463768115949" y="424.55357142857139"/>
         </scene>
@@ -445,8 +445,8 @@
         <!--LCReference-->
         <scene sceneID="iwW-xQ-DmO">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pUg-6h-Gm2" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="MyPageStoryboard" referencedIdentifier="LCReference" id="NQc-h8-J2a" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pUg-6h-Gm2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5351" y="153"/>
         </scene>
