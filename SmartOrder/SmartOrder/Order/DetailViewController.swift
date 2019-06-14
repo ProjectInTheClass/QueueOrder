@@ -41,6 +41,9 @@ class DetailViewController: UITableViewController, GIDSignInUIDelegate {
         super.viewDidLoad()
          ifLarge.isHidden = true
         
+        tableView.estimatedRowHeight = 225.0
+        tableView.rowHeight = UITableView.automaticDimension
+        
         likeBtn.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
         
         //샷 추가 가능하지 않으면 보이지 않게
@@ -159,6 +162,10 @@ class DetailViewController: UITableViewController, GIDSignInUIDelegate {
         print(caffeInfo)
         print(coffeeForView?.coffee)
         
+        tableView.estimatedRowHeight = 225.0
+        tableView.rowHeight = UITableView.automaticDimension
+        
+     
     }
     
     // 총 결제 금액 계산하는 함수

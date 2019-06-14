@@ -115,7 +115,7 @@ struct Caffe {
 var caffe1 = Caffe(caffeInfo:0, logo:"queue", photo:"queueIn", name:"카페큐", location:"한양대학교 산학기술관(IT/BT관) 3층 로비", menu:MenuSubscript, stampToCoupon:10, sizeUp:500, shotPrice:500)
 
 var caffe2 = Caffe(caffeInfo:1, logo: "tiamo", photo:"tiamo_photo.JPG", name:"TIAMO MK점", location:"한양대학교 노천", menu:MenuSubscript2, stampToCoupon:10, sizeUp:500, shotPrice:400)
-var caffe3 = Caffe(caffeInfo:2, logo: "tiamo", photo:nil, name:"TIAMO 학술정보관점", location:"제2공학관", menu:MenuSubscript3, stampToCoupon:10, sizeUp:500, shotPrice:400)
+var caffe3 = Caffe(caffeInfo:2, logo: "tiamo", photo:"tiamo_photo_2.JPG", name:"TIAMO 학술정보관점", location:"제2공학관", menu:MenuSubscript3, stampToCoupon:10, sizeUp:500, shotPrice:400)
 
 var caffeList:[Int:Caffe] = [caffe1.caffeInfo:caffe1, caffe2.caffeInfo:caffe2, caffe3.caffeInfo:caffe3]
 
