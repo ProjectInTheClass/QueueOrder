@@ -51,7 +51,7 @@ class LoginController: UIViewController, GIDSignInUIDelegate, SignUpDelegate {
         button.setTitle("취소", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .mainBrown()
+        button.backgroundColor = .mainBlue()
         button.addTarget(self, action: #selector(handleClose), for: .touchUpInside)
         button.layer.cornerRadius = 5
         return button
@@ -61,7 +61,7 @@ class LoginController: UIViewController, GIDSignInUIDelegate, SignUpDelegate {
         let button = UIButton(type: .system)
         button.setTitle("로그인", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18)
-        button.setTitleColor(.mainBrown(), for: .normal)
+        button.setTitleColor(.mainBlue(), for: .normal)
         button.backgroundColor = .white
         button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         button.layer.cornerRadius = 5
@@ -203,7 +203,7 @@ class LoginController: UIViewController, GIDSignInUIDelegate, SignUpDelegate {
     }
     
     func configureViewComponents() {
-        view.backgroundColor = UIColor.mainBrown()
+        view.backgroundColor = UIColor.mainBlue()
         navigationController?.navigationBar.isHidden = true
         
         view.addSubview(closeButton)

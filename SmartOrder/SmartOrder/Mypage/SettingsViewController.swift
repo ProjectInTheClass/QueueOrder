@@ -36,7 +36,7 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func askBtn(_ sender: Any) {
-        let alert = UIAlertController(title: "문의메일", message:"odysseyj@naver.com", preferredStyle: .alert)
+        let alert = UIAlertController(title: "문의메일", message:"hOrder@gmail.com", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "확인", style: .default
             , handler: nil))
         self.present(alert, animated: true, completion: nil)
