@@ -65,7 +65,7 @@ class SignUpController: UIViewController, GIDSignInUIDelegate {
         let button = UIButton(type: .system)
         button.setTitle("회원 가입", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18)
-        button.setTitleColor(UIColor.mainBrown(), for: .normal)
+        button.setTitleColor(UIColor.mainBlue(), for: .normal)
         button.backgroundColor = .white
         button.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
         button.layer.cornerRadius = 5
@@ -212,7 +212,7 @@ class SignUpController: UIViewController, GIDSignInUIDelegate {
     // MARK: - Helper Functions
     
     func configureViewComponents() {
-        view.backgroundColor = UIColor.mainBrown()
+        view.backgroundColor = UIColor.mainBlue()
         navigationController?.navigationBar.isHidden = true
         
         view.addSubview(logoImageView)
@@ -220,7 +220,7 @@ class SignUpController: UIViewController, GIDSignInUIDelegate {
         logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         view.addSubview(emailContainerView)
-        emailContainerView.anchor(top: logoImageView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 24, paddingLeft: 32, paddingBottom: 0, paddingRight: 32, width: 0, height: 50)
+        emailContainerView.anchor(top: logoImageView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 50, paddingLeft: 32, paddingBottom: 0, paddingRight: 32, width: 0, height: 50)
         
         view.addSubview(usernameContainerView)
         usernameContainerView.anchor(top: emailContainerView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 24, paddingLeft: 32, paddingBottom: 0, paddingRight: 32, width: 0, height: 50)
