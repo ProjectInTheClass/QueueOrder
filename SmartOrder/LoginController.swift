@@ -61,7 +61,7 @@ class LoginController: UIViewController, GIDSignInUIDelegate, SignUpDelegate {
         let button = UIButton(type: .system)
         button.setTitle("로그인", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18)
-        button.setTitleColor(.mainBlue(), for: .normal)
+        button.setTitleColor(.black, for: .normal)
         button.backgroundColor = .white
         button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         button.layer.cornerRadius = 5
@@ -119,7 +119,7 @@ class LoginController: UIViewController, GIDSignInUIDelegate, SignUpDelegate {
     
     let dontHaveAccountButton: UIButton = {
         let button = UIButton(type: .system)
-        let attributedTitle = NSMutableAttributedString(string: "이용이 처음이신가요?  ", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16), NSAttributedString.Key.foregroundColor: UIColor.white])
+        let attributedTitle = NSMutableAttributedString(string: "처음이신가요?  ", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16), NSAttributedString.Key.foregroundColor: UIColor.white])
         attributedTitle.append(NSAttributedString(string: "진짜 쉬운 간편 회원 가입", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16), NSAttributedString.Key.foregroundColor: UIColor.white]))
         button.setAttributedTitle(attributedTitle, for: .normal)
         button.addTarget(self, action: #selector(handleShowSignUp), for: .touchUpInside)
@@ -203,36 +203,62 @@ class LoginController: UIViewController, GIDSignInUIDelegate, SignUpDelegate {
     }
     
     func configureViewComponents() {
+        //let constraint1 = NSLayoutConstraint(item:self.closeButton, attribute: .leading, relatedBy: .equal, toItem: self.closeButton.superview, attribute: .leading, multiplier: 1.0, constant: 0)
+        //starview.super.addConstaint(constraint1)
+       // let constraint2 = NSLayoutConstraint(item: self.closeButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 100)
+       // closeButton.addConstraint(constraint2)
+       // let constraints: [NSLayoutConstraint] = NSLayoutConstraint.constraints(withVisualFormat: "V:|-20-[button1]-20-[button2]", options: <#T##NSLayoutConstraint.FormatOptions#>, metrics: <#T##[String : Any]?#>, views: ["button1":self.closeButton, "button2":self.loginButton])
+        
         view.backgroundColor = UIColor.mainBlue()
         navigationController?.navigationBar.isHidden = true
+
+        let margins = self.view.layoutMarginsGuide
         
         view.addSubview(closeButton)
-        closeButton.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 30, paddingLeft: 30, paddingBottom: 0, paddingRight: 0, width: 0, height: 50)
+        closeButton.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 30, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        
+        closeButton.heightAnchor.constraint(equalTo: margins.heightAnchor,
+                                              multiplier: 0.1, constant: 0).isActive = true
         
         view.addSubview(logoImageView)
-        logoImageView.anchor(top: closeButton.bottomAnchor, left: nil, bottom: nil, right: nil, paddingTop: 80, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 150, height: 150)
+        logoImageView.anchor(top: closeButton.bottomAnchor, left: nil, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        logoImageView.widthAnchor.constraint(equalTo: margins.widthAnchor,
+                                             multiplier: 0.2, constant: 0).isActive = true
+        
+        logoImageView.heightAnchor.constraint(equalTo: margins.heightAnchor,
+                                              multiplier: 0.2, constant: 0).isActive = true
         logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         view.addSubview(emailContainerView)
-        emailContainerView.anchor(top: logoImageView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 50, paddingLeft: 32, paddingBottom: 0, paddingRight: 32, width: 0, height: 50)
+        emailContainerView.anchor(top: logoImageView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 0, paddingLeft: 32, paddingBottom: 0, paddingRight: 32, width: 0, height: 50)
         
         view.addSubview(passwordContainerView)
         passwordContainerView.anchor(top: emailContainerView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 16, paddingLeft: 32, paddingBottom: 0, paddingRight: 32, width: 0, height: 50)
         
         view.addSubview(loginButton)
-        loginButton.anchor(top: passwordContainerView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 24, paddingLeft: 32, paddingBottom: 0, paddingRight: 32, width: 0, height: 50)
+        loginButton.anchor(top: passwordContainerView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 24, paddingLeft: 32, paddingBottom: 0, paddingRight: 32, width: 0, height: 0)
+        loginButton.heightAnchor.constraint(equalTo: margins.heightAnchor,
+                                                   multiplier: 0.05, constant: 0).isActive = true
         
         view.addSubview(dividerView)
-        dividerView.anchor(top: loginButton.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 24, paddingLeft: 32, paddingBottom: 0, paddingRight: 32, width: 0, height: 50)
+        dividerView.anchor(top: loginButton.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 24, paddingLeft: 32, paddingBottom: 0, paddingRight: 32, width: 0, height: 0)
+        dividerView.heightAnchor.constraint(equalTo: margins.heightAnchor,
+                                                   multiplier: 0.05, constant: 0).isActive = true
         
         view.addSubview(googleLoginButton)
-        googleLoginButton.anchor(top: dividerView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 24, paddingLeft: 32, paddingBottom: 0, paddingRight: 32, width: 0, height: 50)
+        googleLoginButton.anchor(top: dividerView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 24, paddingLeft: 32, paddingBottom: 0, paddingRight: 32, width: 0, height: 0)
+        googleLoginButton.heightAnchor.constraint(equalTo: margins.heightAnchor,
+                                                   multiplier: 0.05, constant: 0).isActive = true
         
         view.addSubview(kakaoLoginButton)
-        kakaoLoginButton.anchor(top: dividerView.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 100, paddingLeft: 32, paddingBottom: 0, paddingRight: 32, width: 0, height: 50)
+        kakaoLoginButton.anchor(top: googleLoginButton.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 24, paddingLeft: 32, paddingBottom: 0, paddingRight: 32, width: 0, height: 0)
+        kakaoLoginButton.heightAnchor.constraint(equalTo: margins.heightAnchor,
+                                                   multiplier: 0.05, constant: 0).isActive = true
         
         view.addSubview(dontHaveAccountButton)
         dontHaveAccountButton.anchor(top: nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 32, paddingBottom: 30, paddingRight: 32, width: 0, height: 50)
+        dontHaveAccountButton.heightAnchor.constraint(equalTo: margins.heightAnchor,
+                                                   multiplier: 0.1, constant: 0).isActive = true
     }
 }
 
