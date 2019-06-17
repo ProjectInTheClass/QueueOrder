@@ -140,7 +140,7 @@ class StampViewController: UIViewController, UITableViewDataSource, UITableViewD
             return cell.Base.bounds.size
         }
         else{
-            let width = self.view.bounds.size.width / CGFloat(caffe1.stampToCoupon) - 20
+            let width = self.view.frame.size.width / 6.3
             return CGSize(width: width, height: width)
         }
     }
