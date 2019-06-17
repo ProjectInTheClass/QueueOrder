@@ -13,7 +13,7 @@
         <!--장바구니-->
         <scene sceneID="Gdm-r6-0Ls">
             <objects>
-                <viewController storyboardIdentifier="MyCart2" id="tFT-Su-2U1" customClass="CartOrderInfoViewController" customModule="SmartOrder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyCart2" title="장바구니" id="tFT-Su-2U1" customClass="CartOrderInfoViewController" customModule="SmartOrder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SNc-WG-5mU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

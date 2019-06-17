@@ -363,7 +363,7 @@
                     <connections>
                         <segue destination="dgh-Wk-7Vf" kind="relationship" relationship="viewControllers" id="jL9-Sm-AuW"/>
                         <segue destination="13p-Cl-zai" kind="relationship" relationship="viewControllers" id="CdY-99-Zkl"/>
-                        <segue destination="aKl-qh-ppk" kind="relationship" relationship="viewControllers" id="7tB-Bp-TUq"/>
+                        <segue destination="T9D-gb-LDT" kind="relationship" relationship="viewControllers" id="7tB-Bp-TUq"/>
                         <segue destination="hIz-gs-OeA" kind="relationship" relationship="viewControllers" id="WB8-ka-xQS"/>
                     </connections>
                 </tabBarController>
@@ -375,11 +375,11 @@
         <scene sceneID="6R2-ei-9Va">
             <objects>
                 <viewControllerPlaceholder storyboardIdentifier="Cart2" storyboardName="Cart" referencedIdentifier="MyCart2" id="aKl-qh-ppk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="WLe-1Y-EcJ"/>
+                    <navigationItem key="navigationItem" id="zVD-fb-pFo"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hCH-La-fCy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="272" y="825"/>
+            <point key="canvasLocation" x="807" y="1104"/>
         </scene>
         <!--MyPage-->
         <scene sceneID="aZz-IH-dku">
@@ -389,7 +389,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mcc-aa-mU6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="691" y="825"/>
+            <point key="canvasLocation" x="1600.7246376811595" y="825"/>
         </scene>
         <!--MyMenu-->
         <scene sceneID="5AQ-Y8-riH">
@@ -601,7 +601,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IDJ-J2-wlo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1339" y="779"/>
+            <point key="canvasLocation" x="2247.826086956522" y="778.79464285714278"/>
         </scene>
         <!--메뉴 선택-->
         <scene sceneID="dGB-r3-sw1">
@@ -677,6 +677,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EuM-64-tVS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1338" y="83"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="Gt0-Us-KJZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="T9D-gb-LDT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="WLe-1Y-EcJ"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lck-5I-hhY">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="aKl-qh-ppk" kind="relationship" relationship="rootViewController" id="7fX-qp-zLQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M9G-zg-dfW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="259" y="1104"/>
         </scene>
     </scenes>
     <resources>
