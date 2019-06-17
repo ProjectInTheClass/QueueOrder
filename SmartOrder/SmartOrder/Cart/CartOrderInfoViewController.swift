@@ -165,7 +165,7 @@ class CartOrderInfoViewController: UIViewController, UITableViewDataSource, UITa
         }
         destVC.items = sendingCart
     }
-
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -221,10 +221,16 @@ class CartOrderInfoViewController: UIViewController, UITableViewDataSource, UITa
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        navigationController?.setNavigationBarHidden(true, animated: animated)
         self.viewDidLoad()
     }
+  
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+
     
     /*
      // MARK: - Navigation

@@ -10,7 +10,12 @@ import UIKit
 import UserNotifications
 
 class HomeViewController: UIViewController {
-/*
+    @IBOutlet var btn1: UIButton!
+    @IBOutlet var btn2: UIButton!
+    
+    
+    
+    /*
     @IBOutlet weak var item1: UIImageView!
     @IBOutlet weak var item2: UIImageView!
     */
@@ -36,6 +41,9 @@ class HomeViewController: UIViewController {
         */
         super.viewDidLoad()
        
+        btn1.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
+        btn2.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
+        
        //navigation bar back 글씨 지우기
         self.navigationController?.navigationBar.topItem?.title = ""
         

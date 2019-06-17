@@ -139,7 +139,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F7x-yR-usH">
                                 <rect key="frame" x="0.0" y="129.5" width="414" height="474"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dnv-Oz-Z02">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dnv-Oz-Z02">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="474"/>
                                         <state key="normal" image="cart0img"/>
                                         <connections>
