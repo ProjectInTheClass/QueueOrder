@@ -409,6 +409,9 @@
                                             <segment title="게이지"/>
                                         </segments>
                                         <color key="tintColor" red="1" green="0.98040046120000002" blue="0.99848016350000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="ChangeSetting:" destination="jg6-Oo-O6F" eventType="valueChanged" id="E8b-JJ-L9U"/>
+                                        </connections>
                                     </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" red="0.31689900160000001" green="0.57918137309999995" blue="0.84086620810000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -484,6 +487,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fEU-f8-2hq"/>
                     </view>
+                    <connections>
+                        <outlet property="StampOrGauge" destination="xqe-jg-Iao" id="L6l-U0-DcJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D22-DN-xuK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -14,7 +14,6 @@ class StampViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet weak var stampOrCouponTable: UITableView!
     @IBOutlet weak var stamps: UICollectionView!
     
-    var isgauge = true
     var random : Int = 0
     //table view
     
@@ -114,6 +113,11 @@ class StampViewController: UIViewController, UITableViewDataSource, UITableViewD
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.stamps.reloadData()
+    }
+    
     // MARK: UICollectionViewDataSource
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -136,7 +140,7 @@ class StampViewController: UIViewController, UITableViewDataSource, UITableViewD
             return cell.Base.bounds.size
         }
         else{
-            let width = self.view.bounds.size.width / CGFloat(caffe1.stampToCoupon) - 20
+            let width = self.view.frame.size.width / 6.3
             return CGSize(width: width, height: width)
         }
     }
