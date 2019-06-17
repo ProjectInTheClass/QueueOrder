@@ -10,10 +10,14 @@ import UIKit
 import Firebase
 import GoogleSignIn
 
-class MypageViewController: UIViewController, GIDSignInUIDelegate {
-
+class MypageViewController: UIViewController, GIDSignInUIDelegate
+    {
+    
+    let picker = UIImagePickerController()
+    
     @IBOutlet weak var loginIcon: UIImageView!
     
+    @IBOutlet var addButton: UIButton!
     @IBOutlet weak var mainImage: UIImageView!
     @IBOutlet weak var loginButtonLabel: UILabel!
     @IBOutlet weak var logoutIcon: UIImageView!
@@ -36,6 +40,33 @@ class MypageViewController: UIViewController, GIDSignInUIDelegate {
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var orderInfoButton: UIButton!
     
+    @IBAction func addButtonPressed(_ sender: Any) {
+        let alert =  UIAlertController(title: "원하는 타이틀", message: "원하는 메세지", preferredStyle: .actionSheet)
+        
+        
+        let library =  UIAlertAction(title: "사진앨범", style: .default) { (action) in self.openLibrary()
+            
+        }
+        
+        
+        let camera =  UIAlertAction(title: "카메라", style: .default) { (action) in
+            
+            self.openCamera()
+            
+        }
+        
+        
+        let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        
+        
+        alert.addAction(library)
+        
+        alert.addAction(camera)
+        
+        alert.addAction(cancel)
+        
+        present(alert, animated: true, completion: nil)
+    }
     // 로그아웃 버튼 눌렀을때 동작 처리.
     @IBAction func pressLogout(_ sender: Any) {
         self.present(logoutalertController, animated: true, completion: {})
@@ -129,8 +160,7 @@ class MypageViewController: UIViewController, GIDSignInUIDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print ("ViewDidLoad")
+        picker.delegate = self
         // Google Signin버튼
         //GIDSignIn.sharedInstance().uiDelegate = self
         
@@ -237,6 +267,31 @@ class MypageViewController: UIViewController, GIDSignInUIDelegate {
     }
     */
     
+    
+    func openLibrary(){
+        
+        picker.sourceType = .photoLibrary
+        
+        present(picker, animated: false, completion: nil)
+        
+    }
+    
+    func openCamera(){
+        
+        if(UIImagePickerController .isSourceTypeAvailable(.camera)){
+            
+            picker.sourceType = .camera
+            
+            present(picker, animated: false, completion: nil)
+            
+        }
+        else{
+            
+            print("Camera not available")
+            
+        }
+    }
+    
     // 인증 조건에 맞춰서 뷰 변화주기
     func authenticationUser(){
         guard let currentUser = Auth.auth().currentUser else{
@@ -246,6 +301,7 @@ class MypageViewController: UIViewController, GIDSignInUIDelegate {
             loginIcon.isHidden = false;
             logoutButton.isHidden = true
             label2.isHidden = false
+           addButton.isHidden = true
             userNameLabel.text = "회원서비스 이용을 위해 로그인해주세요."
             joinAddress.text = "안녕하세요!"
             mainImage.image = UIImage(named: "coffeebottle2")
@@ -260,6 +316,7 @@ class MypageViewController: UIViewController, GIDSignInUIDelegate {
         userNameLabel.text = "님 안녕하세요!"
         joinAddress.text = Auth.auth().currentUser?.email
         mainImage.image = UIImage(named: "coffeebottlefilled")
+        addButton.isHidden = false
     }
     
     // 처음에 보여줄 뷰 결정하기
@@ -283,4 +340,21 @@ class MypageViewController: UIViewController, GIDSignInUIDelegate {
         
         authenticationUser()
     }
+}
+
+extension MypageViewController : UIImagePickerControllerDelegate,
+UINavigationControllerDelegate{
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        if let image = info["UIImagePickerControllerOriginalImage"] as? UIImage
+        {
+            mainImage.image = image
+            print(info)
+            
+        }
+        dismiss(animated: true, completion: nil)
+        
+    }
+    
 }
