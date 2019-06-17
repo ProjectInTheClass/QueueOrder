@@ -11,6 +11,7 @@ import UserNotifications
 
 class ConfirmViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    
     @IBAction func orderButtonPressed(_ sender: Any) {
         
         let content = UNMutableNotificationContent()
@@ -120,7 +121,7 @@ class ConfirmViewController: UIViewController, UITableViewDataSource, UITableVie
     //CouponSelected에 coupon index와 coupon값 저장
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         let cell = tableView.dequeueReusableCell(withIdentifier: "coupon", for: indexPath)
-        
+       
         if let selected = CouponSelected{
             print("\(selected.0)와 \(indexPath.row)는 같은가요?")
             if selected.0 == self.couponindex[indexPath.row]{
@@ -160,7 +161,7 @@ class ConfirmViewController: UIViewController, UITableViewDataSource, UITableVie
     //각 cell별 데이터 설정 및 alert창 선언, action정의
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "coupon", for: indexPath)
-        
+       
         cell.textLabel?.text = couponlist[indexPath.row].name
         cell.detailTextLabel?.text = "\(couponlist[indexPath.row].price)원"
         

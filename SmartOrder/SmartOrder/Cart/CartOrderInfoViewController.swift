@@ -166,10 +166,30 @@ class CartOrderInfoViewController: UIViewController, UITableViewDataSource, UITa
         destVC.items = sendingCart
     }
    
+    /*
+    // #2. reorder UITableView cell
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .none
+    }
+    
+    func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let movedObject = myCart.selectedMenu[sourceIndexPath.row]
+        myCart.selectedMenu.remove(at: sourceIndexPath.row)
+        myCart.selectedMenu.insert(movedObject, at: destinationIndexPath.row)
+    }
+    */
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        /*
+        // #1. reorder UITableView cell
+        self.cartTable.isEditing = true
+        */
         if let tabItems = tabBarController?.tabBar.items {
             // In this case we want to modify the badge number of the third tab:
             let tabItem = tabItems[2]

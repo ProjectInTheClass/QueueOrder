@@ -152,9 +152,6 @@ class CartViewController: UITableViewController {
          let selectedCoffee = coffeeSubscript[self.tableView.indexPathForSelectedRow.row] // 여기서 self : tableView Controller
          destVC.coffeeForview = selectedCoffee
          */
-        let destVC = segue.destination as! CartDetailViewController
-        let selectedCart = myCart.selectedMenu[self.tableView.indexPathForSelectedRow!.row]
-        destVC.CartForView = selectedCart
     }
     
    

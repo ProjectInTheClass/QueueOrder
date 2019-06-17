@@ -9,7 +9,7 @@
 import UIKit
 
 class CartOrderInfoCell: UITableViewCell {
-
+    
     @IBOutlet weak var orderPrice: UILabel!
     @IBOutlet weak var orderBtn: UIButton!
     
@@ -18,10 +18,10 @@ class CartOrderInfoCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         //orderBtn.backgroundColor = .clear
         orderBtn.backgroundColor = UIColor(red: 98/255, green: 92/255, blue: 89/255, alpha: 1.0)
         orderBtn.layer.cornerRadius = 5
@@ -31,5 +31,5 @@ class CartOrderInfoCell: UITableViewCell {
         
         // Configure the view for the selected state
     }
-
+    
 }

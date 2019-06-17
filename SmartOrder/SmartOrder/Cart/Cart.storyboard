@@ -68,6 +68,39 @@
                                     <constraint firstAttribute="bottom" secondItem="jFY-bN-JUJ" secondAttribute="bottom" multiplier="1.3" id="vh5-q7-b8g"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dNK-ZE-AMU" userLabel="장바구니비었음">
+                                <rect key="frame" x="103.5" y="244" width="227.5" height="569"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="장바구니에 담긴 음료가 없습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujF-xd-D9o">
+                                        <rect key="frame" x="20" y="190" width="266" height="52"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="266" id="bnc-7G-UK5"/>
+                                            <constraint firstAttribute="height" constant="52" id="t6K-8K-sFL"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gNN-3d-GOB">
+                                        <rect key="frame" x="35.5" y="20" width="235" height="178"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="178" id="M9u-jb-IbQ"/>
+                                            <constraint firstAttribute="width" constant="235" id="gVt-ud-Smk"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="cart0btn"/>
+                                        <state key="disabled" image="bag0img"/>
+                                        <connections>
+                                            <action selector="noItemInCart:" destination="AHx-Hs-EzG" eventType="touchUpInside" id="fkd-nk-gXn"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ujF-xd-D9o" firstAttribute="top" secondItem="dNK-ZE-AMU" secondAttribute="topMargin" constant="190" id="1HY-1z-1nl"/>
+                                    <constraint firstItem="gNN-3d-GOB" firstAttribute="centerX" secondItem="dNK-ZE-AMU" secondAttribute="centerX" id="C4b-Vf-4Fz"/>
+                                    <constraint firstItem="gNN-3d-GOB" firstAttribute="top" secondItem="dNK-ZE-AMU" secondAttribute="topMargin" constant="20" id="ET0-MN-rzg"/>
+                                    <constraint firstItem="ujF-xd-D9o" firstAttribute="centerX" secondItem="dNK-ZE-AMU" secondAttribute="centerX" id="IU4-fV-EYX"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="111" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hiI-i2-4gR">
                                 <rect key="frame" x="0.0" y="44" width="414" height="687.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -161,39 +194,6 @@
                                     <outlet property="dataSource" destination="tFT-Su-2U1" id="zCg-Pm-kZa"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dNK-ZE-AMU" userLabel="장바구니비었음">
-                                <rect key="frame" x="103.5" y="244" width="227.5" height="569"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="장바구니에 담긴 음료가 없습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujF-xd-D9o">
-                                        <rect key="frame" x="20" y="190" width="266" height="52"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="266" id="bnc-7G-UK5"/>
-                                            <constraint firstAttribute="height" constant="52" id="t6K-8K-sFL"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gNN-3d-GOB">
-                                        <rect key="frame" x="35.5" y="20" width="235" height="178"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="178" id="M9u-jb-IbQ"/>
-                                            <constraint firstAttribute="width" constant="235" id="gVt-ud-Smk"/>
-                                        </constraints>
-                                        <state key="normal" title="Button" image="cart0btn"/>
-                                        <state key="disabled" image="bag0img"/>
-                                        <connections>
-                                            <action selector="noItemInCart:" destination="AHx-Hs-EzG" eventType="touchUpInside" id="fkd-nk-gXn"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="ujF-xd-D9o" firstAttribute="top" secondItem="dNK-ZE-AMU" secondAttribute="topMargin" constant="190" id="1HY-1z-1nl"/>
-                                    <constraint firstItem="gNN-3d-GOB" firstAttribute="centerX" secondItem="dNK-ZE-AMU" secondAttribute="centerX" id="C4b-Vf-4Fz"/>
-                                    <constraint firstItem="gNN-3d-GOB" firstAttribute="top" secondItem="dNK-ZE-AMU" secondAttribute="topMargin" constant="20" id="ET0-MN-rzg"/>
-                                    <constraint firstItem="ujF-xd-D9o" firstAttribute="centerX" secondItem="dNK-ZE-AMU" secondAttribute="centerX" id="IU4-fV-EYX"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
