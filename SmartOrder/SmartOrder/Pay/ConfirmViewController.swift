@@ -21,7 +21,7 @@ class ConfirmViewController: UIViewController, UITableViewDataSource, UITableVie
         content.summaryArgumentCount = 40
         
         //2. Use TimeIntervalNotificationTrigger
-        let TimeIntervalTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+        let TimeIntervalTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 30, repeats: false)
         
         //Adding Request
         // MARK: - identifier가 다 달라야만 Notification Grouping이 됩니닷..!!
