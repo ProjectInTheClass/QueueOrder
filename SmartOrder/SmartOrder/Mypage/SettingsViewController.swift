@@ -9,6 +9,7 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
+    @IBOutlet var StampOrGauge: UISegmentedControl!
     @IBAction func soundBtn(_ sender: Any) {
         if let appURL = URL(string: "app-settings:root=Sounds&path=Ringtone://"){
             if UIApplication.shared.canOpenURL(appURL) {
@@ -49,6 +50,15 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    @IBAction func ChangeSetting(_ sender: Any) {
+        switch StampOrGauge.selectedSegmentIndex{
+        case 1:
+            isgauge = true
+            
+        default:
+            isgauge = false
+        }
     }
     
 
