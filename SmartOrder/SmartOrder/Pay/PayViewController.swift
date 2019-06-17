@@ -138,6 +138,8 @@ extension PayViewController : BootpayRequestProtocol{
     //취소 선택시 실행되는 함수
     func onCancel(data: [String : Any]) {
         print("cancel\n\(data)")
+        vc.dismiss()
+        self.navigationController?.popViewController(animated: true)
     }
     //결제 완료시 호출 되며 coupon을 사용한 경우
     //해당 쿠폰의 use를 설정해주고 첫 home화면으로 돌아갑니다.
