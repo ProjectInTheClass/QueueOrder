@@ -37,6 +37,33 @@ extension UIView{
             heightAnchor.constraint(equalToConstant: height).isActive = true
         }
     }
+    func anchor(top: NSLayoutYAxisAnchor?, left: NSLayoutXAxisAnchor?, bottom: NSLayoutYAxisAnchor?, right: NSLayoutXAxisAnchor?,  multipleTop: CGFloat, multipleLeft: CGFloat, multipleBottom: CGFloat, multipleRight: CGFloat, width: CGFloat, height: CGFloat){
+        
+        translatesAutoresizingMaskIntoConstraints = true
+        
+        if let top = top {
+            self.topAnchor.constraint(equalToSystemSpacingBelow: top, multiplier: multipleTop).isActive = true
+        }
+        
+        if let left = left {
+            self.leftAnchor.constraint(equalToSystemSpacingAfter: left, multiplier: multipleLeft).isActive = true
+        }
+        
+        if let bottom = bottom {
+            self.bottomAnchor.constraint(equalToSystemSpacingBelow: bottom, multiplier: multipleBottom).isActive = true
+        }
+        
+        if let right = right {
+            self.rightAnchor.constraint(equalToSystemSpacingAfter: right, multiplier: multipleRight).isActive = true
+        }
+        if width != 0 {
+            widthAnchor.constraint(equalToConstant: width).isActive = true
+        }
+        
+        if height != 0 {
+            heightAnchor.constraint(equalToConstant: height).isActive = true
+        }
+    }
     
     func textContainerView(view: UIView, _ image: UIImage, _ textField: UITextField) -> UIView {
         view.backgroundColor = .clear
