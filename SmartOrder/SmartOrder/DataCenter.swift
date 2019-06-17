@@ -258,3 +258,5 @@ var couponList = CouponList(coupons:[coupon1,coupon2])
 
 //선호 메뉴
 var MyMenu : [[Menu]] = [];
+
+var isgauge : Bool = false

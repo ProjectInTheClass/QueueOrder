@@ -14,7 +14,6 @@ class StampViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet weak var stampOrCouponTable: UITableView!
     @IBOutlet weak var stamps: UICollectionView!
     
-    var isgauge = true
     var random : Int = 0
     //table view
     
@@ -112,6 +111,11 @@ class StampViewController: UIViewController, UITableViewDataSource, UITableViewD
         random = Int.random(in: 0..<5)
         
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.stamps.reloadData()
     }
     
     // MARK: UICollectionViewDataSource
