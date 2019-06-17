@@ -61,7 +61,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="OrderMenu" storyboardName="Main" referencedIdentifier="OrderMenu" id="hVn-TP-wbL" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u5I-t9-uQc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1957" y="-173"/>
+            <point key="canvasLocation" x="2569" y="515"/>
         </scene>
         <!--Order-->
         <scene sceneID="MXl-tN-cmh">
@@ -69,12 +69,12 @@
                 <viewControllerPlaceholder storyboardName="Order" referencedIdentifier="Order" id="Ybi-1i-2zr" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gAE-d4-bbR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2021.0144927536232" y="-6.0267857142857144"/>
+            <point key="canvasLocation" x="3156" y="-173"/>
         </scene>
-        <!--선호메뉴-->
+        <!--마이메뉴-->
         <scene sceneID="XY8-j6-1W1">
             <objects>
-                <viewController storyboardIdentifier="MyMenu" title="선호메뉴" id="LOZ-3Z-g2d" customClass="MyMenuViewController" customModule="SmartOrder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyMenu" title="마이메뉴" id="LOZ-3Z-g2d" customClass="MyMenuViewController" customModule="SmartOrder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vbe-8d-txb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

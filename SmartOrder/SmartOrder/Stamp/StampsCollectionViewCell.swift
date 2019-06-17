@@ -12,3 +12,5 @@ class StampsCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var img: UIImageView!
 }
+
+

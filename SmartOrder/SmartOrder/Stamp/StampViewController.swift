@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class StampViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var segmentedStampCoupon: UISegmentedControl!
@@ -124,7 +125,30 @@ class StampViewController: UIViewController, UITableViewDataSource, UITableViewD
    
         return 1
     }
+
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        var header:StampViewHeader?
+
+        
+        if kind == UICollectionView.elementKindSectionHeader {
+
+            header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Header", for: indexPath) as? StampViewHeader
     
+            if(indexPath.section == 0)
+            {
+                if(isgauge){
+                    header?.isHidden = true
+                } else {
+                    header?.isHidden = false
+                    header?.headerLabel?.text = caffeList[stampList[0].caffeInfo]?.name
+                }
+            }
+        }
+        
+        return header!
+    }
+
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
@@ -158,8 +182,9 @@ class StampViewController: UIViewController, UITableViewDataSource, UITableViewD
             }
             cell.toStamp = caffeList[indexPath.item]!.stampToCoupon
             cell.HowMany.text = "\(cell.stamp) / \(cell.toStamp)"
-            cell.Boundaries.layer.borderColor = UIColor.black.cgColor
+            cell.Boundaries.layer.borderColor = UIColor.orange.cgColor
             cell.Boundaries.layer.borderWidth = 1.0
+            cell.Gauge.backgroundColor? = UIColor.orange
             cell.Boundaries.layer.cornerRadius = cell.Boundaries.bounds.size.height / 2
             cell.Gauge.layer.cornerRadius = cell.Boundaries.bounds.size.height / 2
             

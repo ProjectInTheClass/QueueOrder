@@ -59,6 +59,7 @@ class ConfirmViewController: UIViewController, UITableViewDataSource, UITableVie
     //init
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // MARK: - 여기 options에 원하는 option넣기.
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert], completionHandler: { (didAllow, error) in
             
@@ -67,7 +68,15 @@ class ConfirmViewController: UIViewController, UITableViewDataSource, UITableVie
         //이부분의 경우 카페 내부 이미지를 보여주고 싶은데
         //사진이 없는경우 넣어줄 default사진을 정하면 추후 수정하겠습니다.
         //지금은 Logo로 넣어두겠습니다.
-        cafeImage.image = UIImage(named:(caffeList[items.selectedMenu[0].caffeInfo]!.logo)!)
+        if caffeList[items.selectedMenu[0].caffeInfo]!.photo != nil {
+            cafeImage.image = UIImage(named:(caffeList[items.selectedMenu[0].caffeInfo]!.photo)!)
+        } else {
+            if caffeList[items.selectedMenu[0].caffeInfo]!.logo != nil {
+                cafeImage.image = UIImage(named:(caffeList[items.selectedMenu[0].caffeInfo]!.logo)!)
+            } else {
+                cafeImage.image = UIImage(named:"dummy")!
+            }
+        }
         cafeName.text = caffeList[items.selectedMenu[0].caffeInfo]!.name
         cafeLocation.text = caffeList[items.selectedMenu[0].caffeInfo]!.location
         cafeLocation.numberOfLines = 0

@@ -58,7 +58,7 @@ class MyMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let myLabel = UILabel()
         myLabel.frame = CGRect(x: 0, y: 0, width: self.view.bounds.size.height, height: height / 35)
-        myLabel.font = UIFont.boldSystemFont(ofSize: height / 40)
+        myLabel.font = UIFont.boldSystemFont(ofSize: height / 60)
         myLabel.text = CaffeName[section]
         
         let headerView = UIView()

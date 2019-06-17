@@ -319,7 +319,7 @@ class DetailViewController: UITableViewController, GIDSignInUIDelegate {
             return CGFloat(height * 0.1)
         }
         else{
-            return CGFloat(height * 0.5)
+            return CGFloat(height * 0.42)
         }
     }
     
