@@ -114,10 +114,10 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z5H-g1-JYG">
-                                                <rect key="frame" x="331" y="0.0" width="62.5" height="55"/>
-                                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <rect key="frame" x="331" y="8.5" width="74.5" height="40"/>
+                                                <color key="backgroundColor" red="0.28061923379999998" green="0.49708396199999999" blue="0.96871286629999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="주문하기">
-                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="orderButtonPressed:" destination="b9J-Rf-R2O" eventType="touchUpInside" id="7lF-6C-iiO"/>
@@ -125,18 +125,18 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="e9r-fi-Y3j" firstAttribute="top" secondItem="QfG-2z-Lm2" secondAttribute="top" id="01I-2U-xwJ"/>
                                             <constraint firstItem="Z5H-g1-JYG" firstAttribute="leading" secondItem="e9r-fi-Y3j" secondAttribute="trailing" id="2cP-Hg-X1R"/>
                                             <constraint firstItem="WRn-1Q-S4u" firstAttribute="bottom" secondItem="QfG-2z-Lm2" secondAttribute="bottom" id="HV1-HU-JyW"/>
-                                            <constraint firstItem="Z5H-g1-JYG" firstAttribute="top" secondItem="QfG-2z-Lm2" secondAttribute="top" id="J3n-K6-uqT"/>
-                                            <constraint firstItem="Z5H-g1-JYG" firstAttribute="bottom" secondItem="QfG-2z-Lm2" secondAttribute="bottom" id="PGX-Zg-m09"/>
+                                            <constraint firstItem="Z5H-g1-JYG" firstAttribute="top" secondItem="QfG-2z-Lm2" secondAttribute="bottom" multiplier="0.15" id="J3n-K6-uqT"/>
+                                            <constraint firstItem="Z5H-g1-JYG" firstAttribute="bottom" secondItem="QfG-2z-Lm2" secondAttribute="bottom" multiplier="0.88" id="PGX-Zg-m09"/>
                                             <constraint firstItem="e9r-fi-Y3j" firstAttribute="bottom" secondItem="QfG-2z-Lm2" secondAttribute="bottom" id="TMN-ZA-07D"/>
                                             <constraint firstItem="WRn-1Q-S4u" firstAttribute="leading" secondItem="QfG-2z-Lm2" secondAttribute="trailing" multiplier="0.05" id="bIU-Uh-YPZ"/>
                                             <constraint firstItem="WRn-1Q-S4u" firstAttribute="trailing" secondItem="QfG-2z-Lm2" secondAttribute="trailing" multiplier="0.3" id="gOo-mk-PNk"/>
                                             <constraint firstItem="e9r-fi-Y3j" firstAttribute="trailing" secondItem="QfG-2z-Lm2" secondAttribute="trailing" multiplier="0.8" id="iMp-Rk-ODx"/>
-                                            <constraint firstItem="Z5H-g1-JYG" firstAttribute="trailing" secondItem="QfG-2z-Lm2" secondAttribute="trailing" multiplier="0.95" id="muW-YQ-9ln"/>
+                                            <constraint firstItem="Z5H-g1-JYG" firstAttribute="trailing" secondItem="QfG-2z-Lm2" secondAttribute="trailing" multiplier="0.98" id="muW-YQ-9ln"/>
                                             <constraint firstItem="WRn-1Q-S4u" firstAttribute="top" secondItem="QfG-2z-Lm2" secondAttribute="top" id="pHI-so-xBH"/>
                                             <constraint firstItem="e9r-fi-Y3j" firstAttribute="leading" secondItem="QfG-2z-Lm2" secondAttribute="trailing" multiplier="0.6" id="yQ0-U0-uct"/>
                                         </constraints>

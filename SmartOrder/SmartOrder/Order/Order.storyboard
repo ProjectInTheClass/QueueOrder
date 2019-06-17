@@ -336,7 +336,6 @@
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0oD-KY-pVp">
                                                                     <rect key="frame" x="0.0" y="0.0" width="179.5" height="52"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    <color key="tintColor" red="0.3411764706" green="0.16862745100000001" blue="0.1058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <state key="normal" title="담기"/>
                                                                     <variation key="heightClass=regular-widthClass=regular">
                                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
