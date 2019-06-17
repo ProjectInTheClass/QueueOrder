@@ -32,12 +32,13 @@ class CartOrderInfoViewController: UIViewController, UITableViewDataSource, UITa
         //데이터 삭제
         myCart.selectedMenu.remove(at: indexPath.row)
         cartSelectedArray.remove(at: indexPath.row)
+        
         //셀 삭제
         tableView.deleteRows(at: [indexPath], with: .automatic)
         
         //장바구니 테이블 셀 삭제 시 총 금액 계산하는 함수 call
         totalPrice()
-        
+        cartTable.reloadData()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
