@@ -7,9 +7,16 @@
 //
 
 import UIKit
+import Firebase
+import GoogleSignIn
 
-class CartOrderInfoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+class CartOrderInfoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, GIDSignInUIDelegate {
+    
+    var added = 0
+    
+    let alertController3 = UIAlertController(title: "로그인이 필요합니다.", message:
+        "", preferredStyle: .alert)
+    
     @IBOutlet weak var cartTable: UITableView!
     @IBOutlet weak var totTitle: UILabel!
     @IBOutlet weak var totalOrderPrice: UILabel!
@@ -157,7 +164,7 @@ class CartOrderInfoViewController: UIViewController, UITableViewDataSource, UITa
             let selectedCart = myCart.selectedMenu[self.cartTable.indexPathForSelectedRow!.row]
             destVC.CartForView = selectedCart
          */
-        let destVC = segue.destination as! ConfirmViewController
+        if let destVC = segue.destination as? ConfirmViewController{
         var sendingCart = cart(selectedMenu: [])
         for i in 0 ..< cartSelectedArray.count{
             if(cartSelectedArray[i] == 1){
@@ -165,6 +172,7 @@ class CartOrderInfoViewController: UIViewController, UITableViewDataSource, UITa
             }
         }
         destVC.items = sendingCart
+        }
     }
    
     /*
@@ -187,6 +195,14 @@ class CartOrderInfoViewController: UIViewController, UITableViewDataSource, UITa
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if(added != 1){ alertController3.addAction(UIAlertAction(title: "취소", style: .default))
+        alertController3.addAction(UIAlertAction(title: "로그인", style:.default)
+        {
+            UIAlertAction in
+            self.performSegue(withIdentifier: "LoginSegue", sender: nil)
+        })
+        }
+        added = 1
         /*
         // #1. reorder UITableView cell
         self.cartTable.isEditing = true
@@ -238,7 +254,6 @@ class CartOrderInfoViewController: UIViewController, UITableViewDataSource, UITa
         
        
     }
- 
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -267,4 +282,15 @@ class CartOrderInfoViewController: UIViewController, UITableViewDataSource, UITa
         //장바구니 테이블 셀 체크박스 선택/해제 시 총 금액 계산하는 함수 call
          totalPrice()
     }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "PaySegue" {
+            guard let currentUser = Auth.auth().currentUser else{
+                self.present(alertController3, animated: true, completion: {})
+                return false
+            }
+        }
+        return true
+    }
+    
 }
