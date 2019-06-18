@@ -120,6 +120,9 @@ class ConfirmViewController: UIViewController, UITableViewDataSource, UITableVie
     //cell 선택시 경고창 출력과 쿠폰 사용 결과 최종 가격만 변경
     //CouponSelected에 coupon index와 coupon값 저장
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        if(indexPath.row < couponlist.count){
+            return;
+        }
         let cell = tableView.dequeueReusableCell(withIdentifier: "coupon", for: indexPath)
        
         if let selected = CouponSelected{
@@ -166,55 +169,55 @@ class ConfirmViewController: UIViewController, UITableViewDataSource, UITableVie
         cell.detailTextLabel?.text = "\(couponlist[indexPath.row].price)원"
         
         //쿠폰 선택 alert
-        confirmController.append(UIAlertController(title: "\(couponlist[indexPath.row].name)을 사용하시겠습니까?", message:
-            "이미 적용중인 쿠폰이 있다면 적용중인 쿠폰은 취소됩니다.", preferredStyle: .alert))
+        if(confirmController.count < indexPath.row){
+            confirmController.append(UIAlertController(title: "\(couponlist[indexPath.row].name)을 사용하시겠습니까?", message: "이미 적용중인 쿠폰이 있다면 적용중인 쿠폰은 취소됩니다.", preferredStyle: .alert))
         //쿠폰 취소 alert
-        cancelController.append(UIAlertController(title: "\(couponlist[indexPath.row].name)의 사용을 취소하시겠습니까?", message : "", preferredStyle : .alert))
+            cancelController.append(UIAlertController(title: "\(couponlist[indexPath.row].name)의 사용을 취소하시겠습니까?", message: "", preferredStyle : .alert))
         
         //쿠폰 선택시 action(쿠폰 중복 사용 불가)
-        confirmController[indexPath.row].addAction(UIAlertAction(title: "확인", style: .default){
-            UIAlertAction in
+            confirmController[indexPath.row].addAction(UIAlertAction(title: "확인", style: .default){
+                UIAlertAction in
             
-            if let selected = self.CouponSelected{
-                print("\(selected.1.name) 대신 \(self.couponlist[indexPath.row].name)이 사용됩니다.")
-                self.total += selected.1.price
-                self.CouponSelected = (self.couponindex[indexPath.row], self.couponlist[indexPath.row])
-                self.total -= self.couponlist[indexPath.row].price
-                if self.total < 0{
-                    self.Total.text = "0원"
-                } else{
-                    self.Total.text = "\(self.total)원"
+                if let selected = self.CouponSelected{
+                    print("\(selected.1.name) 대신 \(self.couponlist[indexPath.row].name)이 사용됩니다.")
+                    self.total += selected.1.price
+                    self.CouponSelected = (self.couponindex[indexPath.row], self.couponlist[indexPath.row])
+                    self.total -= self.couponlist[indexPath.row].price
+                    if self.total < 0{
+                        self.Total.text = "0원"
+                    } else{
+                        self.Total.text = "\(self.total)원"
+                    }
+                } else {
+                    print("\(couponList.coupons[indexPath.row].name)이 사용됩니다.")
+                    self.CouponSelected = (self.couponindex[indexPath.row], self.couponlist[indexPath.row])
+                    self.total -= self.couponlist[indexPath.row].price
+                    if self.total < 0{
+                        self.Total.text = "0원"
+                    } else{
+                        self.Total.text = "\(self.total)원"
+                    }
                 }
-            } else {
-                print("\(couponList.coupons[indexPath.row].name)이 사용됩니다.")
-                self.CouponSelected = (self.couponindex[indexPath.row], self.couponlist[indexPath.row])
-                self.total -= self.couponlist[indexPath.row].price
-                if self.total < 0{
-                    self.Total.text = "0원"
-                } else{
-                    self.Total.text = "\(self.total)원"
-                }
-            }
-        })
+            })
         //취소 선택지
-        confirmController[indexPath.row].addAction(UIAlertAction(title: "취소", style: .cancel))
+            confirmController[indexPath.row].addAction(UIAlertAction(title: "취소", style: .cancel))
         
         
         //쿠폰 선택 취소 확인시 action
-        cancelController[indexPath.row].addAction(UIAlertAction(title: "확인", style: .default){
-            UIAlertAction in
+            cancelController[indexPath.row].addAction(UIAlertAction(title: "확인", style: .default){
+                UIAlertAction in
             
-            if let selected = self.CouponSelected{
-                print("\(selected.1.name)의 사용이 취소됩니다.")
-                self.CouponSelected = nil
-                self.total += selected.1.price
-                self.Total.text = "\(self.total)원"
-            }
+                if let selected = self.CouponSelected{
+                    print("\(selected.1.name)의 사용이 취소됩니다.")
+                    self.CouponSelected = nil
+                    self.total += selected.1.price
+                    self.Total.text = "\(self.total)원"
+                }
             
-        })
-        //쿠폰 선택 취소 취소 선택지
-        cancelController[indexPath.row].addAction(UIAlertAction(title: "취소", style: .cancel))
-        
+            })
+            //쿠폰 선택 취소 취소 선택지
+            cancelController[indexPath.row].addAction(UIAlertAction(title: "취소", style: .cancel))
+        }
         //image setting인데 이건 coupon마다 image생성시 바꾸겠습니다.
         if couponlist[indexPath.row].name.hasPrefix("2000"){
             cell.imageView?.image = UIImage(named: "2000coupon")
