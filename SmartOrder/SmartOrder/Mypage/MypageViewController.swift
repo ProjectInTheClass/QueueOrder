@@ -35,10 +35,12 @@ class MypageViewController: UIViewController, GIDSignInUIDelegate
     @IBOutlet weak var orderInfoButton: UIButton!
     
     @IBAction func addButtonPressed(_ sender: Any) {
-        let alert =  UIAlertController(title: "사진 선택", message: "원하는 저장소를 선택해주세요.", preferredStyle: .actionSheet)
+        let alert =  UIAlertController(title: "사진 선택", message: "원하는 저장소를 선택해주세요.", preferredStyle: .alert)
         
         
-        let library =  UIAlertAction(title: "사진앨범", style: .default) { (action) in self.openLibrary()
+        let library =  UIAlertAction(title: "사진앨범", style: .default) { (action) in
+            
+            self.openLibrary()
             
         }
         
@@ -49,6 +51,10 @@ class MypageViewController: UIViewController, GIDSignInUIDelegate
             
         }
         
+        let defaultimage =  UIAlertAction(title: "기본이미지", style: .default) { (action) in
+            self.mainImage.image = UIImage(named: "coffeebottlefilled")
+        }
+        
         
         let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
         
@@ -56,6 +62,8 @@ class MypageViewController: UIViewController, GIDSignInUIDelegate
         alert.addAction(library)
         
         alert.addAction(camera)
+        
+        alert.addAction(defaultimage)
         
         alert.addAction(cancel)
         
