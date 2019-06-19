@@ -41,7 +41,6 @@ class MypageViewController: UIViewController, GIDSignInUIDelegate
         let library =  UIAlertAction(title: "사진앨범", style: .default) { (action) in
             
             self.openLibrary()
-            
         }
         
         
@@ -53,6 +52,7 @@ class MypageViewController: UIViewController, GIDSignInUIDelegate
         
         let defaultimage =  UIAlertAction(title: "기본이미지", style: .default) { (action) in
             self.mainImage.image = UIImage(named: "coffeebottlefilled")
+            self.mainImage.contentMode = .scaleAspectFit
         }
         
         
@@ -101,7 +101,8 @@ class MypageViewController: UIViewController, GIDSignInUIDelegate
             {UIAlertAction in
             self.performSegue(withIdentifier: "LoginVCSegue", sender: nil)
             })
-        
+        let smaller = self.mainImage.frame.size.width < self.mainImage.frame.size.height ? self.mainImage.frame.size.width : self.mainImage.frame.size.height
+        self.mainImage.layer.cornerRadius = smaller
         // 로그아웃 alert처리
         logoutalertController.addAction(UIAlertAction(title: "취소", style: .cancel))
         logoutalertController.addAction(UIAlertAction(title: "확인", style: .default){
@@ -199,6 +200,8 @@ UINavigationControllerDelegate{
         {
             imagepicked = image
             mainImage.image = image
+            mainImage.contentMode = .scaleAspectFill
+            
             print(info)
             
         }
