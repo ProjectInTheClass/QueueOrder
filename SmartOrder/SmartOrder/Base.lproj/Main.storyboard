@@ -274,6 +274,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdg-Ft-DF6" userLabel="Button1">
                                         <rect key="frame" x="0.0" y="0.0" width="273" height="243"/>
+                                        <color key="tintColor" red="1" green="0.68995137159999997" blue="0.36267740949999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button" image="menu11"/>
                                         <connections>
                                             <segue destination="v1J-UE-HZ4" kind="show" id="4FS-yk-OyF"/>
@@ -281,6 +282,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U3v-jr-X8e" userLabel="Button2">
                                         <rect key="frame" x="0.0" y="253" width="273" height="243"/>
+                                        <color key="tintColor" red="1" green="0.68995137159999997" blue="0.36267740949999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button" image="menu22"/>
                                         <connections>
                                             <segue destination="8Tw-ow-qjz" kind="show" id="q6u-eu-ScN"/>

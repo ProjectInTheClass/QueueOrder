@@ -44,6 +44,8 @@ class HomeViewController: UIViewController {
         btn1.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
         btn2.imageView?.contentMode = UIView.ContentMode.scaleAspectFit
         
+        btn1.tintColor = UIColor.orange
+        
        //navigation bar back 글씨 지우기
         self.navigationController?.navigationBar.topItem?.title = ""
         
