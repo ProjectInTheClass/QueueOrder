@@ -101,8 +101,7 @@ class MypageViewController: UIViewController, GIDSignInUIDelegate
             {UIAlertAction in
             self.performSegue(withIdentifier: "LoginVCSegue", sender: nil)
             })
-        let smaller = self.mainImage.frame.size.width < self.mainImage.frame.size.height ? self.mainImage.frame.size.width : self.mainImage.frame.size.height
-        self.mainImage.layer.cornerRadius = smaller
+        self.mainImage.layer.cornerRadius = self.mainImage.frame.size.height / 2
         // 로그아웃 alert처리
         logoutalertController.addAction(UIAlertAction(title: "취소", style: .cancel))
         logoutalertController.addAction(UIAlertAction(title: "확인", style: .default){
