@@ -44,7 +44,6 @@ class MyMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
             self.NoMenu.isHidden = true
         }
         self.MyMenutable.reloadData()
-        self.loadViewIfNeeded()
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return FavoriteMenu[section].count
@@ -61,8 +60,10 @@ class MyMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
         myLabel.font = UIFont.boldSystemFont(ofSize: height / 60)
         myLabel.text = CaffeName[section]
         
+        
         let headerView = UIView()
         headerView.addSubview(myLabel)
+        headerView.backgroundColor = UIColor.lightGray
         
         return headerView
     }
@@ -70,7 +71,7 @@ class MyMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 89
     }
-    
+ 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         let height = self.view.bounds.size.height
         return height / 35

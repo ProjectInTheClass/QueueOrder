@@ -25,7 +25,6 @@
 		B1E5D19F22AA4A0A00F05521 /* MyMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E5D19E22AA4A0A00F05521 /* MyMenuTableViewCell.swift */; };
 		B1E5D1AF22B24E1700F05521 /* GaugeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E5D1AE22B24E1700F05521 /* GaugeCollectionViewCell.swift */; };
 		B1E72EA6228D066200485306 /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E72EA5228D066200485306 /* ConfirmViewController.swift */; };
-		B1E9EE27228A6FCD00E44687 /* MyMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E9EE26228A6FCD00E44687 /* MyMenuTableViewController.swift */; };
 		D63AE79E229F178D0043985B /* StampsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63AE79D229F178D0043985B /* StampsCollectionViewCell.swift */; };
 		D656554522B7FEDD008EC8B3 /* StampViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656554422B7FEDD008EC8B3 /* StampViewHeader.swift */; };
 		D656554722B81F35008EC8B3 /* CartOrderInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656554622B81F35008EC8B3 /* CartOrderInfoCell.swift */; };
@@ -112,7 +111,6 @@
 		B1E5D19E22AA4A0A00F05521 /* MyMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMenuTableViewCell.swift; sourceTree = "<group>"; };
 		B1E5D1AE22B24E1700F05521 /* GaugeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaugeCollectionViewCell.swift; sourceTree = "<group>"; };
 		B1E72EA5228D066200485306 /* ConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
-		B1E9EE26228A6FCD00E44687 /* MyMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMenuTableViewController.swift; sourceTree = "<group>"; };
 		BE24E8A5F404F852E5CDA5F2 /* Pods-SmartOrder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartOrder.debug.xcconfig"; path = "Target Support Files/Pods-SmartOrder/Pods-SmartOrder.debug.xcconfig"; sourceTree = "<group>"; };
 		D63AE79D229F178D0043985B /* StampsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampsCollectionViewCell.swift; sourceTree = "<group>"; };
 		D656554422B7FEDD008EC8B3 /* StampViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampViewHeader.swift; sourceTree = "<group>"; };
@@ -312,7 +310,6 @@
 				D6E96A0A227C4891009A3E04 /* MyMenu.storyboard */,
 				B1E5D19C22AA49F000F05521 /* MyMenuViewController.swift */,
 				B1E5D19E22AA4A0A00F05521 /* MyMenuTableViewCell.swift */,
-				B1E9EE26228A6FCD00E44687 /* MyMenuTableViewController.swift */,
 			);
 			path = MyMenu;
 			sourceTree = "<group>";
@@ -653,7 +650,6 @@
 				D67B8FA022687A43009FEBD5 /* DetailViewController.swift in Sources */,
 				57E8D619228C0E1C003EBC05 /* MypageDetailViewController.swift in Sources */,
 				D670AEAD228B3B5A0034D94D /* CartOrderInfoViewController.swift in Sources */,
-				B1E9EE27228A6FCD00E44687 /* MyMenuTableViewController.swift in Sources */,
 				D67B8F8A22685F3D009FEBD5 /* AppDelegate.swift in Sources */,
 				D67B8F9E226869D4009FEBD5 /* MenuTableViewController.swift in Sources */,
 				57E3B24922966AE60090DB7F /* SignUpController.swift in Sources */,
