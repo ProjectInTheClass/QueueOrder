@@ -375,7 +375,7 @@
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RA5-Vw-RX0">
                                         <rect key="frame" x="339.5" y="26" width="56" height="61"/>
-                                        <color key="onTintColor" red="0.84640704310000003" green="0.84640704310000003" blue="0.84640704310000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="onTintColor" red="1" green="0.68995137164423681" blue="0.36267740945715421" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <action selector="pushBtn:" destination="jg6-Oo-O6F" eventType="valueChanged" id="rxN-PQ-Cv5"/>
                                         </connections>

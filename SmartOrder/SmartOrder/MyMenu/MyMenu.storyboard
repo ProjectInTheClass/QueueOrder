@@ -79,6 +79,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F7x-yR-usH">
+                                <rect key="frame" x="0.0" y="129.5" width="414" height="474"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dnv-Oz-Z02">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="474"/>
+                                        <state key="normal" image="cart0img"/>
+                                        <connections>
+                                            <segue destination="hVn-TP-wbL" kind="show" identifier="CafeSelect" id="3ye-7u-6Iz"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="선호메뉴 추가하러 가기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dA-WS-b2g">
+                                        <rect key="frame" x="0.0" y="260.5" width="414" height="166"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                        <color key="textColor" red="0.35968005657196045" green="0.29067340493202209" blue="0.2627386748790741" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Dnv-Oz-Z02" firstAttribute="bottom" secondItem="F7x-yR-usH" secondAttribute="bottom" id="4z5-aI-oe6"/>
+                                    <constraint firstItem="5dA-WS-b2g" firstAttribute="top" secondItem="F7x-yR-usH" secondAttribute="bottom" multiplier="0.55" id="Cv6-rT-VIV"/>
+                                    <constraint firstItem="5dA-WS-b2g" firstAttribute="trailing" secondItem="F7x-yR-usH" secondAttribute="trailing" id="HAx-J7-mPp"/>
+                                    <constraint firstItem="Dnv-Oz-Z02" firstAttribute="leading" secondItem="F7x-yR-usH" secondAttribute="leading" id="IB2-40-8H5"/>
+                                    <constraint firstItem="5dA-WS-b2g" firstAttribute="leading" secondItem="F7x-yR-usH" secondAttribute="leading" id="NWK-Is-Gev"/>
+                                    <constraint firstItem="Dnv-Oz-Z02" firstAttribute="trailing" secondItem="F7x-yR-usH" secondAttribute="trailing" id="VRQ-E2-92N"/>
+                                    <constraint firstItem="5dA-WS-b2g" firstAttribute="bottom" secondItem="F7x-yR-usH" secondAttribute="bottom" multiplier="0.9" id="itq-2X-luL"/>
+                                    <constraint firstItem="Dnv-Oz-Z02" firstAttribute="top" secondItem="F7x-yR-usH" secondAttribute="top" id="umc-Yn-jy5"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sFC-kg-9jf">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -136,35 +165,6 @@
                                     <outlet property="delegate" destination="LOZ-3Z-g2d" id="jOa-5K-vBU"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F7x-yR-usH">
-                                <rect key="frame" x="0.0" y="129.5" width="414" height="474"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dnv-Oz-Z02">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="474"/>
-                                        <state key="normal" image="cart0img"/>
-                                        <connections>
-                                            <segue destination="hVn-TP-wbL" kind="show" identifier="CafeSelect" id="3ye-7u-6Iz"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="선호메뉴 추가하러 가기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dA-WS-b2g">
-                                        <rect key="frame" x="0.0" y="260.5" width="414" height="166"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                        <color key="textColor" red="0.35968005657196045" green="0.29067340493202209" blue="0.2627386748790741" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="Dnv-Oz-Z02" firstAttribute="bottom" secondItem="F7x-yR-usH" secondAttribute="bottom" id="4z5-aI-oe6"/>
-                                    <constraint firstItem="5dA-WS-b2g" firstAttribute="top" secondItem="F7x-yR-usH" secondAttribute="bottom" multiplier="0.55" id="Cv6-rT-VIV"/>
-                                    <constraint firstItem="5dA-WS-b2g" firstAttribute="trailing" secondItem="F7x-yR-usH" secondAttribute="trailing" id="HAx-J7-mPp"/>
-                                    <constraint firstItem="Dnv-Oz-Z02" firstAttribute="leading" secondItem="F7x-yR-usH" secondAttribute="leading" id="IB2-40-8H5"/>
-                                    <constraint firstItem="5dA-WS-b2g" firstAttribute="leading" secondItem="F7x-yR-usH" secondAttribute="leading" id="NWK-Is-Gev"/>
-                                    <constraint firstItem="Dnv-Oz-Z02" firstAttribute="trailing" secondItem="F7x-yR-usH" secondAttribute="trailing" id="VRQ-E2-92N"/>
-                                    <constraint firstItem="5dA-WS-b2g" firstAttribute="bottom" secondItem="F7x-yR-usH" secondAttribute="bottom" multiplier="0.9" id="itq-2X-luL"/>
-                                    <constraint firstItem="Dnv-Oz-Z02" firstAttribute="top" secondItem="F7x-yR-usH" secondAttribute="top" id="umc-Yn-jy5"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
