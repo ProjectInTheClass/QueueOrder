@@ -21,46 +21,12 @@ class CaffePreViewController: UIViewController , MTMapViewDelegate{
     @IBOutlet weak var noBtn: UIButton!
     @IBOutlet weak var yesBtn: UIButton!
  
-    @IBOutlet var mapTest: UIImageView!
-    
     override func viewDidLoad() {
 
         super.viewDidLoad()
         print(cafeForView?.logo)
         print(cafeForView?.photo)
         // Do any additional setup after loading the view.
-
-        mapView = MTMapView(frame: self.view.bounds)
-        
-        let locMap:(Double,Double) = cafeMapList[(cafeForView?.caffeInfo)!]
-        
-        
-        if let mapView = mapView {
-            mapView.delegate = self
-            mapView.baseMapType = .standard
-            var items = [MTMapPOIItem]()
-            let item = MTMapPOIItem()
-            item.mapPoint = MTMapPoint(geoCoord: .init( latitude: locMap.0, longitude: locMap.1))
-            item.itemName = "Here!"
-            item.draggable = true
-            item.markerType = .redPin
-            item.markerSelectedType = .redPin
-            item.customImageAnchorPointOffset = .init(offsetX: 30, offsetY: 0)
-            
-            items.append(item)
-            
-            let item1 = MTMapPOIItem()
-            item1.mapPoint = MTMapPoint(geoCoord: .init( latitude: 37.555792, longitude: 127.049466))
-            item1.markerType = .redPin
-            //items.append(item1)
- 
- 
-            //mapView.setZoomLevel(4, animated: true)
-            //mapView.setMapCenter(MTMapPoint(geoCoord: .init( latitude: locMap.0, longitude: locMap.1)), animated: true)
-            mapView.addPOIItems(items)
-            mapView.fitAreaToShowAllPOIItems()
-            self.mapTest.addSubview(mapView)
-        }
         
         let name = cafeForView?.name
         detailed.text = "\(name!)를 선택하시겠어요?"
@@ -124,23 +90,27 @@ class CaffePreViewController: UIViewController , MTMapViewDelegate{
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-         let destvc = segue.destination as! MenuTableViewController //Your ViewController class
-         let indexPath:Int? = cafeForView?.caffeInfo
-         let item = caffeList[indexPath!] as! Caffe?
-         //destvc.menuForView = item?.menu
-         print("preview ...")
-         //print(item?.menu)
-         print("preview 에서 MenuTableViewController로 넘기는 카페고유번호는 ...")
-         destvc.cafeInfo = (item?.caffeInfo)!
-         print(destvc.cafeInfo)
+        let indexPath:Int? = cafeForView?.caffeInfo
+        let item = caffeList[indexPath!] as! Caffe?
+        
+        if segue.identifier == "Map" {
+            let destvc = segue.destination as! MapViewController
+            destvc.cafeInfo = (item?.caffeInfo)!
+        } else {
+            let destvc = segue.destination as! MenuTableViewController //Your ViewController class
+            
+            
+            //destvc.menuForView = item?.menu
+            print("preview ...")
+            //print(item?.menu)
+            print("preview 에서 MenuTableViewController로 넘기는 카페고유번호는 ...")
+            destvc.cafeInfo = (item?.caffeInfo)!
+            print(destvc.cafeInfo)
+        }
         
     }
     
-    @IBAction func noBtn(_ sender: Any) {
-        if let navController = self.navigationController {
-            navController.popViewController(animated: true)
-        }
-    }
+  
     
     @IBAction func toBack(segue:UIStoryboardSegue) {
         

@@ -120,7 +120,7 @@ var caffe3 = Caffe(caffeInfo:2, logo: "tiamo", photo:"tiamo_photo_2.JPG", name:"
 
 var caffeList:[Int:Caffe] = [caffe1.caffeInfo:caffe1, caffe2.caffeInfo:caffe2, caffe3.caffeInfo:caffe3]
 
-var cafeMapList:[(Double,Double)] = [(37.554848,127.049472), (37.554445,127.045103), (37.555274,127.045227)]
+var cafeMapList:[(Double,Double)] = [(37.555864,127.049425), (37.555426,127.045187), (37.556587,127.045954)]
 
 //주문
 struct Order {

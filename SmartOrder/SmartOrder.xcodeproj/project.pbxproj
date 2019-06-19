@@ -79,6 +79,7 @@
 		D6BC363422848DB700ADF9EA /* CaffeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BC363322848DB700ADF9EA /* CaffeCollectionViewController.swift */; };
 		D6BC36382284B0A900ADF9EA /* CaffePreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BC36372284B0A900ADF9EA /* CaffePreViewController.swift */; };
 		D6BC363D22855FE900ADF9EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6BC363C22855FE900ADF9EA /* Assets.xcassets */; };
+		D6C6131222BAA06400267353 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C6131122BAA06400267353 /* MapViewController.swift */; };
 		D6E96A03227C100C009A3E04 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E96A02227C100C009A3E04 /* HomeViewController.swift */; };
 		D6E96A05227C133A009A3E04 /* StampViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E96A04227C133A009A3E04 /* StampViewController.swift */; };
 		D6E96A09227C4819009A3E04 /* MyPageStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6E96A08227C4819009A3E04 /* MyPageStoryboard.storyboard */; };
@@ -179,6 +180,7 @@
 		D6BC363322848DB700ADF9EA /* CaffeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaffeCollectionViewController.swift; sourceTree = "<group>"; };
 		D6BC36372284B0A900ADF9EA /* CaffePreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaffePreViewController.swift; sourceTree = "<group>"; };
 		D6BC363C22855FE900ADF9EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D6C6131122BAA06400267353 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		D6E96A02227C100C009A3E04 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D6E96A04227C133A009A3E04 /* StampViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampViewController.swift; sourceTree = "<group>"; };
 		D6E96A08227C4819009A3E04 /* MyPageStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPageStoryboard.storyboard; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 				D6E96A02227C100C009A3E04 /* HomeViewController.swift */,
 				D67B8F9222685F3E009FEBD5 /* LaunchScreen.storyboard */,
 				D67B8F8D22685F3D009FEBD5 /* Main.storyboard */,
+				D6C6131122BAA06400267353 /* MapViewController.swift */,
 				D67B8F9D226869D4009FEBD5 /* MenuTableViewController.swift */,
 				D67B8F8B22685F3D009FEBD5 /* ViewController.swift */,
 				D6BC363C22855FE900ADF9EA /* Assets.xcassets */,
@@ -642,6 +645,7 @@
 				D67B8F9C22685F8F009FEBD5 /* DataCenter.swift in Sources */,
 				57D9251D227DAF6B0044E96B /* KakaoLoginButton.swift in Sources */,
 				57E8D617228C0D55003EBC05 /* MypageTableViewController.swift in Sources */,
+				D6C6131222BAA06400267353 /* MapViewController.swift in Sources */,
 				D656554722B81F35008EC8B3 /* CartOrderInfoCell.swift in Sources */,
 				B1E5D19D22AA49F000F05521 /* MyMenuViewController.swift in Sources */,
 				D6BC36382284B0A900ADF9EA /* CaffePreViewController.swift in Sources */,
