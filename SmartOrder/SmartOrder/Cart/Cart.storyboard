@@ -221,6 +221,7 @@
                         <outlet property="noItem" destination="ujF-xd-D9o" id="qN9-ln-mea"/>
                         <outlet property="totTitle" destination="euF-gI-pPg" id="Xlh-gD-sRR"/>
                         <outlet property="totalOrderPrice" destination="prn-wK-dtv" id="iFD-V9-390"/>
+                        <segue destination="agp-Kj-IRC" kind="presentation" identifier="LoginSegue" id="aaC-bO-PDl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Nn-7c-Eee" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -235,6 +236,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QuU-QE-zpO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1321" y="1237"/>
+        </scene>
+        <!--LCReference-->
+        <scene sceneID="MZV-BB-cSU">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MyPageStoryboard" referencedIdentifier="LCReference" id="agp-Kj-IRC" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ciz-KI-RlF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1310" y="1341"/>
         </scene>
     </scenes>
     <resources>

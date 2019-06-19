@@ -41,7 +41,7 @@ struct UserInfo {
         self.name = name!
         self.id = id!
         self.joinAddress = joinAddress!
-        self.orderList = [orderlisttest]
+        self.orderList = [orderlisttest, orderlisttest2]
         self.stampsList = stampList
         self.couponsList = couponList
     }
@@ -64,12 +64,13 @@ var loginUserInfo : KOUserMe?
 
 
 var ordertest1 = Order(caffeInfo:caffe1.caffeInfo, coffee:"카페라떼", price:2500, count:1, size:"small", ice:"보통", shot:0, orderDate:"19.03.30")
-var ordertest2 = Order(caffeInfo:caffe1.caffeInfo, coffee:"카페라떼", price:3000, count:1, size:"small", ice:"보통", shot:1, orderDate:"19.03.30")
-var ordertest3 = Order(caffeInfo:caffe1.caffeInfo, coffee:"카페라떼", price:3000, count:1, size:"small", ice:"보통", shot:1, orderDate:"19.03.30")
-var ordertest4 = Order(caffeInfo:caffe1.caffeInfo, coffee:"카페라떼", price:3000, count:1, size:"small", ice:"보통", shot:1, orderDate:"19.03.30")
-var ordertest5 = Order(caffeInfo:caffe1.caffeInfo, coffee:"카페라떼", price:3000, count:1, size:"small", ice:"보통", shot:1, orderDate:"19.03.30")
+var ordertest2 = Order(caffeInfo:caffe1.caffeInfo, coffee:"아메리카노", price:3000, count:1, size:"small", ice:"보통", shot:1, orderDate:"19.03.30")
+var ordertest3 = Order(caffeInfo:caffe1.caffeInfo, coffee:"카라멜마끼야또", price:3000, count:1, size:"small", ice:"보통", shot:1, orderDate:"19.03.30")
+var ordertest4 = Order(caffeInfo:caffe1.caffeInfo, coffee:"카페모카", price:3000, count:1, size:"small", ice:"보통", shot:1, orderDate:"19.03.30")
+var ordertest5 = Order(caffeInfo:caffe1.caffeInfo, coffee:"녹차", price:3000, count:1, size:"small", ice:"보통", shot:1, orderDate:"19.03.30")
 
-var orderlisttest = OrderList(caffeInfo: ordertest1.caffeInfo, orderDate: ordertest1.orderDate, totalPrice: ordertest1.price+ordertest2.price, orders:[ordertest1, ordertest2, ordertest3, ordertest4, ordertest5])
+var orderlisttest = OrderList(caffeInfo: ordertest1.caffeInfo, orderDate: ordertest1.orderDate, totalPrice: ordertest1.price+ordertest2.price+ordertest3.price+ordertest4.price+ordertest5.price, orders:[ordertest1, ordertest2, ordertest3, ordertest4, ordertest5])
+var orderlisttest2 = OrderList(caffeInfo: caffe2.caffeInfo, orderDate: ordertest1.orderDate, totalPrice: ordertest1.price+ordertest2.price+ordertest3.price, orders:[ordertest1, ordertest2, ordertest3, ordertest4, ordertest5])
 
 var moca = Menu(menuId:0, coffee:"카페모카", image:nil, price:3500, shot:true)
 var latte = Menu(menuId:1, coffee:"카페라떼", image:nil, price:2500, shot:true)

@@ -21,9 +21,9 @@ class MypageDetailViewController: UIViewController,  UITableViewDataSource, UITa
         cell!.menuNameLabel.text = orderForTheRow.coffee
         cell!.menuImage.image = UIImage(named: "coffee_picture_blue")
         cell!.totalPriceLabel.text = "금액 \(orderForTheRow.price)원"
-        cell!.totalCount.text = String(orderInfo!.orders.count)
+        cell!.totalCount.text = String("\(orderForTheRow.count)잔")
         cell!.menuImage.image = UIImage(named: "coffee_picture_blue")
-        cell!.sizeIceShot.text = "사이즈\(orderForTheRow.size) / 얼음\(orderForTheRow.ice) / 샷추가\(orderForTheRow.shot)"
+        cell!.sizeIceShot.text = "사이즈 \(orderForTheRow.size) / 얼음 \(orderForTheRow.ice) / 샷추가 \(orderForTheRow.shot)번"
 //
         return cell!
     }

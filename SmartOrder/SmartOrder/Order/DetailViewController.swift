@@ -61,13 +61,13 @@ class DetailViewController: UITableViewController, GIDSignInUIDelegate {
         price.text = "\(str!) 원"
         resultPrice.text = "\(str!)"
         shotTit.text = "샷 추가(+ \(caffeList[caffeInfo!]!.shotPrice)원)"
-        alertController2.addAction(UIAlertAction(title: "취소", style: .destructive))
+        alertController2.addAction(UIAlertAction(title: "취소", style: .default))
         alertController2.addAction(UIAlertAction(title: "로그인", style:.default)
         {
             UIAlertAction in
             self.performSegue(withIdentifier: "LoginSegue", sender: nil)
             })
-        alertController.addAction(UIAlertAction(title: "취소", style: .destructive))
+        alertController.addAction(UIAlertAction(title: "취소", style: .default))
         alertController.addAction(UIAlertAction(title: "확인", style: .default)
         {
             UIAlertAction in
