@@ -19,9 +19,6 @@ class PayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(items)
-    }
-    override func viewDidAppear(_ animated: Bool) {
-       super.viewDidAppear(animated)
         goBuy()
     }
     //구매 API실행 controller로 이동
