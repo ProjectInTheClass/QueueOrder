@@ -120,9 +120,10 @@ class ConfirmViewController: UIViewController, UITableViewDataSource, UITableVie
     //cell 선택시 경고창 출력과 쿠폰 사용 결과 최종 가격만 변경
     //CouponSelected에 coupon index와 coupon값 저장
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        if(indexPath.row < couponlist.count){
+        if(indexPath.row > couponlist.count){
             return;
         }
+        print(indexPath)
         let cell = tableView.dequeueReusableCell(withIdentifier: "coupon", for: indexPath)
        
         if let selected = CouponSelected{
@@ -169,7 +170,7 @@ class ConfirmViewController: UIViewController, UITableViewDataSource, UITableVie
         cell.detailTextLabel?.text = "\(couponlist[indexPath.row].price)원"
         
         //쿠폰 선택 alert
-        if(confirmController.count < indexPath.row){
+        if(confirmController.count <= indexPath.row){
             confirmController.append(UIAlertController(title: "\(couponlist[indexPath.row].name)을 사용하시겠습니까?", message: "이미 적용중인 쿠폰이 있다면 적용중인 쿠폰은 취소됩니다.", preferredStyle: .alert))
         //쿠폰 취소 alert
             cancelController.append(UIAlertController(title: "\(couponlist[indexPath.row].name)의 사용을 취소하시겠습니까?", message: "", preferredStyle : .alert))
