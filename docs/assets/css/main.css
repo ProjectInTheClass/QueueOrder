@@ -44,9 +44,10 @@ body, #top {
 	text-align: center;
 	color: #eee;
 }
-#developer_title{
+#developer_title, #coupon{
 	text-align: center;
 }
+
 
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
