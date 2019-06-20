@@ -27,10 +27,26 @@ section, summary, time, mark, audio, video {
 
 body, #top {
   /*background: linear-gradient(-135deg, #2ebf91, #8360c3) fixed;*/
-  background: linear-gradient(90deg, #4BC0C8, #C779D0) fixed;
+  background: linear-gradient(180deg, #000000, #434343, #4389A2) fixed;
 }
 
+#app_title, #app_subtitle{
+	font-weight: 600;
+	color: #ffffff;
+	text-align: center;
+}
 
+#app_logo {
+	border-radius: 20px;
+}
+
+.logo,.copyright{
+	text-align: center;
+	color: #eee;
+}
+#developer_title{
+	text-align: center;
+}
 
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
