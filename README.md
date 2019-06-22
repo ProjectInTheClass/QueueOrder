@@ -11,7 +11,7 @@
 더이상 종이로된 쿠폰을 사용할 필요 없습니다. 모바일로 쉽게 쿠폰과 스탬프를 관리하세요.
 
 
-1. 주요 기능
+주요 기능:
 - 한양대학교 내 카페 위치 확인
 - 한양대학교 내 카페 메뉴 확인
 - 카페 메뉴 주문 및 장바구니
@@ -19,12 +19,11 @@
 - 쿠폰 관리
 - 주문 내역 및 유저 정보 관리
 
-2. 권한
-1) 필수권한
+필수권한:
 - 알림 설정
 주문한 음료가 준비완료 되었음을 알리기 위해 앱의 알림을 보낼 수 있는 권한이 필요합니다.
 
-2) 선택권한
+선택권한:
 - 설정
 앱의 사운드를 조절할 수 있도록 앱에서 휴대폰의 설정시 사용
 
@@ -36,7 +35,9 @@
 
 <br>
 <br>
+
 ### App Info
+
 Order coffee everywhere in Hanyang University!
 
 Hanyang Smart Order is smart order system of private cafes in Hanyang University
@@ -45,7 +46,7 @@ Check the position and menus of cafe in Hanyang University
 Order coffee and enroll favorite menu by simple authentication.
 You don't have to use paper coupon. Simply check your coupon and stamp by mobile.
 
-1. Main Function
+Main Function:
 - Check the position of cafe in Hanyang University
 - Check the menu of cafe in Hanyang University
 - Order cafe menus and shopping cart.
@@ -54,12 +55,13 @@ You don't have to use paper coupon. Simply check your coupon and stamp by mobile
 - Managing order list and user authentication
 
 
-2. Authority Requirement
-1) Essential Authority Requirement
+Authority Requirement:
+
+Essential Authority Requirement
 - Notification 
 To notify that beverage is ready, we need notification authority.
 
-2) Selective Authority Requirement
+Selective Authority Requirement
 - Setting
 When user is going to control sound of application, we need authority to access to setting
 
