@@ -8,7 +8,7 @@
 
 한양대학교 어디서나 편하게 커피를 주문해 보세요!
 
-한양 스마트 오더는 한양대학교내의 개인카페를 위한 스마트오더 서비스입니다.
+한양 스마트 오더는 한양대학교내의 개인카페에서 사용가능한 스마트오더 서비스입니다.
 
 한양대학교 내의 카페들의 위치와  메뉴를 간단히 확인해 보세요.
 간단한 회원가입을 통해 자신의 선호메뉴를 등록하고 커피를 주문해 보세요.
@@ -17,11 +17,23 @@
 
 주요 기능:
 - 한양대학교 내 카페 위치 확인
+카페선택 메뉴 - 지도보기를 통해 한양대학교 내의 카페들의 위치를 확인할 수 있습니다.
+
 - 한양대학교 내 카페 메뉴 확인
+카페를 선택한 후 다양한 카페 메뉴를 확인할 수 있습니다.
+
 - 카페 메뉴 주문 및 장바구니
+카페 메뉴를 주문하고, 쿠폰을 적용하고, 카카오페이를 사용해 간단히 결제해보세요. 원하는 메뉴는 장바구니에 담아 한꺼번에 편하게 결제할 수 있습니다.
+
 - 스탬프 관리
+스탬프 적립 내역과 현재 보유한 스탬프를 카페별로 확인할 수 있습니다.
+
 - 쿠폰 관리
+적립된 스탬프를 자동으로 쿠폰으로 변환해줍니다. 쉽고 빠르게 쿠폰을 관리 및 적용할 수 있습니다.
+
 - 주문 내역 및 유저 정보 관리
+이전에 주문했던 내용을 한눈에 확인할 수 있습니다. 또한 유저의 프로필 사진을 변경하고 유저의 선호 메뉴와 장바구니를 함께 관리할 수 있습니다.
+
 
 <br>
 <br>
@@ -57,11 +69,25 @@ You don't have to use paper coupon. Simply check your coupon and stamp by mobile
 
 Main Function:
 - Check the position of cafe in Hanyang University
+you can check the position of cafes in hanyang university by 'show map' button
+
+
 - Check the menu of cafe in Hanyang University
+you can check the menus of cafe after selecting cafe
+
 - Order cafe menus and shopping cart.
+order menus and discount by coupons. simply pay by kakaopay. you can pay conveniently by adding menus at cart.
+
+
 - Managing stamp
+you can check your current stamps simply by cafes.
+
 - Managing coupon
+convert stamps into coupons automatically. easy and quickly check your coupons and discount by coupons.
+
 - Managing order list and user authentication
+you can see your order list at a glance. also you can change your profile images and manage like-menu and shopping cart
+
 
 <br>
 <br>
