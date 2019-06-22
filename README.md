@@ -1,7 +1,11 @@
 # QueueOrder
 한양대학교내의 개인카페를 위한 스마트오더 어플리케이션
 
+<br>
+<br>
+
 ### 앱소개
+
 한양대학교 어디서나 편하게 커피를 주문해 보세요!
 
 한양 스마트 오더는 한양대학교내의 개인카페를 위한 스마트오더 서비스입니다.
@@ -71,26 +75,32 @@ When user wants to set own profile picture by pick up from gallery, we need auth
 - Camera
 When user wnats to set own profile picture by taking picture, we need authority to access to camera
 
+<br>
+<br>
+<br>
+<br>
+<br>
+
 ### 팀 구성원
 
--  **전하영**
+1. **전하영**
 
  한양대학교 컴퓨터공학부 4학년 학생입니다.
 
  email : superha0@naver.com
 
 
-<p></p>
+<br><br>
 
--  **정성운**
+2. **정성운**
 
  한양대학교 3학년 학생입니다.
 
  email : odysseyj@naver.com
 
-<p></p>
+<br></br>
 
--  **최준호**
+3. **최준호**
 
  한양대학교 3학년 학생입니다.
 
