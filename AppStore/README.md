@@ -68,3 +68,6 @@ When user wants to set own profile picture by pick up from gallery, we need auth
 
 - Camera
 When user wnats to set own profile picture by taking picture, we need authority to access to camera
+
+### 앱의 키워드
+한양대 / 한양대카페 
