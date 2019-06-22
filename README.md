@@ -73,23 +73,24 @@ When user wnats to set own profile picture by taking picture, we need authority 
 
 ### 팀 구성원
 
- **전하영**
+-  **전하영**
 
  한양대학교 컴퓨터공학부 4학년 학생입니다.
 
  email : superha0@naver.com
 
 
+<p></p>
 
- **정성운**
+-  **정성운**
 
  한양대학교 3학년 학생입니다.
 
  email : odysseyj@naver.com
 
+<p></p>
 
-
- **최준호**
+-  **최준호**
 
  한양대학교 3학년 학생입니다.
 
