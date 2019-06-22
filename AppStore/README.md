@@ -23,9 +23,14 @@
 - 쿠폰 관리
 - 주문 내역 및 유저 정보 관리
 
+<br>
+<br>
+
 필수권한:
 - 알림 설정
 주문한 음료가 준비완료 되었음을 알리기 위해 앱의 알림을 보낼 수 있는 권한이 필요합니다.
+
+<br>
 
 선택권한:
 - 설정
@@ -58,14 +63,17 @@ Main Function:
 - Managing coupon
 - Managing order list and user authentication
 
+<br>
+<br>
 
-Authority Requirement:
 
-Essential Authority Requirement
+Essential Authority Requirement:
 - Notification 
 To notify that beverage is ready, we need notification authority.
 
-Selective Authority Requirement
+<br>
+
+Selective Authority Requirement:
 - Setting
 When user is going to control sound of application, we need authority to access to setting
 
